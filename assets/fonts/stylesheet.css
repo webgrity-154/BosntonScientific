@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'ITC Officina Serif Std';
+    src: url('OfficinaSerifStd-Bold.eot');
+    src: url('OfficinaSerifStd-Bold.eot?#iefix') format('embedded-opentype'),
+        url('OfficinaSerifStd-Bold.woff2') format('woff2'),
+        url('OfficinaSerifStd-Bold.woff') format('woff'),
+        url('OfficinaSerifStd-Bold.ttf') format('truetype'),
+        url('OfficinaSerifStd-Bold.svg#OfficinaSerifStd-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SST';
+    src: url('SST-Medium.eot');
+    src: url('SST-Medium.eot?#iefix') format('embedded-opentype'),
+        url('SST-Medium.woff2') format('woff2'),
+        url('SST-Medium.woff') format('woff'),
+        url('SST-Medium.ttf') format('truetype'),
+        url('SST-Medium.svg#SST-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SST';
+    src: url('SST-Bold.eot');
+    src: url('SST-Bold.eot?#iefix') format('embedded-opentype'),
+        url('SST-Bold.woff2') format('woff2'),
+        url('SST-Bold.woff') format('woff'),
+        url('SST-Bold.ttf') format('truetype'),
+        url('SST-Bold.svg#SST-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Minion Pro';
+    src: url('MinionPro-Regular.eot');
+    src: url('MinionPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('MinionPro-Regular.woff2') format('woff2'),
+        url('MinionPro-Regular.woff') format('woff'),
+        url('MinionPro-Regular.ttf') format('truetype'),
+        url('MinionPro-Regular.svg#MinionPro-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SST';
+    src: url('SST-Roman.eot');
+    src: url('SST-Roman.eot?#iefix') format('embedded-opentype'),
+        url('SST-Roman.woff2') format('woff2'),
+        url('SST-Roman.woff') format('woff'),
+        url('SST-Roman.ttf') format('truetype'),
+        url('SST-Roman.svg#SST-Roman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
