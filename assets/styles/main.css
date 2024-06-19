@@ -3415,10 +3415,10 @@ body .tabular-modal h3 {
 .column.middle [type="number"]{appearance:none;border:1px solid #ccc;border-radius:4px;box-sizing:border-box;display:inline-block;margin:8px 0;moz-appearance:textfield;padding:12px 20px;width:100%;}
 
 
- @media only screen and (orientation: portrait) {
+ /* @media only screen and (orientation: portrait) {
   .portrait-overlay {
     display: flex; } }
 
 @media only screen and (orientation: landscape) and (max-width: 1023px), screen and (orientation: landscape) and (max-height: 650px) {
   .small-overlay {
-    display: flex; } } 
+    display: flex; } }  */
