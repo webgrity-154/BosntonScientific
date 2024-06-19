@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en-US" translate="no">
+
 <head>
-    <meta charset="utf-8">
-    <title>Boston Scientific - Heartlogic&trade; - Heart Failure Diagonistic</title>
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
-    <meta content="true" name="HandheldFriendly">
-    <link href="assets/styles/main.css" rel="stylesheet">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+	<meta charset="utf-8">
+	<title>Boston Scientific - Heartlogic&trade; - Heart Failure Diagonistic</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
+	<meta content="true" name="HandheldFriendly">
+	<link href="assets/styles/main.css" rel="stylesheet">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
 </head>
+
 <body class="home-page">
 	<header class="header-sec">
 		<p class="bg-top-gradient"></p>
@@ -22,11 +24,11 @@
 			<div class="portfolio-calc-sec">
 				<h1>CARDIAC RHYTHM MANAGEMENT <br> <span class="sst-bold">Portfolio Value Calculator</span></h1>
 				<div class="portfolio-calc-form">
-					<form action="result.html">						
+					<form action="input.html">
 						<div class="input-field">
 							<label for="choose-country">Select your country</label>
-							<select name="choose-country" id="choose-country" class="boston-select">
-								<option selected disabled>Choose...</option>
+							<select name="country" id="choose-country" class="boston-select" required>
+								<option selected disabled>Select</option>
 								<option value="Austria">Austria</option>
 								<option value="Belgium">Belgium</option>
 								<option value="Czech-Republic">Czech Republic</option>
@@ -49,18 +51,35 @@
 						</div>
 						<div class="input-field">
 							<label for="hospital-name">Enter your hospital name</label>
-							<input type="text" name="hospital-name" id="hospital-name" class="boston-input" placeholder="Xxxxx">
+							<input type="text" name="hospital" id="hospital-name" class="boston-input" placeholder="Enter Name" required>
 						</div>
 						<div class="input-field currency-submit-btn">
 							<input type="submit" value="START YOUR CALCULATION" class="blue-btn">
 						</div>
 					</form>
-					
-	
 				</div>
 			</div>
 		</div>
 	</main>
+
+	<div class="portrait-overlay">
+		<div class="portrait-overlay__content">
+			<span class="portrait-overlay__icon icon-portrait-to-landscape"></span>
+			<div class="head3">Use the app in <strong>landscape</strong> mode
+				please.</div>
+		</div>
+	</div>
+
+	<div class="small-overlay">
+		<div class="small-overlay__content">
+			<span class="small-overlay__icon icon-screen-size"></span>
+			<div class="head3">Screen size too small <br>Minimum supported
+				screensize is <strong>1024px</strong> by <strong>768px</strong></div>
+		</div>
+	</div>
+
+
 	<script src="assets/scripts/build/main.js"></script>
 </body>
+
 </html>

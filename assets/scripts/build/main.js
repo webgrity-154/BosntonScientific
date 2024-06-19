@@ -10736,27 +10736,61 @@
 
 
 const country_currency = {
-	'Austria': 'EUR (€)',
-	'Belgium': 'EUR (€)',
-	'Czech-Republic': 'CZK (Kč)',
-	'Denmark': 'DKK (kr)',
-	'Finland': 'EUR (€)',
-	'France': 'EUR (€)',
-	'Germany': 'EUR (€)',
-	'Greece': 'EUR (€)',
-	'Ireland': 'EUR (€)',
-	'Italy': 'EUR (€)',
-	'Netherlands': 'EUR (€)',
-	'Norway': 'NOK (kr)',
-	'Poland': 'PLN (zł)',
-	'Portugal': 'EUR (€)',
-	'Spain': 'EUR (€)',
-	'Sweden': 'SEK (kr)',
-	'Switzerland': 'EUR (€)',
-	'United-Kingdom': 'GBP (£)',
+	'Austria': '€',
+	'Belgium': '€',
+	'Czech-Republic': 'Kč',
+	'Denmark': 'kr',
+	'Finland': '€',
+	'France': '€',
+	'Germany': '€',
+	'Greece': '€',
+	'Ireland': '€',
+	'Italy': '€',
+	'Netherlands': '€',
+	'Norway': 'kr',
+	'Poland': 'zł',
+	'Portugal': '€',
+	'Spain': '€',
+	'Sweden': 'kr',
+	'Switzerland': '€',
+	'United-Kingdom': '£',
+}
+
+function number_format(number, decimals = 2, decPoint = '.', thousandsSep = ',') {
+	if (isNaN(number) || number == null) {
+		return '0';
+	}
+	// Fix the number to the specified number of decimal places
+	let n = Number(number).toFixed(decimals);
+	// Split the fixed number into integer and decimal parts
+	let [integerPart, decimalPart] = n.split('.');
+	// Add thousands separators to the integer part
+	integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSep);
+	// If decimals are specified, add the decimal part with the specified decimal point
+	if (decimals > 0) {
+		if (decimalPart == '00') {
+			return integerPart;
+		} else {
+			return integerPart + decPoint + (decimalPart || '');
+		}
+	} else {
+		return integerPart;
+	}
+}
+
+const trimAndParse = (selector) => {
+	let value = $(selector).val().trim();
+	value = value.replace('%', '');
+	value = value.replace(',', '');
+	value = value.replace(country_currency[Boston.country], '');
+	return parseFloat(value) || 0; // Convert to number, default to 0 if NaN
 }
 
 const Boston = {
+
+	country: '', // current country
+
+	initialData: {},
 
 	actionTab: function () {
 		const bothDirectionBtn = document.querySelector('.both-direct-btn');
@@ -10789,7 +10823,7 @@ const Boston = {
 					}
 				})
 
-				bothDirectionBtn.setAttribute('data-target', tBtn.dataset.menuItem + '-modal');
+				bothDirectionBtn.setAttribute('id', tBtn.dataset.menuItem + '_modal_open');
 			}
 
 
@@ -10805,6 +10839,8 @@ const Boston = {
 				})
 				const t = e.target.closest('.open-modal-btn').dataset.target;
 				const tElement = document.querySelector('#' + t);
+				if (!tElement)
+					return false;
 				tElement.classList.add('show');
 			})
 		})
@@ -10828,7 +10864,6 @@ const Boston = {
 				let val = +e.target.value;
 				const resultEl = e.target.closest('.boston-slider-input-wrapper').querySelector('.range-result');
 				const thumbEl = e.target.closest('.boston-slider-input-wrapper').querySelector('.range-thumb');
-				console.log(val);
 				if (val > 25 && val <= 50) {
 					val -= 0.5;
 				} else if (val > 50 && val < 75) {
@@ -10837,14 +10872,10 @@ const Boston = {
 					val -= 2.5;
 				} else if (val > 75 && val <= 100) {
 					val -= 3;
-				}			
-
+				}
 				resultEl.innerHTML = e.target.value + '%';
 				thumbEl.style.left = val + '%';
 				resultEl.style.left = val + '%';
-
-
-
 			})
 		})
 	},
@@ -10856,15 +10887,29 @@ const Boston = {
 	},
 
 	validateNumberInput: function () {
-		const els = document.querySelectorAll('.validate-number-input')
+		const els = document.querySelectorAll('.validate-number-input');
 		els.forEach((el) => {
-			el.addEventListener('keydown', (e) => {
-				if (e.keyCode >= 65 && e.keyCode <= 90) e.preventDefault();
-
-
+			el.addEventListener('input', (e) => {
+				const val = e.target.value;
+				e.target.value = e.target.value.replace(/[^0-9.]/g, '');
+				e.target.setAttribute('data-modified', true);
 			})
 
+			el.addEventListener('focus', (e) => {
+				const val = e.target.value;
+				if (val.length == 1 && val == 0) e.target.value = '';
+				e.target.value = e.target.value.replace(/[^0-9.]/g, '');
+			})
 
+			el.addEventListener('blur', (e) => {
+				const val = e.target.value.replace(/[^0-9.]/g, '');
+				const symbol = e.target.dataset.symbol;
+				if (symbol === 'percentage') e.target.value = e.target.value.replace(/[^0-9.]/g, '') + '%';
+				if (symbol === 'currency') e.target.value = e.target.value.replace(/[^0-9.]/g, '');
+				Boston.storeMemorizeData();
+				ResultCalculation.resultMainCalculation();
+				if (val.length == 0) e.target.value = '0';
+			})
 		})
 	},
 
@@ -10872,14 +10917,82 @@ const Boston = {
 		const el = document.querySelector('#cinput-checks-table');
 		if (!el) return false;
 		el.addEventListener('change', (e) => {
-
 			const tRow = e.target.closest('tr');
 			if (e.target.value === 'no') {
 				tRow.classList.add('cinputs-disable');
+				$(tRow).find('.boston-input').val(0);
+				this.calRemoteMonitoring()
 			} else {
 				tRow.classList.remove('cinputs-disable');
 			}
 		})
+	},
+
+	calRemoteMonitoring: function () {
+		let remoteMonitored = parseFloat($('.remote-monitored-percent').val()) ?? 0
+		let monitoredHeartlogic = parseFloat($('.monitored-heartlogic-precent').val()) ?? 0
+		let total = 0,
+			totalHeartLogic = 0
+		$('.remote-monitor-input').each(function () {
+			total += parseFloat($(this).val())
+		})
+		total = (total * remoteMonitored / 100)
+		totalHeartLogic = (total * monitoredHeartlogic / 100)
+		$('.remote-monitored').val(number_format(total, 2, '.', ','))
+		$('.monitored-heartlogic').val(number_format(totalHeartLogic, 2, '.', ','))
+	},
+
+	showCurrentCurrencySymbol: function () {
+		const els = document.querySelectorAll('.currency-sign');
+		const currency = country_currency[Boston.country] || '';
+		els.forEach((el) => {
+			el.innerHTML = currency;
+		})
+		const iEls = document.querySelectorAll('[data-symbol="currency"]');
+		console.log(iEls);
+		iEls.forEach((el) => {
+			if (!(el.value.indexOf(currency) === 0) && currency) {
+				el.value = currency + el.value;
+			}
+		})
+	},
+
+	storeMemorizeData: function () {
+		// diagnosis
+		Boston.initialData.false_positive = $('#false_positive').val();
+		Boston.initialData.false_positive_dis = $('#false_positive_dis').val();
+		Boston.initialData.tot_cost_false = $('#tot_cost_false').val();
+		Boston.initialData.tot_cost_false_dis = $('#tot_cost_false_dis').val();
+		// Therapy
+		Boston.initialData.icd_bos_science = $('#icd_bos_science').val();
+		Boston.initialData.icd_bos_science_dis = $('#icd_bos_science_dis').val();
+		Boston.initialData.crtd_bos_science = $('#crtd_bos_science').val();
+		Boston.initialData.crtd_bos_science_dis = $('#crtd_bos_science_dis').val();
+		Boston.initialData.infection_rate = $('#infection_rate').val();
+		Boston.initialData.infection_rate_dis = $('#infection_rate_dis').val();
+		Boston.initialData.tle_production_cost = $('#tle_production_cost').val();
+		Boston.initialData.tle_production_cost_dis = $('#tle_production_cost_dis').val();
+		// store in local storage
+		const jsonData = JSON.stringify(Boston.initialData);
+		localStorage.setItem('initial-data', jsonData);
+	},
+
+	setMemorizeData: function () {
+		const data = JSON.parse(localStorage.getItem('initial-data'));
+		// diagnosis
+		$('#false_positive').val(data.false_positive);
+		$('#false_positive_dis').val(data.false_positive_dis);
+		$('#tot_cost_false').val(data.tot_cost_false);
+		$('#tot_cost_false_dis').val(data.tot_cost_false_dis);
+		// Therapy
+		$('#icd_bos_science').val(data.icd_bos_science);
+		$('#icd_bos_science_dis').val(data.icd_bos_science_dis);
+		$('#crtd_bos_science').val(data.crtd_bos_science);
+		$('#crtd_bos_science_dis').val(data.crtd_bos_science_dis);
+		$('#infection_rate').val(data.infection_rate);
+		$('#infection_rate_dis').val(data.infection_rate_dis);
+		$('#tle_production_cost').val(data.tle_production_cost);
+		$('#tle_production_cost_dis').val(data.tle_production_cost_dis);
 	},
 
 	init: function () {
@@ -10890,11 +11003,323 @@ const Boston = {
 		this.select2Active();
 		this.validateNumberInput();
 		this.cinputChecksTableAction();
+		this.calRemoteMonitoring();
+		const self = this;
+		$('.remote-monitor-input').each(function () {
+			$(this).on('input', function () {
+				self.calRemoteMonitoring();
+			})
+		})
+		$('.remote-monitor-input-percent').each(function () {
+			$(this).on('input', function () {
+				self.calRemoteMonitoring();
+			})
+		})
+	}
+}
+
+const Diagnosis = {
+
+	openTabulatormodal: function () {
+		$(document).on('click', '#diagnosis_tabular_modal_btn', function () {
+			$('#table_false_positive').html($('#false_positive').val())
+			$('#table_false_positive_dis').html($('#false_positive_dis').val())
+			$('#table_tot_cost_false').html(trimAndParse('#tot_cost_false'))
+			$('#table_tot_cost_false_dis').html(trimAndParse('#tot_cost_false_dis'))
+			$('#table_diagnostic_cost').html($('#diagnostic_cost').html())
+			$('#table_diagnostic_cost_dis').html($('#diagnostic_cost_dis').html())
+			$('#table_tot_diagnostic_cost').html($('#tot_diagnostic_cost').html())
+			$('#table_tot_diagnostic_cost_dis').html($('#tot_diagnostic_cost_dis').html())
+			$('#table_boston_scientific').html($('#boston_scientific').html())
+			$('#table_tot_boston_scientific').html($('#tot_boston_scientific').html())
+			$('#diagnosis-tabular-modal-wrapper').addClass('show');
+		})
+	},
+
+	resetIput: function () {
+		$(document).on('click', '.diagnosis_reset_btn', function () {
+			$(this).closest('tr').find('.boston-sminput').each(function () {
+				var dataValue = $(this).attr('data-value');
+				$(this).val(dataValue);
+				$(this).attr('data-modified', false);
+			})
+			Boston.storeMemorizeData();
+			ResultCalculation.resultMainCalculation();
+		})
+	},
+
+	openSliderModel: function () {
+		$(document).on('click', '#diagnosis_modal_open', function (e) {
+			$('#modal_boston_scientific').html($('#boston_scientific').html())
+			$('#modal_tot_boston_scientific').html($('#tot_boston_scientific').html())
+			$('#diagnosis_slider').val($('.icm_percent_display').html());
+			$('#diagnosis_slider').parent().find('.range-result').html($('.icm_percent_display').html() + '%').css('left', $('.icm_percent_display').html() + '%')
+			$('#diagnosis_slider').parent().find('.range-thumb').css('left', $('.icm_percent_display').html() + '%')
+			$('#modified_tot_boston_scientific').html($('#tot_boston_scientific').html())
+			$('#diagnosis-modal').addClass('show');
+		})
+	},
+
+	recalculate: function () {
+		$(document).on('click', '.diagnosis-recalculate', function (e) {
+			let changedPercentage = $('#diagnosis_slider').val(),
+
+				oldPercentage = parseFloat($('.icm_percent_display').html()) || 0,
+				oldICM = parseFloat($('.icm_display').html()),
+				newICM = 0;
+
+			if (oldPercentage != 0) {
+				newICM = oldICM * changedPercentage / oldPercentage;
+				// Diagnostic Starts
+				const D_ownFalsePos_modified = trimAndParse('#false_positive'); //number as percent
+				const D_ownCostFalsePosTotal_modified = trimAndParse('#tot_cost_false');
+				const D_ownDiagnosticCost_modified = D_ownCostFalsePosTotal_modified * D_ownFalsePos_modified / 100;
+
+				//Other device numbers
+				const D_otherFalsePos_modified = trimAndParse('#false_positive_dis'); //number as percent
+				const D_otherCostFalsePosTotal_modified = trimAndParse('#tot_cost_false_dis');
+				const D_otherDiagnosticCost_modified = D_otherCostFalsePosTotal_modified * D_otherFalsePos_modified / 100;
+				//Benefit
+				const D_BSCBenefitPatientYear_modified = D_otherDiagnosticCost_modified - D_ownDiagnosticCost_modified;
+				const D_TotalBSCBenefitYear_modified = D_BSCBenefitPatientYear_modified * newICM;
+				$('#modified_tot_boston_scientific').html(number_format(D_TotalBSCBenefitYear_modified, 2, '.', ','))
+
+			}
+		})
+	},
+
+	init: function () {
+		this.openTabulatormodal();
+		this.resetIput();
+		this.openSliderModel();
+		this.recalculate();
+	}
+}
+
+const Therapy = {
+	openTabulatormodal: function () {
+		$(document).on('click', '.icd-crtd-table-modal-btn', function () {
+			$('#table_icd_bos_science').html(number_format(trimAndParse('#icd_bos_science'), 2, '.', ','))
+			$('#table_icd_bos_science_dis').html(number_format(trimAndParse('#icd_bos_science_dis'), 2, '.', ','))
+			$('#table_crtd_bos_science').html(number_format(trimAndParse('#crtd_bos_science'), 2, '.', ','))
+			$('#table_crtd_bos_science_dis').html(number_format(trimAndParse('#crtd_bos_science_dis'), 2, '.', ','))
+			$('#table_tot_icd_cost').html($('#tot_icd_cost').val())
+			$('#table_tot_icd_cost_dis').html($('#tot_icd_cost_dis').val())
+			$('#table_tot_icd_bos_science').html($('#tot_icd_bos_science').html())
+			$('#table_tot_crtd_cost').html($('#tot_crtd_cost').val())
+			$('#table_tot_crtd_cost_dis').html($('#tot_crtd_cost_dis').val())
+			$('#table_tot_crtd_bos_science').html($('#tot_crtd_bos_science').html())
+			$('#table_tot_bos_science').html($('#tot_bos_science').html())
+			$('#therapy-device-tabular-modal-wrapper').addClass('show');
+		})
+		$(document).on('click', '.sicd-table-modal-btn', function () {
+			$('#table_infection_rate').html($('#infection_rate').val())
+			$('#table_infection_rate_dis').html($('#infection_rate_dis').val())
+			$('#table_tle_production_cost').html(trimAndParse('#tle_production_cost'))
+			$('#table_tle_production_cost_dis').html(trimAndParse('#tle_production_cost_dis'))
+			$('#table_tle_cost_year').html($('#tle_cost_year').html())
+			$('#table_tle_cost_year_dis').html($('#tle_cost_year_dis').html())
+			$('#table_tot_tle_cost').html($('#tot_tle_cost').html())
+			$('#table_tot_tle_cost_dis').html($('#tot_tle_cost_dis').html())
+			$('#table_icd_benifit_year').html($('#icd_benifit_year').html())
+			$('#table_tot_icd_benifit_year').html($('#tot_icd_benifit_year').html())
+			$('#therapy-tle-tabular-modal-wrapper').addClass('show');
+		})
+	},
+	resetIput: function () {
+		$(document).on('click', '.therapy_reset_btn', function () {
+			$(this).closest('.tr-reset').find('.boston-sminput').each(function () {
+				var dataValue = $(this).attr('data-value');
+				$(this).val(dataValue);
+				$(this).attr('data-modified', false);
+			})
+			Boston.storeMemorizeData();
+			ResultCalculation.resultMainCalculation();
+		})
+	},
+	openSliderModel: function () {
+		$(document).on('click', '#therapy_modal_open', function (e) {
+
+			$('#modal_tot_icd_bos_science').html($('#tot_icd_bos_science').html())
+			$('#modal_tot_crtd_bos_science').html($('#tot_crtd_bos_science').html())
+			$('#modal_tot_bos_science').html($('#tot_bos_science').html())
+			$('#modal_icd_benifit_year').html($('#icd_benifit_year').html())
+			$('#modal_tot_icd_benifit_year').html($('#tot_icd_benifit_year').html())
+
+			$('#cal_modal_tot_bos_science').html($('#tot_bos_science').html())
+			$('#cal_modal_tot_icd_benifit_year').html($('#tot_icd_benifit_year').html())
+
+			// $('#diagnosis_slider').parent().find('.range-result').html($('.icm_percent_display').html() + '%').css('left', $('.icm_percent_display').html() + '%')
+			// $('#diagnosis_slider').parent().find('.range-thumb').css('left', $('.icm_percent_display').html() + '%')
+
+			$('#therapy-modal').addClass('show');
+		})
+	},
+
+	init: function () {
+		this.openTabulatormodal();
+		this.resetIput();
+		this.openSliderModel();
+	}
+}
+
+const Portfolio = {
+	openSliderModel: function () {
+		$(document).on('click', '#portfolio_modal_open', function (e) {
+			$('#portfolio-modal').addClass('show');
+		})
+	},
+	init: function () {
+		this.openSliderModel();
+	}
+}
+
+const ResultCalculation = {
+	resultMainCalculation: function () {
+		var _urlHref$split$;
+		const urlHref = location.href;
+		let parameterArr = ((_urlHref$split$ = urlHref.split('.html?')[1]) === null || _urlHref$split$ === void 0 ? void 0 : _urlHref$split$.split('&')) || [];
+		const parameterObj = {
+			country: '',
+		};
+
+		parameterArr.forEach(item => {
+			const itemArr = item.split('=');
+			parameterObj[itemArr[0]] = itemArr[1];
+		});
+		if (location.pathname.includes('input.html')) {
+			$('#country').val(parameterObj["country"]?.replace(/\+/g, " ") || '');
+			Boston.country = parameterObj["country"]?.replace(/\+/g, " ") || '';
+			Boston.showCurrentCurrencySymbol();
+			$('#hospital').val(parameterObj["hospital"]?.replace(/\+/g, " ") || '');
+			$('.country-name').html(parameterObj["country"]?.replace(/\+/g, " ") || '');
+			$('.hospital-name').html(parameterObj["hospital"]?.replace(/\+/g, " ") || '');
+
+			localStorage.removeItem('initial-data');
+		} else {
+			if (!location.pathname.includes('result.html')) {
+				localStorage.removeItem('initial-data');
+				return;
+			}
+			if (localStorage.getItem('initial-data')) {
+				Boston.setMemorizeData();
+			} else {
+				Boston.storeMemorizeData();
+			}
+
+			const country = parameterObj["country"]?.replace(/\+/g, " ") || '';
+			Boston.country = parameterObj["country"]?.replace(/\+/g, " ") || '';
+			const hospital = parameterObj["hospital"]?.replace(/\+/g, " ") || '';
+			const LuxDx = parameterObj["icm_input"];
+			const TVICD = parameterObj["tv_icd"];
+			const SICD = parameterObj["s_icd"];
+			const CRT = parameterObj["crt_d"];
+			const LuxDxPercent = parameterObj["icm_input_percent"];
+			const TVICDPercent = parameterObj["tv_icd_percent"];
+			const SICDPercent = parameterObj["s_icd_percent"];
+			const CRTPercent = parameterObj["crt_d_percent"];
+			const RemoteMonitoredPercent = parameterObj["remote_monitored_percent"];
+			const TotRemoteMonitored = parameterObj["tot_remote_monitored"];
+			const HearLogicPercent = parameterObj["heartlogic_precent"];
+			const TotHeartLogic = parameterObj["tot_heartlogic"];
+
+			$('.country-name').html(country);
+			Boston.showCurrentCurrencySymbol();
+			$('.hospital-name').html(hospital)
+			$('.amend-input').attr('href', 'input.html?country=' + country + '&hospital=' + hospital)
+			$('.icm_display').html(LuxDx)
+			$('.icm_percent_display').html(LuxDxPercent)
+			$('.tvicd_display').html(TVICD)
+			$('.tvicd_percent_display').html(TVICDPercent)
+			$('.sicd_display').html(SICD)
+			$('.sicd_display_percent').html(SICDPercent)
+			$('.crtd_display').html(CRT)
+			$('.crtd_display_percent').html(CRTPercent)
+			$('.remote_monitred_percent').html(RemoteMonitoredPercent)
+			$('.tot_remote_monitoed').html(TotRemoteMonitored)
+			$('.heart_logic_percent').html(HearLogicPercent)
+			$('.tot_heart_logic').html(TotHeartLogic)
+
+			// Diagnostic Starts
+			const D_ownFalsePos = trimAndParse('#false_positive'); //number as percent
+			const D_ownCostFalsePosTotal = trimAndParse('#tot_cost_false');
+			const D_ownDiagnosticCost = D_ownCostFalsePosTotal * D_ownFalsePos / 100;
+			const D_ownTotalDiagnosticCost = D_ownDiagnosticCost * LuxDx;
+			const D_otherFalsePos = trimAndParse('#false_positive_dis'); //number as percent
+			const D_otherCostFalsePosTotal = trimAndParse('#tot_cost_false_dis');
+			const D_otherDiagnosticCost = D_otherCostFalsePosTotal * D_otherFalsePos / 100;
+			const D_otherTotalDiagnosticCost = D_otherDiagnosticCost * LuxDx;
+
+
+			//Benefit
+			const D_BSCBenefitPatientYear = D_otherDiagnosticCost - D_ownDiagnosticCost;
+			const D_TotalBSCBenefitYear = D_BSCBenefitPatientYear * LuxDx;
+			const D_TotalBSCBenefit = D_otherTotalDiagnosticCost - D_ownTotalDiagnosticCost;
+			$('#diagnostic_cost').html(number_format(D_ownDiagnosticCost, 2, '.', ','));
+			$('#diagnostic_cost_dis').html(number_format(D_otherDiagnosticCost, 2, '.', ','));
+			$('#tot_diagnostic_cost').html(number_format(D_ownTotalDiagnosticCost, 2, '.', ','));
+			$('#tot_diagnostic_cost_dis').html(number_format(D_otherTotalDiagnosticCost, 2, '.', ','));
+			$('#boston_scientific').html(number_format(D_BSCBenefitPatientYear, 2, '.', ','));
+			$('#tot_boston_scientific').html(number_format(D_TotalBSCBenefitYear, 2, '.', ','));
+			// Diagnostic ends
+
+
+			// Therapy Starts
+			const DTL_ownLongevityICDAvgYrCost = trimAndParse('#icd_bos_science');
+			const DTL_otherLongevityICDAvgYrCost = trimAndParse('#icd_bos_science_dis');
+			const DTL_ownTotalICDCost = TVICD * DTL_ownLongevityICDAvgYrCost;
+			const DTL_otherTotalICDCost = TVICD * DTL_otherLongevityICDAvgYrCost;
+			const DTL_ownLongevityCRTDAvgYrCost = trimAndParse('#crtd_bos_science');
+			const DTL_otherLongevityCRTDAvgYrCost = trimAndParse('#crtd_bos_science_dis');
+			const DTL_ownTotalCRTDCost = CRT * DTL_ownLongevityCRTDAvgYrCost;
+			const DTL_otherTotalCRTDCost = CRT * DTL_otherLongevityCRTDAvgYrCost;
+			//Benefit
+			const DTL_BSCBenefitICDPatientYear = DTL_otherLongevityICDAvgYrCost - DTL_ownLongevityICDAvgYrCost;
+			const DTL_BSCBenefitCRTDPatientYear = DTL_otherLongevityCRTDAvgYrCost - DTL_ownLongevityCRTDAvgYrCost;
+			const DTL_TotalBSCBenefitYear = DTL_otherTotalICDCost + DTL_otherTotalCRTDCost - DTL_ownTotalICDCost - DTL_ownTotalCRTDCost;
+			$('#tot_icd_cost').val(number_format(DTL_ownTotalICDCost, 2, '.', ','));
+			$('#tot_icd_cost_dis').val(number_format(DTL_otherTotalICDCost, 2, '.', ','));
+			$('#tot_icd_bos_science').html(number_format(DTL_BSCBenefitICDPatientYear, 2, '.', ','));
+			$('#tot_crtd_cost').val(number_format(DTL_ownTotalCRTDCost, 2, '.', ','));
+			$('#tot_crtd_cost_dis').val(number_format(DTL_otherTotalCRTDCost, 2, '.', ','));
+			$('#tot_crtd_bos_science').html(number_format(DTL_BSCBenefitCRTDPatientYear, 2, '.', ','));
+			$('#tot_bos_science').html(number_format(DTL_TotalBSCBenefitYear, 2, '.', ','));
+
+			//Transvenous Lead Extraction
+			//BSC Numbers
+			const DTT_ownInfectionsPatientYear = trimAndParse('#infection_rate'); //number as percent
+			const DTT_ownProcCost = trimAndParse('#tle_production_cost');
+			const DTT_ownCostPatientYear = DTT_ownProcCost * DTT_ownInfectionsPatientYear / 100;
+			const DTT_ownTotalCost = SICD * DTT_ownCostPatientYear;
+			//Other Device Numbers
+			const DTT_otherInfectionsPatientYear = trimAndParse('#infection_rate_dis'); //number as percent
+			const DTT_otherProcCost = trimAndParse('#tle_production_cost_dis');
+			const DTT_otherCostPatientYear = DTT_otherProcCost * DTT_otherInfectionsPatientYear / 100;
+			const DTT_otherTotalCost = SICD * DTT_otherCostPatientYear;
+			//Benefit
+			const DTT_BSCBenefitICDPatientYear = DTT_otherCostPatientYear - DTT_ownCostPatientYear;
+			const DTT_TotalBSCBenefitYear = DTT_otherTotalCost - DTT_ownTotalCost;
+			$('#tle_cost_year').html(number_format(DTT_ownCostPatientYear, 2, '.', ','))
+			$('#tle_cost_year_dis').html(number_format(DTT_otherCostPatientYear, 2, '.', ','))
+			$('#icd_benifit_year').html(number_format(DTT_BSCBenefitICDPatientYear, 2, '.', ','))
+			$('#tot_tle_cost').html(number_format(DTT_ownTotalCost, 2, '.', ','))
+			$('#tot_tle_cost_dis').html(number_format(DTT_otherTotalCost, 2, '.', ','))
+			$('#tot_icd_benifit_year').html(number_format(DTT_TotalBSCBenefitYear, 2, '.', ','))
+		}
+	},
+
+	init: function () {
+
+		this.resultMainCalculation();
 	}
 }
 
 window.addEventListener('load', function () {
 	Boston.init();
+	ResultCalculation.init();
+	Diagnosis.init();
+	Therapy.init();
+	Portfolio.init();
 })
 
 
