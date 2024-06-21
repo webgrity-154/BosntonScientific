@@ -10752,8 +10752,110 @@ const country_currency = {
 	'Portugal': '€',
 	'Spain': '€',
 	'Sweden': 'kr',
-	'Switzerland': '€',
+	'Switzerland': 'Fr',
 	'United-Kingdom': '£',
+}
+const currency_rate = {
+	'Czech-Republic': 23.21,
+	'Denmark': 7.07,
+	'Norway': 10.71,
+	'Poland': 4.34,
+	'Sweden': 11.27,
+	'Switzerland': 0.91,
+	'United-Kingdom': 0.82,
+}
+
+const global_hospitalisation = {
+	'Austria': {
+		'hospitalisation': 815,
+		'nurse': 17,
+		'physician': 82,
+	},
+	'Belgium': {
+		'hospitalisation': 435,
+		'nurse': 29,
+		'physician': 132,
+	},
+	'Czech-Republic': {
+		'hospitalisation': 5103,
+		'nurse': 257,
+		'physician': 1306,
+	},
+	'Denmark': {
+		'hospitalisation': 6728,
+		'nurse': 183,
+		'physician': 524,
+	},
+	'Finland': {
+		'hospitalisation': 586,
+		'nurse': 20,
+		'physician': 97,
+	},
+	'France': {
+		'hospitalisation': 940,
+		'nurse': 17,
+		'physician': 84,
+	},
+	'Germany': {
+		'hospitalisation': 815,
+		'nurse': 17,
+		'physician': 82,
+	},
+	'Greece': {
+		'hospitalisation': 272,
+		'nurse': 11,
+		'physician': 49,
+	},
+	'Ireland': {
+		'hospitalisation': 948,
+		'nurse': 15,
+		'physician': 70,
+	},
+	'Italy': {
+		'hospitalisation': 610,
+		'nurse': 17,
+		'physician': 78,
+	},
+	'Netherlands': {
+		'hospitalisation': 807,
+		'nurse': 23,
+		'physician': 103,
+	},
+	'Norway': {
+		'hospitalisation': 9506,
+		'nurse': 220,
+		'physician': 1087,
+	},
+	'Poland': {
+		'hospitalisation': 2687,
+		'nurse': 33,
+		'physician': 156,
+	},
+	'Portugal': {
+		'hospitalisation': 570,
+		'nurse': 12,
+		'physician': 56,
+	},
+	'Spain': {
+		'hospitalisation': 481,
+		'nurse': 14,
+		'physician': 57,
+	},
+	'Sweden': {
+		'hospitalisation': 19322,
+		'nurse': 217,
+		'physician': 978,
+	},
+	'Switzerland': {
+		'hospitalisation': 816,
+		'nurse': 48,
+		'physician': 219,
+	},
+	'United-Kingdom': {
+		'hospitalisation': 495,
+		'nurse': 26,
+		'physician': 128,
+	},
 }
 
 function number_format(number, decimals = 2, decPoint = '.', thousandsSep = ',') {
@@ -10791,11 +10893,13 @@ const trimHtml = (value) => {
 	value = value.replace(country_currency[Boston.country], '');
 	return number_format(parseFloat(value), 2, '.', ','); // Convert to number, default to 0 if NaN
 }
-
+const trimValue = (value) => {
+	value = value.replace('%', '');
+	value = value.replace(',', '');
+	return parseFloat(value) || 0;
+}
 const Boston = {
-
 	country: '', // current country
-
 	initialData: {},
 
 	actionTab: function () {
@@ -10906,7 +11010,6 @@ const Boston = {
 				if (val.length == 1 && val == 0) e.target.value = '';
 				e.target.value = e.target.value.replace(/[^0-9.]/g, '');
 			})
-
 			el.addEventListener('blur', (e) => {
 				const val = e.target.value.replace(/[^0-9.]/g, '');
 				const symbol = e.target.dataset.symbol;
@@ -10944,8 +11047,8 @@ const Boston = {
 		})
 		total = (total * remoteMonitored / 100)
 		totalHeartLogic = (total * monitoredHeartlogic / 100)
-		$('.remote-monitored').val(number_format(total, 2, '.', ','))
-		$('.monitored-heartlogic').val(number_format(totalHeartLogic, 2, '.', ','))
+		$('.remote-monitored').val(number_format(total, 0, '.', ','))
+		$('.monitored-heartlogic').val(number_format(totalHeartLogic, 0, '.', ','))
 	},
 
 	showCurrentCurrencySymbol: function () {
@@ -10978,6 +11081,18 @@ const Boston = {
 		Boston.initialData.infection_rate_dis = $('#infection_rate_dis').val();
 		Boston.initialData.tle_production_cost = $('#tle_production_cost').val();
 		Boston.initialData.tle_production_cost_dis = $('#tle_production_cost_dis').val();
+
+		// Monitoring
+		Boston.initialData.remote_monitored = $('#remote_monitored').val();
+		Boston.initialData.remote_monitored_dis = $('#remote_monitored_dis').val();
+		Boston.initialData.avg_hospitalisation = $('#avg_hospitalisation').val();
+		Boston.initialData.avg_hospitalisation_dis = $('#avg_hospitalisation_dis').val();
+		Boston.initialData.len_hospitalisation = $('#len_hospitalisation').val();
+		Boston.initialData.len_hospitalisation_dis = $('#len_hospitalisation_dis').val();
+		Boston.initialData.hospitalisation_cost = $('#hospitalisation_cost').val();
+		Boston.initialData.hospitalisation_cost_dis = $('#hospitalisation_cost_dis').val();
+		Boston.initialData.icd_crtd_cost = $('#icd_crtd_cost').val();
+		Boston.initialData.icd_crtd_cost_dis = $('#icd_crtd_cost_dis').val();
 		// store in local storage
 		const jsonData = JSON.stringify(Boston.initialData);
 		localStorage.setItem('initial-data', jsonData);
@@ -10999,6 +11114,17 @@ const Boston = {
 		$('#infection_rate_dis').val(data.infection_rate_dis);
 		$('#tle_production_cost').val(data.tle_production_cost);
 		$('#tle_production_cost_dis').val(data.tle_production_cost_dis);
+		// Monitoring
+		$('#remote_monitored').val(data.remote_monitored);
+		$('#remote_monitored_dis').val(data.remote_monitored_dis);
+		$('#avg_hospitalisation').val(data.avg_hospitalisation);
+		$('#avg_hospitalisation_dis').val(data.avg_hospitalisation_dis);
+		$('#len_hospitalisation').val(data.len_hospitalisation);
+		$('#len_hospitalisation_dis').val(data.len_hospitalisation_dis);
+		$('#hospitalisation_cost').val(data.hospitalisation_cost);
+		$('#hospitalisation_cost_dis').val(data.hospitalisation_cost_dis);
+		$('#icd_crtd_cost').val(data.icd_crtd_cost);
+		$('#icd_crtd_cost_dis').val(data.icd_crtd_cost_dis);
 	},
 
 	init: function () {
@@ -11025,7 +11151,6 @@ const Boston = {
 }
 
 const Diagnosis = {
-
 	openTabulatormodal: function () {
 		$(document).on('click', '#diagnosis_tabular_modal_btn', function () {
 			$('#table_false_positive').html($('#false_positive').val())
@@ -11175,7 +11300,7 @@ const Therapy = {
 				oldtvicdPercentage = parseFloat($('.tvicd_percent_display').html()) || 0,
 				oldtvicd = parseFloat($('.tvicd_display').html()),
 				newtvicd = oldtvicd,
-				oldcrtdPercentage = parseFloat($('.crtd_percent_display').html()) || 0,
+				oldcrtdPercentage = parseFloat($('.crtd_display_percent').html()) || 0,
 				oldcrtd = parseFloat($('.crtd_display').html()),
 				newcrtd = oldcrtd,
 				oldsicdPercentage = parseFloat($('.sicd_display_percent').html()) || 0,
@@ -11208,18 +11333,247 @@ const Therapy = {
 	}
 }
 
+const Monitoring = {
+	openTabulatormodal: function () {
+		$(document).on('click', '.monitoring-crtd-tabular-modal-btn', function () {
+			$('#tbl_remote_monitored').html(number_format(trimAndParse('#remote_monitored'), 2, '.', ','))
+			$('#tbl_remote_monitored_dis').html(number_format(trimAndParse('#remote_monitored_dis'), 2, '.', ','))
+			$('#tbl_remote_monitored_benifit').html($('#remote_monitored_benifit').html())
+			$('#tbl_tot_remote_monitored').html($('#tot_remote_monitored').html())
+			$('#tbl_tot_remote_monitored_dis').html($('#tot_remote_monitored_dis').html())
+			$('#tbl_tot_remote_monitored_benifit').html($('#tot_remote_monitored_benifit').html())
+			$('#monitoring-crtd-tabular-modal-wrapper').addClass('show');
+		})
+
+		$(document).on('click', '.monitoring-heart-tabular-modal-btn', function () {
+			$('#tbl_avg_hospitalisation').html(number_format(trimAndParse('#avg_hospitalisation'), 2, '.', ','))
+			$('#tbl_len_hospitalisation').html(number_format(trimAndParse('#len_hospitalisation'), 2, '.', ','))
+			$('#tbl_hospitalisation_cost').html(number_format(trimAndParse('#hospitalisation_cost'), 2, '.', ','))
+			$('#tbl_icd_crtd_cost').html(number_format(trimAndParse('#icd_crtd_cost'), 2, '.', ','))
+			$('#tbl_avg_hospitalisation_dis').html(number_format(trimAndParse('#avg_hospitalisation_dis'), 2, '.', ','))
+			$('#tbl_len_hospitalisation_dis').html(number_format(trimAndParse('#len_hospitalisation_dis'), 2, '.', ','))
+			$('#tbl_hospitalisation_cost_dis').html(number_format(trimAndParse('#hospitalisation_cost_dis'), 2, '.', ','))
+			$('#tbl_icd_crtd_cost_dis').html(number_format(trimAndParse('#icd_crtd_cost_dis'), 2, '.', ','))
+			$('#tbl_tot_hospitalisation_cost').html($('#tot_hospitalisation_cost').html())
+			$('#tbl_tot_hospitalisation_cost_dis').html($('#tot_hospitalisation_cost_dis').html())
+			$('#tbl_hospitalisation_benifit').html($('#hospitalisation_benifit').html())
+			$('#tbl_tot_hospitalisation_benifit').html($('#tot_hospitalisation_benifit').html())
+			$('#monitoring-heart-tabular-modal-wrapper').addClass('show');
+		})
+	},
+	resetIput: function () {
+		$(document).on('click', '.monitoring-reset-btn', function () {
+			$(this).closest('.tr-reset').find('.boston-sminput').each(function () {
+				var dataValue = $(this).attr('data-value');
+				$(this).val(dataValue);
+				$(this).attr('data-modified', false);
+			})
+			Boston.storeMemorizeData();
+			ResultCalculation.resultMainCalculation();
+		})
+	},
+
+	init: function () {
+		this.openTabulatormodal();
+		this.resetIput();
+	}
+}
 const Portfolio = {
 	openSliderModel: function () {
 		$(document).on('click', '#portfolio_modal_open', function (e) {
+			$('#modal_Eco_impact').html($('#Eco_impact').html())
+			$('#modal_Eco_impact_dis').html($('#Eco_impact_dis').html())
+			$('#modal_Eco_impact_dif').html($('#Eco_impact_dif').html())
+			$('#cal_modal_Eco_impact_dis').html($('#Eco_impact_dif').html())
+
+			$('#portfolio_slider_1').parent().find('.range-result').html($('.icm_percent_display').html() + '%').css('left', $('.icm_percent_display').html() + '%')
+			$('#portfolio_slider_1').parent().find('.range-thumb').css('left', $('.icm_percent_display').html() + '%')
+			$('#portfolio_slider_1').val($('.icm_percent_display').html());
+			$('#portfolio_slider_2').parent().find('.range-result').html($('.tvicd_percent_display').html() + '%').css('left', $('.tvicd_percent_display').html() + '%')
+			$('#portfolio_slider_2').parent().find('.range-thumb').css('left', $('.tvicd_percent_display').html() + '%')
+			$('#portfolio_slider_2').val($('.tvicd_percent_display').html());
+			$('#portfolio_slider_3').parent().find('.range-result').html($('.sicd_display_percent').html() + '%').css('left', $('.sicd_display_percent').html() + '%')
+			$('#portfolio_slider_3').parent().find('.range-thumb').css('left', $('.sicd_display_percent').html() + '%')
+			$('#portfolio_slider_3').val($('.sicd_display_percent').html());
+			$('#portfolio_slider_4').parent().find('.range-result').html($('.crtd_display_percent').html() + '%').css('left', $('.crtd_display_percent').html() + '%')
+			$('#portfolio_slider_4').parent().find('.range-thumb').css('left', $('.crtd_display_percent').html() + '%')
+			$('#portfolio_slider_4').val($('.crtd_display_percent').html());
 			$('#portfolio-modal').addClass('show');
+		})
+	},
+	recalculate: function () {
+		$(document).on('click', '.portfolio-recalculate', function (e) {
+			let changedicmPercentage = $('#portfolio_slider_1').val(),
+				changedtvicdPercentage = $('#portfolio_slider_2').val(),
+				changedsicdPercentage = $('#portfolio_slider_3').val(),
+				changedcrtdPercentage = $('#portfolio_slider_4').val(),
+				oldicmPercentage = parseFloat($('.icm_percent_display').html()) || 0,
+				oldicm = parseFloat($('.icm_display').html()),
+				newicm = oldicm,
+				oldtvicdPercentage = parseFloat($('.tvicd_percent_display').html()) || 0,
+				oldtvicd = parseFloat($('.tvicd_display').html()),
+				newtvicd = oldtvicd,
+				oldcrtdPercentage = parseFloat($('.crtd_display_percent').html()) || 0,
+				oldcrtd = parseFloat($('.crtd_display').html()),
+				newcrtd = oldcrtd,
+				oldsicdPercentage = parseFloat($('.sicd_display_percent').html()) || 0,
+				oldsicd = parseFloat($('.sicd_display').html()),
+				newsicd = oldsicd,
+				monitoredPercent = parseFloat($('.remote_monitred_percent').html()) || 0,
+				oldmonitoredPerson = parseFloat($('.tot_remote_monitoed').html()),
+				newmonitoredPerson = oldmonitoredPerson,
+				heartLogicPercent = parseFloat($('.heart_logic_percent').html()) || 0,
+				oldHeartLogicPerson = parseFloat($('.tot_heart_logic').html()),
+				newHeartLogicPerson = oldHeartLogicPerson
+
+			if (oldicmPercentage != 0) {
+				newicm = oldicm * changedicmPercentage / oldicmPercentage;
+			}
+			if (oldtvicdPercentage != 0) {
+				newtvicd = oldtvicd * changedtvicdPercentage / oldtvicdPercentage;
+			}
+			if (oldcrtdPercentage != 0) {
+				newcrtd = oldcrtd * changedcrtdPercentage / oldcrtdPercentage;
+			}
+			if (oldsicdPercentage != 0) {
+				newsicd = oldsicd * changedsicdPercentage / oldsicdPercentage;
+			}
+			newmonitoredPerson = (newtvicd + newcrtd + newsicd) * monitoredPercent / 100
+			newHeartLogicPerson = newmonitoredPerson * heartLogicPercent / 100
+
+			// diagnosis
+			const D_ownFalsePos = trimAndParse('#false_positive');
+			const D_ownCostFalsePosTotal = trimAndParse('#tot_cost_false');
+			const D_ownDiagnosticCost = D_ownCostFalsePosTotal * D_ownFalsePos / 100;
+			const D_otherFalsePos = trimAndParse('#false_positive_dis');
+			const D_otherCostFalsePosTotal = trimAndParse('#tot_cost_false_dis');
+			const D_otherDiagnosticCost = D_otherCostFalsePosTotal * D_otherFalsePos / 100;
+			const N_icm_othercost = D_otherDiagnosticCost * newicm;
+			//Benefit
+			const D_BSCBenefitPatientYear = D_otherDiagnosticCost - D_ownDiagnosticCost;
+			const NICM_TotalBSCBenefitYear = D_BSCBenefitPatientYear * newicm;
+
+			// Therapy
+			const DTL_ownLongevityICDAvgYrCost = trimAndParse('#icd_bos_science');
+			const DTL_otherLongevityICDAvgYrCost = trimAndParse('#icd_bos_science_dis');
+			const N_tvicd_othercost = newtvicd * DTL_otherLongevityICDAvgYrCost;
+			const DTL_ownLongevityCRTDAvgYrCost = trimAndParse('#crtd_bos_science');
+			const DTL_otherLongevityCRTDAvgYrCost = trimAndParse('#crtd_bos_science_dis');
+			const N_crtd_othercost = newcrtd * DTL_otherLongevityCRTDAvgYrCost;
+			//Benefit
+			const N_DTL_BSCBenefitICDPatientYear = DTL_otherLongevityICDAvgYrCost - DTL_ownLongevityICDAvgYrCost;
+			const N_DTL_BSCBenefitCRTDPatientYear = DTL_otherLongevityCRTDAvgYrCost - DTL_ownLongevityCRTDAvgYrCost;
+			const N_DTL_TotalBSCBenefitYear = (N_DTL_BSCBenefitICDPatientYear * newtvicd) + (N_DTL_BSCBenefitCRTDPatientYear * newcrtd);
+
+			//Transvenous Lead Extraction
+			//BSC Numbers
+			const DTT_ownInfectionsPatientYear = trimAndParse('#infection_rate'); //number as percent
+			const DTT_ownProcCost = trimAndParse('#tle_production_cost');
+			const DTT_ownCostPatientYear = DTT_ownProcCost * DTT_ownInfectionsPatientYear / 100;
+			//Other Device Numbers
+			const DTT_otherInfectionsPatientYear = trimAndParse('#infection_rate_dis'); //number as percent
+			const DTT_otherProcCost = trimAndParse('#tle_production_cost_dis');
+			const DTT_otherCostPatientYear = DTT_otherProcCost * DTT_otherInfectionsPatientYear / 100;
+			const N_sicd_othercost = newsicd * Number(DTT_otherCostPatientYear).toFixed(2);
+			//Benefit
+			const DTT_BSCBenefitICDPatientYear = DTT_otherCostPatientYear - DTT_ownCostPatientYear;
+			const N_DTT_TotalBSCBenefitYear = DTT_BSCBenefitICDPatientYear * newsicd;
+
+			// Remote Monitoring
+			const RM_ownCostPatientYear = trimAndParse('#remote_monitored');
+			//Other Device Numbers
+			const RM_otherCostPatientYear = trimAndParse('#remote_monitored_dis');
+			const N_rm_othercost = newmonitoredPerson * RM_otherCostPatientYear;
+			//Benefit
+			const RM_BSCBenefitPatientYear = RM_otherCostPatientYear - RM_ownCostPatientYear;
+			const N_RM_TotalBSCBenefitYear = RM_BSCBenefitPatientYear * newmonitoredPerson;
+
+			//Heartlogic
+			const HL_ownAvgPatientYear = trimAndParse('#avg_hospitalisation');
+			const HL_ownLengthDays = trimAndParse('#len_hospitalisation');
+			const HL_ownCostPatientDay = trimAndParse('#hospitalisation_cost');
+			const HL_ownCostPatientYear = HL_ownAvgPatientYear * HL_ownLengthDays * HL_ownCostPatientDay;
+			const HL_ownTotalCost = newHeartLogicPerson * HL_ownCostPatientYear;
+			//Other Device Numbers
+			const HL_otherAvgPatientYear = trimAndParse('#avg_hospitalisation_dis');
+			const HL_otherLengthDays = trimAndParse('#len_hospitalisation_dis');
+			const HL_otherCostPatientDay = trimAndParse('#hospitalisation_cost_dis');
+			const HL_otherCostPatientYear = HL_otherAvgPatientYear * HL_otherLengthDays * HL_otherCostPatientDay;
+			const N_hl_othercost = newHeartLogicPerson * HL_otherCostPatientYear;
+			//Benefit
+			const N_HL_TotalBSCBenefitYear = N_hl_othercost - HL_ownTotalCost;
+
+			const N_G_EconomicBenefit = NICM_TotalBSCBenefitYear + N_DTL_TotalBSCBenefitYear + N_DTT_TotalBSCBenefitYear + N_RM_TotalBSCBenefitYear + N_HL_TotalBSCBenefitYear;
+			const N_G_TotalCost = N_icm_othercost + N_tvicd_othercost + N_crtd_othercost + N_sicd_othercost + N_rm_othercost + N_hl_othercost;
+			const N_G_ownTotalCost = N_G_TotalCost - N_G_EconomicBenefit;
+			$('#cal_modal_Eco_impact_dis').html(number_format(N_G_ownTotalCost, 2, '.', ','))
 		})
 	},
 	init: function () {
 		this.openSliderModel();
+		this.recalculate()
 	}
 }
 
 const ResultCalculation = {
+	loadData: function () {
+		var _urlHref$split$;
+		const urlHref = location.href;
+		let parameterArr = ((_urlHref$split$ = urlHref.split('.html?')[1]) === null || _urlHref$split$ === void 0 ? void 0 : _urlHref$split$.split('&')) || [];
+		const parameterObj = {
+			country: '',
+		};
+		parameterArr.forEach(item => {
+			const itemArr = item.split('=');
+			parameterObj[itemArr[0]] = itemArr[1];
+		});
+		Boston.country = parameterObj["country"]?.replace(/\+/g, " ") || '';
+		if (location.pathname.includes('result.html')) {
+			$('#hospitalisation_cost').val(number_format(global_hospitalisation[Boston.country]['hospitalisation']), 2, '.', ',')
+			$('#hospitalisation_cost_dis').val(number_format(global_hospitalisation[Boston.country]['hospitalisation']), 2, '.', ',')
+			$('#hospitalisation_cost').attr('data-value', global_hospitalisation[Boston.country]['hospitalisation'])
+			$('#hospitalisation_cost_dis').attr('data-value', global_hospitalisation[Boston.country]['hospitalisation'])
+			const falsepositive = global_hospitalisation[Boston.country]['nurse'] + global_hospitalisation[Boston.country]['physician'];
+			$('#tot_cost_false').val(number_format(falsepositive, 2, '.', ','))
+			$('#tot_cost_false_dis').val(number_format(falsepositive, 2, '.', ','))
+			$('#tot_cost_false').attr('data-value', falsepositive)
+			$('#tot_cost_false_dis').attr('data-value', falsepositive)
+
+			if (currency_rate[Boston.country]) {
+				let newICD = currency_rate[Boston.country] * $('#icd_bos_science').attr('data-value'),
+					newICDDIS = currency_rate[Boston.country] * $('#icd_bos_science_dis').attr('data-value'),
+					newCRTD = currency_rate[Boston.country] * $('#crtd_bos_science').attr('data-value'),
+					newCRTDDIS = currency_rate[Boston.country] * $('#crtd_bos_science_dis').attr('data-value'),
+					newTLE = currency_rate[Boston.country] * $('#tle_production_cost').attr('data-value'),
+					newTLEDIS = currency_rate[Boston.country] * $('#tle_production_cost_dis').attr('data-value'),
+					newREM = currency_rate[Boston.country] * $('#remote_monitored').attr('data-value'),
+					newREMDIS = currency_rate[Boston.country] * $('#remote_monitored_dis').attr('data-value'),
+					newCRTDC = currency_rate[Boston.country] * $('#icd_crtd_cost').attr('data-value'),
+					newCRTDCDIS = currency_rate[Boston.country] * $('#icd_crtd_cost_dis').attr('data-value')
+
+				$('#icd_bos_science').val(number_format(newICD, 2, '.', ','))
+				$('#icd_bos_science').attr('data-value', number_format(newICD, 2, '.', ','))
+				$('#icd_bos_science_dis').val(number_format(newICDDIS, 2, '.', ','))
+				$('#icd_bos_science_dis').attr('data-value', number_format(newICDDIS, 2, '.', ','))
+				$('#crtd_bos_science').val(number_format(newCRTD, 2, '.', ','))
+				$('#crtd_bos_science').attr('data-value', number_format(newCRTD, 2, '.', ','))
+				$('#crtd_bos_science_dis').val(number_format(newCRTDDIS, 2, '.', ','))
+				$('#crtd_bos_science_dis').attr('data-value', number_format(newCRTDDIS, 2, '.', ','))
+				$('#tle_production_cost').val(number_format(newTLE, 2, '.', ','))
+				$('#tle_production_cost').attr('data-value', number_format(newTLE, 2, '.', ','))
+				$('#tle_production_cost_dis').val(number_format(newTLEDIS, 2, '.', ','))
+				$('#tle_production_cost_dis').attr('data-value', number_format(newTLEDIS, 2, '.', ','))
+				$('#remote_monitored').val(number_format(newREM, 2, '.', ','))
+				$('#remote_monitored').attr('data-value', number_format(newREM, 2, '.', ','))
+				$('#remote_monitored_dis').val(number_format(newREMDIS, 2, '.', ','))
+				$('#remote_monitored_dis').attr('data-value', number_format(newREMDIS, 2, '.', ','))
+				$('#icd_crtd_cost').val(number_format(newCRTDC, 2, '.', ','))
+				$('#icd_crtd_cost').attr('data-value', number_format(newCRTDC, 2, '.', ','))
+				$('#icd_crtd_cost_dis').val(number_format(newCRTDCDIS, 2, '.', ','))
+				$('#icd_crtd_cost_dis').attr('data-value', number_format(newCRTDCDIS, 2, '.', ','))
+			}
+		}
+	},
 	resultMainCalculation: function () {
 		var _urlHref$split$;
 		const urlHref = location.href;
@@ -11253,7 +11607,6 @@ const ResultCalculation = {
 			}
 
 			const country = parameterObj["country"]?.replace(/\+/g, " ") || '';
-			Boston.country = parameterObj["country"]?.replace(/\+/g, " ") || '';
 			const hospital = parameterObj["hospital"]?.replace(/\+/g, " ") || '';
 			const LuxDx = parameterObj["icm_input"];
 			const TVICD = parameterObj["tv_icd"];
@@ -11269,7 +11622,6 @@ const ResultCalculation = {
 			const TotHeartLogic = parameterObj["tot_heartlogic"];
 
 			$('.country-name').html(country);
-			Boston.showCurrentCurrencySymbol();
 			$('.hospital-name').html(hospital)
 			$('.amend-input').attr('href', 'input.html?country=' + country + '&hospital=' + hospital)
 			$('.icm_display').html(LuxDx)
@@ -11284,6 +11636,7 @@ const ResultCalculation = {
 			$('.tot_remote_monitoed').html(TotRemoteMonitored)
 			$('.heart_logic_percent').html(HearLogicPercent)
 			$('.tot_heart_logic').html(TotHeartLogic)
+			Boston.showCurrentCurrencySymbol();
 
 			// Diagnostic Starts
 			const D_ownFalsePos = trimAndParse('#false_positive'); //number as percent
@@ -11299,7 +11652,6 @@ const ResultCalculation = {
 			//Benefit
 			const D_BSCBenefitPatientYear = D_otherDiagnosticCost - D_ownDiagnosticCost;
 			const D_TotalBSCBenefitYear = D_BSCBenefitPatientYear * LuxDx;
-			const D_TotalBSCBenefit = D_otherTotalDiagnosticCost - D_ownTotalDiagnosticCost;
 			$('#diagnostic_cost').html(number_format(D_ownDiagnosticCost, 2, '.', ','));
 			$('#diagnostic_cost_dis').html(number_format(D_otherDiagnosticCost, 2, '.', ','));
 			$('#tot_diagnostic_cost').html(number_format(D_ownTotalDiagnosticCost, 2, '.', ','));
@@ -11350,10 +11702,66 @@ const ResultCalculation = {
 			$('#tot_tle_cost').html(number_format(DTT_ownTotalCost, 2, '.', ','))
 			$('#tot_tle_cost_dis').html(number_format(DTT_otherTotalCost, 2, '.', ','))
 			$('#tot_icd_benifit_year').html(number_format(DTT_TotalBSCBenefitYear, 2, '.', ','))
+
+			//Remote Monitoring
+			const RM_ownCostPatientYear = trimAndParse('#remote_monitored');
+			const RM_ownTotalCost = TotRemoteMonitored * RM_ownCostPatientYear;
+			//Other Device Numbers
+			const RM_otherCostPatientYear = trimAndParse('#remote_monitored_dis');
+			const RM_otherTotalCost = TotRemoteMonitored * RM_otherCostPatientYear;
+			//Benefit
+			const RM_BSCBenefitPatientYear = RM_otherCostPatientYear - RM_ownCostPatientYear;
+			const RM_TotalBSCBenefitYear = RM_otherTotalCost - RM_ownTotalCost;
+			$('#remote_monitored_benifit').html(number_format(RM_BSCBenefitPatientYear, 2, '.', ','))
+			$('#tot_remote_monitored').html(number_format(RM_ownTotalCost, 2, '.', ','))
+			$('#tot_remote_monitored_dis').html(number_format(RM_otherTotalCost, 2, '.', ','))
+			$('#tot_remote_monitored_benifit').html(number_format(RM_TotalBSCBenefitYear, 2, '.', ','))
+
+			//Heartlogic
+			const HL_ownAvgPatientYear = trimAndParse('#avg_hospitalisation');
+			const HL_ownLengthDays = trimAndParse('#len_hospitalisation');
+			const HL_ownCostPatientDay = trimAndParse('#hospitalisation_cost');
+			const HL_ownCostPatientYear = HL_ownAvgPatientYear * HL_ownLengthDays * HL_ownCostPatientDay;
+			const HL_ownTotalCost = TotHeartLogic * HL_ownCostPatientYear;
+			//Other Device Numbers
+			const HL_otherAvgPatientYear = trimAndParse('#avg_hospitalisation_dis');
+			const HL_otherLengthDays = trimAndParse('#len_hospitalisation_dis');
+			const HL_otherCostPatientDay = trimAndParse('#hospitalisation_cost_dis');
+			const HL_otherCostPatientYear = HL_otherAvgPatientYear * HL_otherLengthDays * HL_otherCostPatientDay;
+			const HL_otherTotalCost = TotHeartLogic * HL_otherCostPatientYear;
+			//Benefit
+			const HL_BSCBenefitPatientYear = HL_otherCostPatientYear - HL_ownCostPatientYear;
+			const HL_TotalBCSBenefitYear = HL_otherTotalCost - HL_ownTotalCost;
+			$('#tot_hospitalisation_cost').html(number_format(HL_ownTotalCost, 2, '.', ','))
+			$('#tot_hospitalisation_cost_dis').html(number_format(HL_otherTotalCost, 2, '.', ','))
+			$('#hospitalisation_benifit').html(number_format(HL_BSCBenefitPatientYear, 2, '.', ','))
+			$('#tot_hospitalisation_benifit').html(number_format(HL_TotalBCSBenefitYear, 2, '.', ','))
+
+			// Portfolio
+			const G_EconomicBenefit = D_TotalBSCBenefitYear + DTT_TotalBSCBenefitYear + DTL_TotalBSCBenefitYear + HL_TotalBCSBenefitYear + RM_TotalBSCBenefitYear;
+			const G_TotalCost = D_otherTotalDiagnosticCost + DTL_otherTotalICDCost + DTL_otherTotalCRTDCost + DTT_otherTotalCost + HL_otherTotalCost + RM_otherTotalCost;
+			const G_ownTotalCost = G_TotalCost - G_EconomicBenefit;
+			const GHG_emission = Number(TotHeartLogic * 29.2).toFixed(2);
+			const GHG_emission_dis = Number(TotHeartLogic * 236.5).toFixed(2);
+			const GHG_emission_dif = GHG_emission_dis - GHG_emission;
+			const HW_waste = Number(TotHeartLogic * 9.7).toFixed(2);
+			const HW_waste_dis = Number(TotHeartLogic * 80.7).toFixed(2);
+			const HW_waste_dif = HW_waste_dis - HW_waste;
+
+			$('#Eco_impact').html(number_format(G_EconomicBenefit, 2, '.', ','))
+			$('#Eco_impact_dis').html(number_format(G_TotalCost, 2, '.', ','))
+			$('#Eco_impact_dif').html(number_format(G_ownTotalCost, 2, '.', ','))
+			$('#GHG_emission').html(number_format(GHG_emission, 2, '.', ','))
+			$('#GHG_emission_dis').html(number_format(GHG_emission_dis, 2, '.', ','))
+			$('#GHG_emission_dif').html(number_format(GHG_emission_dif, 2, '.', ','))
+			$('#HW_waste').html(number_format(HW_waste, 2, '.', ','))
+			$('#HW_waste_dis').html(number_format(HW_waste_dis, 2, '.', ','))
+			$('#HW_waste_dif').html(number_format(HW_waste_dif, 2, '.', ','))
 		}
 	},
 
 	init: function () {
+		this.loadData();
 		this.resultMainCalculation();
 	}
 }
@@ -11363,8 +11771,11 @@ window.addEventListener('load', function () {
 	ResultCalculation.init();
 	Diagnosis.init();
 	Therapy.init();
+	Monitoring.init();
 	Portfolio.init();
 })
+
+
 
 
 

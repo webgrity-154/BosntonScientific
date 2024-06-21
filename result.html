@@ -523,12 +523,8 @@
 										</div>
 									</div>
 								</div>
-
 							</div>
-
-
 							<span class="down-arrow-indicator average-row-down-indicator"></span>
-
 							<div class="iconvalue-box iconvalue-smheight iconvalue-big-pic icdTotal-benifits">
 								<h6>Total Boston Scientific benefit/year</h6>
 								<div class="iconvalue-pic-box">
@@ -649,8 +645,6 @@
 									</div>
 								</div>
 							</div>
-
-
 							<div class="icdyear-benefits">
 								<div class="iconvalue-box iconvalue-smheight">
 									<h6>Boston Scientific <br>
@@ -660,7 +654,6 @@
 									</div>
 								</div>
 							</div>
-
 							<div class="total-tle-wrapper">
 								<div class="calcinput-table bold-calcinput">
 									<table>
@@ -689,10 +682,6 @@
 									</table>
 								</div>
 							</div>
-
-
-
-
 							<div class="icdyear-benefits">
 								<div class="iconvalue-box iconvalue-smheight">
 									<h6>Total Boston Scientific benefit/year</h6>
@@ -705,7 +694,6 @@
 									</button>
 								</div>
 							</div>
-
 							<div class="gradient-stroke-wrapper aside-modal boston-modal" id="therapy-modal">
 								<div class="gradient-stroke">
 									<span class="gradient-stroke-line-hider"></span>
@@ -843,7 +831,6 @@
 
 								</div>
 							</div>
-
 							<div class="boston-modal gradient-border tabular-modal-wrapper" id="therapy-device-tabular-modal-wrapper">
 								<div class="tabular-modal">
 									<div class="modal-header">
@@ -919,7 +906,6 @@
 
 								</div>
 							</div>
-
 							<div class="boston-modal gradient-border tabular-modal-wrapper" id="therapy-tle-tabular-modal-wrapper">
 								<div class="tabular-modal">
 									<div class="modal-header">
@@ -986,7 +972,6 @@
 
 								</div>
 							</div>
-
 							<div class="container caution-text">
 								<h6>References:</h6>
 								<ol>
@@ -1015,7 +1000,6 @@
 										Heart 2020; 2020;106:931-7. doi:10.1136/heartjnl-2019-315839.</li>
 								</ol>
 							</div>
-
 						</div>
 
 						<div class="boston-tab-content boston-tab-content-monitoring">
@@ -1069,19 +1053,22 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
+											<tr class="tr-reset">
 												<td>Cost of care/ <br> patient/year, <br> hospital
 													perspective<sup>1</sup></td>
 												<td>
 													<input class="boston-sminput validate-number-input sst-bold" data-symbol="currency"
-														type="text" name id value="1,512" data-symbol="currency">
+														type="text" name id="remote_monitored" value="1,512" data-value="1512"
+														data-symbol="currency">
 												</td>
 												<td>
 													<input class="boston-sminput disabled validate-number-input sst-bold" data-symbol="currency"
-														type="text" name id value="4,888" data-symbol="currency">
+														type="text" name id="remote_monitored_dis" value="4,888" data-value="4888"
+														data-symbol="currency">
 												</td>
 												<td>
-													<button class="reset-btn"><img src="./assets/images/reset-shape.svg" alt></button>
+													<button class="reset-btn monitoring-reset-btn"><img src="./assets/images/reset-shape.svg"
+															alt></button>
 												</td>
 											</tr>
 											<tr>
@@ -1099,7 +1086,7 @@
 								<h6>Boston Scientific <br>
 									benefit/patient/year</h6>
 								<div class="iconvalue-pic-box">
-									<h2><em class="currency-sign"></em><em>3,376</em></h2>
+									<h2><em class="currency-sign"></em><em id="remote_monitored_benifit">3,376</em></h2>
 								</div>
 							</div>
 
@@ -1111,13 +1098,16 @@
 											<tr>
 												<td>Total cost</td>
 												<td>
-													<span class="boston-sminput"><em class="currency-sign"></em><em>XX,XXX</em></span>
+													<span class="boston-sminput"><em class="currency-sign"></em><em
+															id="tot_remote_monitored">XX,XXX</em></span>
 												</td>
 												<td>
-													<span class="boston-sminput disabled"><em class="currency-sign"></em><em>XX,XXX</em></span>
+													<span class="boston-sminput disabled"><em class="currency-sign"></em><em
+															id="tot_remote_monitored_dis">XX,XXX</em></span>
 												</td>
 												<td>
-													<button class="reset-btn ui-hide"><img src="./assets/images/reset-shape.svg" alt></button>
+													<button class=" therapy_reset_btn ui-hide"><img src="./assets/images/reset-shape.svg"
+															alt></button>
 												</td>
 											</tr>
 											<tr>
@@ -1136,8 +1126,8 @@
 								<div class="iconvalue-profile-pic">
 									<img class="" src="./assets/images/multi-user.svg" alt>
 								</div>
-								<h2><em class="currency-sign"></em><em>XX,XXX</em></h2>
-								<button class="tabular-view-btn open-modal-btn" data-target="monitoring-crtd-tabular-modal-wrapper">
+								<h2><em class="currency-sign"></em><em id="tot_remote_monitored_benifit">XX,XXX</em></h2>
+								<button class="tabular-view-btn open-modal-btn monitoring-crtd-tabular-modal-btn">
 									<img src="./assets/images/tabular-bg.svg" alt>
 									View <br> tabular <br> data
 								</button>
@@ -1193,67 +1183,71 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
+											<tr class="tr-reset">
 												<td>Average hospitalisations <br>
 													/patient/year (n<div class="d-inline" data-sup="2">)</div>
 												</td>
 												<td>
 													<input class="boston-sminput validate-number-input sst-bold" data-symbol="dot" type="text"
-														name id value="0.08">
+														id="avg_hospitalisation" data-value="0.08" value="0.08">
 												</td>
 												<td>
 													<input class="boston-sminput disabled validate-number-input sst-bold" data-symbol="dot"
-														type="text" name id value="0.29">
+														type="text" id="avg_hospitalisation_dis" data-value="0.29" value="0.29">
 												</td>
 												<td>
-													<button class="reset-btn"><img src="./assets/images/reset-shape.svg" alt></button>
+													<button class="reset-btn monitoring-reset-btn"><img src="./assets/images/reset-shape.svg"
+															alt></button>
 												</td>
 											</tr>
-											<tr>
+											<tr class="tr-reset">
 												<td>Length of <br>
 													hospitalisation (days<div class="d-inline" data-sup="2">)</div>
 												</td>
 												<td>
 													<input class="boston-sminput validate-number-input sst-bold" data-symbol="dot" type="text"
-														name id value="5.00">
+														id="len_hospitalisation" data-value="5.00" value="5.00">
 												</td>
 												<td>
 													<input class="boston-sminput disabled validate-number-input sst-bold" data-symbol="dot"
-														type="text" name id value="8.20">
+														type="text" id="len_hospitalisation_dis" data-value="8.20" value="8.20">
 												</td>
 												<td>
-													<button class="reset-btn"><img src="./assets/images/reset-shape.svg" alt></button>
+													<button class="reset-btn monitoring-reset-btn"><img src="./assets/images/reset-shape.svg"
+															alt></button>
 												</td>
 											</tr>
-											<tr>
+											<tr class="tr-reset">
 												<td>Hospitalisation cost <br>
 													/da<div class="d-inline" data-sup="3">y</div>
 												</td>
 												<td>
 													<input class="boston-sminput validate-number-input sst-bold" data-symbol="currency"
-														type="text" name id value="815">
+														type="text" id="hospitalisation_cost" data-value="815" value="815">
 												</td>
 												<td>
 													<input class="boston-sminput disabled validate-number-input sst-bold" data-symbol="currency"
-														type="text" name id value="815">
+														type="text" id="hospitalisation_cost_dis" data-value="815" value="815">
 												</td>
 												<td>
-													<button class="reset-btn"><img src="./assets/images/reset-shape.svg" alt></button>
+													<button class="reset-btn monitoring-reset-btn"><img src="./assets/images/reset-shape.svg"
+															alt></button>
 												</td>
 											</tr>
-											<tr>
+											<tr class="tr-reset">
 												<td>ICD/CRT-D cost/ <br>
 													patient/year</td>
 												<td>
 													<input class="boston-sminput validate-number-input sst-bold" data-symbol="currency"
-														type="text" name id value="326">
+														type="text" id="icd_crtd_cost" data-value="326" value="326">
 												</td>
 												<td>
 													<input class="boston-sminput disabled validate-number-input sst-bold" data-symbol="currency"
-														type="text" name id value="1,938">
+														type="text" id="icd_crtd_cost_dis" data-value="1938" value="1,938">
 												</td>
 												<td>
-													<button class="reset-btn"><img src="./assets/images/reset-shape.svg" alt></button>
+													<button class="reset-btn monitoring-reset-btn"><img src="./assets/images/reset-shape.svg"
+															alt></button>
 												</td>
 											</tr>
 											<tr>
@@ -1271,7 +1265,7 @@
 								<h6>Boston Scientific <br>
 									benefit/patient/year</h6>
 								<div class="iconvalue-pic-box">
-									<h2><em class="currency-sign"></em><em>1,612</em></h2>
+									<h2><em class="currency-sign"></em><em id="hospitalisation_benifit">1,612</em></h2>
 								</div>
 							</div>
 
@@ -1283,10 +1277,12 @@
 											<tr>
 												<td>Total cost</td>
 												<td>
-													<span class="boston-sminput"><em class="currency-sign"></em><em>XX,XXX</em></span>
+													<span class="boston-sminput"><em class="currency-sign"></em><em
+															id="tot_hospitalisation_cost">XX,XXX</em></span>
 												</td>
 												<td>
-													<span class="boston-sminput disabled"><em class="currency-sign"></em><em>XX,XXX</em></span>
+													<span class="boston-sminput disabled"><em class="currency-sign"></em><em
+															id="tot_hospitalisation_cost_dis">XX,XXX</em></span>
 												</td>
 												<td>
 													<button class="reset-btn ui-hide"><img src="./assets/images/reset-shape.svg" alt></button>
@@ -1310,8 +1306,8 @@
 								<div class="iconvalue-profile-pic">
 									<img class="" src="./assets/images/multi-user.svg" alt>
 								</div>
-								<h2><em class="currency-sign"></em><em>XX,XXX</em></h2>
-								<button class="tabular-view-btn open-modal-btn" data-target="monitoring-heart-tabular-modal-wrapper">
+								<h2><em class="currency-sign"></em><em id="tot_hospitalisation_benifit">XX,XXX</em></h2>
+								<button class="tabular-view-btn open-modal-btn monitoring-heart-tabular-modal-btn">
 									<img src="./assets/images/tabular-bg.svg" alt>
 									View <br> tabular <br> data
 								</button>
@@ -1356,13 +1352,17 @@
 												<div>Cost of care/patient/year, hospital perspective<sup>1</sup>
 												</div>
 											</span>
-											<span class="td"><em class="currency-sign"></em><span>1,512</span></span>
-											<span class="td"><em class="currency-sign"></em><span>4,888</span></span>
+											<span class="td"><em class="currency-sign"></em><span
+													id="tbl_remote_monitored">1,512</span></span>
+											<span class="td"><em class="currency-sign"></em><span
+													id="tbl_remote_monitored_dis">4,888</span></span>
 										</li>
 										<li class="tr">
 											<span class="td">Total cost</span>
-											<span class="td"><em class="currency-sign"></em><em class="text-arty">XX,XXX</em></span>
-											<span class="td"><em class="currency-sign"></em><em class="text-arty">XX,XXX</em></span>
+											<span class="td"><em class="currency-sign"></em><em class="text-arty"
+													id="tbl_tot_remote_monitored">XX,XXX</em></span>
+											<span class="td"><em class="currency-sign"></em><em class="text-arty"
+													id="tbl_tot_remote_monitored_dis">XX,XXX</em></span>
 										</li>
 									</ul>
 
@@ -1370,18 +1370,17 @@
 										<li class="tr">
 											<span class="th">Boston Scientific benefit/patient/year</span>
 											<span class="td-pic">
-												<h3><em class="currency-sign"></em><span>3,376</span></h3>
+												<h3><em class="currency-sign"></em><em id="tbl_remote_monitored_benifit">3,376</em></h3>
 											</span>
 										</li>
 										<li class="tr">
 											<span class="th">Total Boston Scientific benefit/ year</span>
 											<span class="td-pic multiuser">
-												<h3><em class="text-arty"><em class="currency-sign"></em><span>XXX,XXX</span></em></h3>
+												<h3><em class="text-arty"><em class="currency-sign"></em><em
+															id="tbl_tot_remote_monitored_benifit">XXX,XXX</em></em></h3>
 											</span>
-
 										</li>
 									</ul>
-
 								</div>
 							</div>
 
@@ -1406,22 +1405,24 @@
 											<span class="td">
 												<div>Average hospitalisations/patient/year (n)<sup>2</sup></div>
 											</span>
-											<span class="td">0.08</span>
-											<span class="td">0.29</span>
+											<span class="td" id="tbl_avg_hospitalisation">0.08</span>
+											<span class="td" id="tbl_avg_hospitalisation_dis">0.29</span>
 										</li>
 										<li class="tr">
 											<span class="td">
 												<div>Average hospitalisations/patient/year (n)<sup>2</sup></div>
 											</span>
-											<span class="td">5.00</span>
-											<span class="td">8.20</span>
+											<span class="td" id="tbl_len_hospitalisation">5.00</span>
+											<span class="td" id="tbl_len_hospitalisation_dis">8.20</span>
 										</li>
 										<li class="tr">
 											<span class="td">
 												<div>Average hospitalisations/patient/year (n)<sup>2</sup></div>
 											</span>
-											<span class="td"><em class="currency-sign"></em><span>815</span></span>
-											<span class="td"><em class="currency-sign"></em><span>815</span></span>
+											<span class="td"><em class="currency-sign"></em><span
+													id="tbl_hospitalisation_cost">815</span></span>
+											<span class="td"><em class="currency-sign"></em><span
+													id="tbl_hospitalisation_cost-dis">815</span></span>
 										</li>
 									</ul>
 
@@ -1429,14 +1430,17 @@
 
 										<li class="tr">
 											<span class="td">ICD/CRT-D cost/patient/year</span>
-											<span class="td"><em class="currency-sign"></em><span>326</span></span>
-											<span class="td"><em class="currency-sign"></em><span>1,938</span></span>
+											<span class="td"><em class="currency-sign"></em><span id="tbl_icd_crtd_cost">326</span></span>
+											<span class="td"><em class="currency-sign"></em><span
+													id="tbl_icd_crtd_cost_dis">1,938</span></span>
 										</li>
 
 										<li class="tr">
 											<span class="td">Total cost</span>
-											<span class="td"><em class="currency-sign"></em><em class="text-arty">XX,XXX</em></span>
-											<span class="td"><em class="currency-sign"></em><em class="text-arty">XX,XXX</em></span>
+											<span class="td"><em class="currency-sign"></em><em class="text-arty"
+													id="tbl_tot_hospitalisation_cost">XX,XXX</em></span>
+											<span class="td"><em class="currency-sign"></em><em class="text-arty"
+													id="tbl_tot_hospitalisation_cost_dis">XX,XXX</em></span>
 										</li>
 									</ul>
 
@@ -1444,13 +1448,14 @@
 										<li class="tr">
 											<span class="th">Boston Scientific benefit/patient/year</span>
 											<span class="td-pic">
-												<h3><em class="currency-sign"></em><em>1,612</em></h3>
+												<h3><em class="currency-sign"></em><em id="tbl_hospitalisation_benifit">1,612</em></h3>
 											</span>
 										</li>
 										<li class="tr">
 											<span class="th">Total Boston Scientific benefit/year</span>
 											<span class="td-pic multiuser">
-												<h3><em class="currency-sign"></em><em class="text-arty">XX,XXX</em></h3>
+												<h3><em class="currency-sign"></em><em class="text-arty"
+														id="tbl_tot_hospitalisation_benifit">XX,XXX</em></h3>
 											</span>
 
 										</li>
@@ -1469,11 +1474,11 @@
 									<div>
 										<div class="analysis-text-item">
 											<h6>Boston Scientific</h6>
-											<span><em class="currency-sign"></em><em>XXX,XXX</em></span>
+											<span><em class="currency-sign"></em><em id="Eco_impact">XXX,XXX</em></span>
 										</div>
 										<div class="analysis-text-item gray-analysis-text-item">
 											<h6>Competitor</h6>
-											<span><em class="currency-sign"></em><em>XXX,XXX</em></span>
+											<span><em class="currency-sign"></em><em id="Eco_impact_dis">XXX,XXX</em></span>
 										</div>
 									</div>
 									<div class="analysis-graphs">
@@ -1483,8 +1488,9 @@
 										<div class="analysis-graph gray-graph">
 											<div class="progress"></div>
 										</div>
+
 										<div class="analysis-graph-values">
-											<span>0</span>
+											<span>Test 000</span>
 											<span>100</span>
 											<span>200</span>
 											<span>300</span>
@@ -1505,7 +1511,7 @@
 							<div class="iconvalue-box iconvalue-smbg mw530px">
 								<h6 class="text21px">Total Benefit with Boston Scientific</h6>
 								<div class="iconvalue-pic-box">
-									<h2 class="text50px"><em class="currency-sign"></em><em>XXX,XXX</em></h2>
+									<h2 class="text50px"><em class="currency-sign"></em><em id="Eco_impact_dif">XXX,XXX</em></h2>
 								</div>
 							</div>
 
@@ -1560,11 +1566,11 @@
 									<div>
 										<div class="analysis-text-item">
 											<h6>HeartLogic<sup>™</sup></h6>
-											<span><em>XX,XXX</em> <em>kg</em></span>
+											<span><em id="GHG_emission">XX,XXX</em> <em>kg</em></span>
 										</div>
 										<div class="analysis-text-item gray-analysis-text-item">
 											<h6>No HeartLogic<sup>™</sup></h6>
-											<span><em>XX,XXX</em> <em>kg</em></span>
+											<span><em id="GHG_emission_dis">XX,XXX</em> <em>kg</em></span>
 										</div>
 									</div>
 									<div class="analysis-graphs">
@@ -1592,7 +1598,7 @@
 							<div class="iconvalue-box iconvalue-smbg no-iconvalue-bg mw530px">
 								<h6 class="text21px">Total HeartLogic™ difference: GHG</h6>
 								<div class="iconvalue-pic-box">
-									<h2 class="text50px"><em>XX,XXX</em> kg</h2>
+									<h2 class="text50px"><em id="GHG_emission_dif">XX,XXX</em> kg</h2>
 								</div>
 							</div>
 
@@ -1602,11 +1608,11 @@
 									<div>
 										<div class="analysis-text-item">
 											<h6>HeartLogic<sup>™</sup></h6>
-											<span><em>XX,XXX</em> <em>kg</em></span>
+											<span><em id="HW_waste">XX,XXX</em> <em>kg</em></span>
 										</div>
 										<div class="analysis-text-item gray-analysis-text-item">
 											<h6>No HeartLogic<sup>™</sup></h6>
-											<span><em>XX,XXX</em> <em>kg</em></span>
+											<span><em id="HW_waste_dis">XX,XXX</em> <em>kg</em></span>
 										</div>
 									</div>
 									<div class="analysis-graphs">
@@ -1635,7 +1641,7 @@
 							<div class="iconvalue-box iconvalue-smbg no-iconvalue-bg mw530px">
 								<h6 class="text21px">Total HeartLogic™ difference: Hospital waste</h6>
 								<div class="iconvalue-pic-box">
-									<h2 class="text50px"><em>XX,XXX</em> kg</h2>
+									<h2 class="text50px"><em id="HW_waste_dif">XX,XXX</em> kg</h2>
 								</div>
 							</div>
 
@@ -1663,11 +1669,11 @@
 												<div>
 													<div class="analysis-text-item">
 														<h6>Boston Scientific</h6>
-														<span><em class="currency-sign"></em><span>XXX,XXX</span></span>
+														<span><em class="currency-sign"></em><em id="modal_Eco_impact">XXX,XXX</em></span>
 													</div>
 													<div class="analysis-text-item gray-analysis-text-item">
 														<h6>Competitor</h6>
-														<span><em class="currency-sign"></em><em>XXX,XXX</em></span>
+														<span><em class="currency-sign"></em><em id="modal_Eco_impact_dis">XXX,XXX</em></span>
 													</div>
 												</div>
 												<div class="analysis-graphs">
@@ -1700,7 +1706,7 @@
 											<div class="iconvalue-box iconvalue-smheight iconvalue-big-pic mw666px">
 												<h6>Total Benefit with Boston Scientific</h6>
 												<div class="iconvalue-pic-box">
-													<h2><em class="currency-sign"></em><em>XX,XXX</em></h2>
+													<h2><em class="currency-sign"></em><em id="modal_Eco_impact_dif">XX,XXX</em></h2>
 												</div>
 											</div>
 										</div>
@@ -1711,7 +1717,8 @@
 												<label for class="boston-slider-label">DIAGNOSTIC <br>
 													DEVICES*</label>
 												<div class="boston-slider-input-wrapper">
-													<input class="boston-slider-input" type="range" step="1" name id min="0" max="100">
+													<input class="boston-slider-input" type="range" step="1" id="portfolio_slider_1" min="0"
+														max="100">
 													<div class="input-mirror"></div>
 													<div class="range-thumb"></div>
 													<span class="range-value-indicator range-0">0%</span>
@@ -1725,7 +1732,8 @@
 											<div class="boston-slider-field">
 												<label for class="boston-slider-label">TV-ICD</label>
 												<div class="boston-slider-input-wrapper">
-													<input class="boston-slider-input" type="range" step="1" name id min="0" max="100">
+													<input class="boston-slider-input" type="range" step="1" id="portfolio_slider_2" min="0"
+														max="100">
 													<div class="input-mirror"></div>
 													<div class="range-thumb"></div>
 													<span class="range-value-indicator range-0">0%</span>
@@ -1739,7 +1747,8 @@
 											<div class="boston-slider-field">
 												<label for class="boston-slider-label">S-ICD</label>
 												<div class="boston-slider-input-wrapper">
-													<input class="boston-slider-input" type="range" step="1" name id min="0" max="100">
+													<input class="boston-slider-input" type="range" step="1" id="portfolio_slider_3" min="0"
+														max="100">
 													<div class="input-mirror"></div>
 													<div class="range-thumb"></div>
 													<span class="range-value-indicator range-0">0%</span>
@@ -1753,7 +1762,8 @@
 											<div class="boston-slider-field">
 												<label for class="boston-slider-label">CRT-D</label>
 												<div class="boston-slider-input-wrapper">
-													<input class="boston-slider-input" type="range" step="1" name id min="0" max="100">
+													<input class="boston-slider-input" type="range" step="1" id="portfolio_slider_4" min="0"
+														max="100">
 													<div class="input-mirror"></div>
 													<div class="range-thumb"></div>
 													<span class="range-value-indicator range-0">0%</span>
@@ -1765,13 +1775,14 @@
 												</div>
 											</div>
 
-											<button class="blue-btn small-btn">CALCULATE</button>
+											<button class="blue-btn small-btn portfolio-recalculate">CALCULATE</button>
 										</div>
 
 										<div class="iconvalue-box iconvalue-full">
 											<h6>Total Boston Scientific benefit/year</h6>
 											<div class="iconvalue-pic-box multiuser multiuser-big">
-												<h2 class="text65px"><em class="currency-sign"></em><em>XX,XXX</em></h2>
+												<h2 class="text65px"><em class="currency-sign"></em><em
+														id="cal_modal_Eco_impact_dis">XX,XXX</em></h2>
 											</div>
 										</div>
 
