@@ -62,10 +62,10 @@
 															value="no">NO</label>
 												</div>
 											</td>
-											<td><input class="boston-input validate-number-input" name="icm_input" type="number" autocomplete="off" min="0"
-													value="0"></td>
-											<td><input class="boston-input validate-number-input" name="icm_input_percent" type="number" autocomplete="off" min="0"
-													value="0"></td>
+											<td><input class="boston-input validate-number-input" name="icm_input" type="number"
+													autocomplete="off" min="0" value="0"></td>
+											<td><input class="boston-input validate-number-input percent-value" name="icm_input_percent"
+													type="number" autocomplete="off" min="0" max="100" value="0"></td>
 										</tr>
 										<tr>
 											<td>
@@ -77,25 +77,10 @@
 															value="no">NO</label>
 												</div>
 											</td>
-											<td><input class="boston-input validate-number-input remote-monitor-input" autocomplete="off" type="number"
-													name="tv_icd" min="0" value="0"></td>
-											<td><input class="boston-input validate-number-input" type="number" autocomplete="off" min="0" name="tv_icd_percent"
-													value="0"></td>
-										</tr>
-										<tr>
-											<td>
-												<div class="cinput-title-wrapper">
-													<span class="cinput-title">S-ICD?</span>
-													<label class="boston-circle-radio"><input type="radio" name="customer-s-icd" checked="checked"
-															value="yes">YES</label>
-													<label class="boston-circle-radio"><input type="radio" name="customer-s-icd"
-															value="no">NO</label>
-												</div>
-											</td>
-											<td><input class="boston-input validate-number-input remote-monitor-input" name="s_icd"
-													type="number" autocomplete="off" min="0" value="0"></td>
-											<td><input class="boston-input validate-number-input" type="number" autocomplete="off" min="0" name="s_icd_percent"
-													value="0"></td>
+											<td><input class="boston-input validate-number-input remote-monitor-input" autocomplete="off"
+													type="number" name="tv_icd" min="0" value="0"></td>
+											<td><input class="boston-input validate-number-input percent-value" type="number"
+													autocomplete="off" min="0" name="tv_icd_percent" value="0"></td>
 										</tr>
 										<tr>
 											<td>
@@ -109,9 +94,25 @@
 											</td>
 											<td><input class="boston-input validate-number-input remote-monitor-input" name="crt_d"
 													type="number" autocomplete="off" min="0" value="0"></td>
-											<td><input class="boston-input validate-number-input" type="number" autocomplete="off" min="0" name="crt_d_percent"
-													value="0"></td>
+											<td><input class="boston-input validate-number-input percent-value" type="number"
+													autocomplete="off" min="0" name="crt_d_percent" value="0"></td>
 										</tr>
+										<tr>
+											<td>
+												<div class="cinput-title-wrapper">
+													<span class="cinput-title">S-ICD?</span>
+													<label class="boston-circle-radio"><input type="radio" name="customer-s-icd" checked="checked"
+															value="yes">YES</label>
+													<label class="boston-circle-radio"><input type="radio" name="customer-s-icd"
+															value="no">NO</label>
+												</div>
+											</td>
+											<td><input class="boston-input validate-number-input remote-monitor-input" name="s_icd"
+													type="number" autocomplete="off" min="0" value="0" id="sicd-total-input"></td>
+											<td><input class="boston-input validate-number-input percent-value disabled" type="number"
+													autocomplete="off" min="0" name="s_icd_percent" value="0" tabindex="-1" id="sicd-percentage-input"></td>
+										</tr>
+										
 									</tbody>
 								</table>
 
@@ -131,17 +132,18 @@
 										<tr>
 											<td>
 												<div class="cinput-title-wrapper">
-													<span class="cinput-title">TV-ICD, S-ICD and CRT-D patients on remote monitoring</span>
+													<span class="cinput-title">TV-ICD, CRT-D and S-ICD patients on remote monitoring</span>
 												</div>
 											</td>
 											<td><input
-													class="boston-input validate-number-input remote-monitored-percent remote-monitor-input-percent"
+													class="boston-input validate-number-input remote-monitored-percent remote-monitor-input-percent percent-value"
 													min="0" name="remote_monitored_percent" type="number" autocomplete="off" value="0"></td>
 											<td>
 												<div class="moreinfo-wrapper">
-													<input class="boston-input disabled remote-monitored" name="tot_remote_monitored"
-														type="text" autocomplete="off" value="0">
-													<button class="moreinfo-btn" type="button"><img src="./assets/images/i.svg" alt=""></button>
+													<input class="boston-input disabled remote-monitored" name="tot_remote_monitored" type="text"
+														autocomplete="off" value="0" tabindex="-1">
+													<button class="moreinfo-btn" type="button" tabindex="-1"><img src="./assets/images/i.svg"
+															alt=""></button>
 													<div class="moreinfo-content">
 														<div class="moreinfo-content-inner">
 															<img src="./assets/images/shape1.png" alt="" class="moreinfo-shape">
@@ -162,13 +164,14 @@
 												</div>
 											</td>
 											<td><input
-													class="boston-input validate-number-input remote-monitor-input-percent monitored-heartlogic-precent"
+													class="boston-input validate-number-input remote-monitor-input-percent monitored-heartlogic-precent percent-value"
 													name="heartlogic_precent" min="0" type="number" autocomplete="off" value="0"></td>
 											<td>
 												<div class="moreinfo-wrapper">
-													<input class="boston-input disabled monitored-heartlogic" name="tot_heartlogic" type="text" autocomplete="off"
-														value="0">
-													<button class="moreinfo-btn" type="button"><img src="./assets/images/i.svg" alt=""></button>
+													<input class="boston-input disabled monitored-heartlogic" name="tot_heartlogic" type="text"
+														autocomplete="off" value="0" tabindex="-1">
+													<button class="moreinfo-btn" type="button" tabindex="-1"><img src="./assets/images/i.svg"
+															alt=""></button>
 													<div class="moreinfo-content">
 														<div class="moreinfo-content-inner">
 															<img src="./assets/images/shape1.png" alt="" class="moreinfo-shape">
