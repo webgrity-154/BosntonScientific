@@ -1,1953 +1,3462 @@
 <!DOCTYPE html>
+
 <html class="no-js" lang="en-US" translate="no">
 
-	<head>
-		<meta charset="utf-8">
-		<title>Boston Scientific - Heartlogic&trade; - Heart Failure
-			Diagonistic</title>
-		<meta
-			content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
-			name="viewport">
-		<meta content="true" name="HandheldFriendly">
-		<link href="assets/styles/main.css" rel="stylesheet">
 
-		<meta http-equiv="Cache-Control"
-			content="no-cache, no-store, must-revalidate" />
-		<meta http-equiv="Pragma" content="no-cache" />
-		<meta http-equiv="Expires" content="0" />
 
-	</head>
+<head>
 
-	<body class="result-page">
-		<header class="header-sec">
-			<p class="bg-top-gradient"></p>
-			<div class="container">
-				<div class="result-header-content">
-					<p class="logo"><img src="./assets/images/logo-full.svg" width="89"
-							height="40" alt="logo" /></p>
-					<div class="header-right">
-						<h4>CARDIAC RHYTHM MANAGEMENT </h4>
-						<h5>Portfolio Value Calculator</h5>
-						<p>
-							<span class="hospital-name"></span>
-							<span class="country-name"></span>
-						</p>
-					</div>
+	<meta charset="utf-8">
+
+	<title>Boston Scientific - Heartlogic&trade; - Heart Failure
+
+		Diagonistic</title>
+
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
+
+	<meta content="true" name="HandheldFriendly">
+
+	<link href="assets/styles/main.css" rel="stylesheet">
+
+
+
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+
+	<meta http-equiv="Pragma" content="no-cache" />
+
+	<meta http-equiv="Expires" content="0" />
+
+
+
+</head>
+
+
+
+<body class="result-page">
+
+	<header class="header-sec">
+
+		<p class="bg-top-gradient"></p>
+
+		<div class="container">
+
+			<div class="result-header-content">
+
+				<p class="logo"><img src="./assets/images/logo-full.svg" width="89" height="40" alt="logo" /></p>
+
+				<div class="header-right">
+
+					<h4>CARDIAC RHYTHM MANAGEMENT </h4>
+
+					<h5>Portfolio Value Calculator</h5>
+
+					<p>
+
+						<span class="hospital-name"></span>
+
+						<span class="country-name"></span>
+
+					</p>
+
 				</div>
+
 			</div>
-		</header>
-		<main>
+
+		</div>
+
+	</header>
+
+	<main>
+
+
+
+		<div class="boston-tab-sec">
+
+			<div class="boston-tab-menu" id="boston-tab-menu">
+
+				<div class="ul">
+
+					<button class="btn1">RESULTS:</button>
+
+					<button class="btn2" data-menu-item="diagnosis">DIAGNOSIS</button>
+
+					<button class="btn3" data-menu-item="therapy">DEVICE <br> THERAPY</button>
+
+					<button class="btn4" data-menu-item="monitoring">MONITORING</button>
+
+					<button class="btn5" data-menu-item="portfolio">PORTFOLIO</button>
+
+				</div>
+
+			</div>
 
 			<div class="boston-tab-sec">
-				<div class="boston-tab-menu" id="boston-tab-menu">
-					<div class="ul">
-						<button class="btn1">RESULTS:</button>
-						<button class="btn2 active" data-menu-item="diagnosis">DIAGNOSIS</button>
-						<button class="btn3" data-menu-item="therapy">DEVICE <br> THERAPY</button>
-						<button class="btn4" data-menu-item="monitoring">MONITORING</button>
-						<button class="btn5" data-menu-item="portfolio">PORTFOLIO</button>
-					</div>
-				</div>
-				<div class="boston-tab-sec">
-					<div class="container">
 
-						<aside data-active-tab="diagnosis">
-							<div class="aside-inner">
-								<div class="aside-tables">
-									<h2>Customer inputs</h2>
-									<div class="aside-table-wrapper aside-cinput-table">
-										<table>
-											<thead>
-												<tr>
-													<th></th>
-													<th>Patients <br> (n)</th>
-													<th>% <br> Boston <br> Scientific</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td><span class="aside-cinput-title">ICM:</span></td>
-													<td><span class="aside-cinput-value icm_display">XX</span></td>
-													<td><span
-															class="aside-cinput-value icm_percent_display">20</span></td>
-												</tr>
-												<tr>
-													<td><span class="aside-cinput-title">TV-ICD:</span> </td>
-													<td><span class="aside-cinput-value tvicd_display">XX</span></td>
-													<td><span
-															class="aside-cinput-value tvicd_percent_display">XX</span></td>
-												</tr>
-												<tr>
-													<td><span class="aside-cinput-title">CRT-D:</span> </td>
-													<td><span class="aside-cinput-value crtd_display">XX</span></td>
-													<td><span
-															class="aside-cinput-value crtd_display_percent">XX</span></td>
-												</tr>
-												<tr>
-													<td><span class="aside-cinput-title">S-ICD:</span> </td>
-													<td><span class="aside-cinput-value sicd_display">XX</span></td>
-													<td><span
-															class="aside-cinput-value sicd_display_percent">XX</span></td>
-												</tr>												
-											</tbody>
-										</table>
-										<button id="diagnosis_modal_open"
-											class="both-direct-btn open-modal-btn"><img
-												src="./assets/images/left-right-arrow.svg" alt></button>
-									</div>
-									<h3>Remote monitoring (RM):</h3>
-									<div class="aside-table-wrapper aside-remote-table">
-										<table>
-											<thead>
-												<tr>
-													<th></th>
-													<th>%</th>
-													<th>Patients <br> (n)</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td><span class="aside-cinput-title">TV-ICD, CRT-D & <br> S-ICD
-															patients</span>:</td>
-													<td><span
-															class="aside-cinput-value remote_monitred_percent">XX</span></td>
-													<td><span
-															class="aside-cinput-value tot_remote_monitoed">XX</span></td>
-												</tr>
-												<tr>
-													<td><span class="aside-cinput-title">HeartLogic™ <br>
-															patients</span>:</td>
-													<td><span
-															class="aside-cinput-value heart_logic_percent">XX</span></td>
-													<td><span class="aside-cinput-value tot_heart_logic">XX</span></td>
-												</tr>
+				<div class="container">
 
-											</tbody>
-										</table>
-									</div>
-								</div>
 
-								<div class="aside-small-btns">
-									<a href="#" class="blue-btn small-btn amend-input">AMEND INPUTS</a>
-									<a href="index.html" class="blue-btn small-btn">RESTART</a>
-								</div>
 
-								<div class="aside-shortdesc-box">
-									<p><strong>CRT-D:</strong> Cardiac resynchronisation
-										therapy-defbrillator </p>
-									<p><strong>ICM:</strong> Insertable cardiac monitor</p>
-									<p><strong>S-ICD:</strong> Subcutaneous-implantable
-										cardioverter-defbrillator </p>
-									<p><strong>TV-ICD:</strong> Transvenous-implantable
-										cardioverter-defbrillator</p>
-								</div>
-							</div>
+					<aside>
 
-						</aside>
+						<div class="aside-inner">
 
-						<div class="boston-tab-contents">
+							<div class="aside-tables">
 
-							<div class="boston-tab-content boston-tab-content-diagnosis active">
+								<h2>Customer inputs</h2>
 
-								<div class="bulb-rates-box gradient-border icmLux-box">
-									<div class="bulb-rates-box-inner align-items-start">
-										<img src="./assets/images/bulb.svg" alt class="bulb-rates-pic">
-										<div class="bulb-rates-body">
-											<div class="media-top">
-												<p><strong>Lux-Dx<sup>™</sup> ICM reduces false positive rates by</strong></p>
-												<h4>33%</h4>
-											</div>
-											<p>vs. other ICMs on the market, <br>
-												<strong>increasing diagnostic efficiency</strong><sup>1</sup>
-											</p>
-										</div>
-									</div>
+								<div class="aside-table-wrapper aside-cinput-table">
 
-								</div>
-								<div class="refcustom-box-wrapper">
-									<div class="calcinput-table">
-										<table>
-											<thead>
-												<tr>
-													<th></th>
-													<th>LUX-Dx™ <br> ICM</th>
-													<th>ICMs weighted <br>
-														<div class="d-inline" data-sup="1">industry average</div>
-													</th>
-													<th></th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>% False <br> positives<sup>1</sup></td>
-													<td>
-														<input class="boston-sminput validate-number-input percent-value"
-															data-symbol="percentage"
-															type="text" id="false_positive" value="33.3%" data-value="33.3%">
-													</td>
-													<td>
-														<input
-															class="boston-sminput disabled validate-number-input percent-value"
-															data-symbol="percentage" type="text" id="false_positive_dis"
-															value="57.5%"
-															data-value="57.5%">
-													</td>
-													<td>
-														<button class="reset-btn diagnosis_reset_btn"><img
-																src="./assets/images/reset-shape.svg"
-																alt></button>
-													</td>
-												</tr>
-												<tr>
-													<td>Total costs for <br> false positive<sup>2</sup></td>
-													<td>
-														<input class="boston-sminput validate-number-input"
-															data-symbol="currency" type="text"
-															id="tot_cost_false" value="180" data-value="180">
-													</td>
-													<td>
-														<input class="boston-sminput disabled validate-number-input"
-															data-symbol="currency"
-															type="text" id="tot_cost_false_dis" value="180" data-value="180">
-													</td>
-													<td>
-														<button class="reset-btn diagnosis_reset_btn"><img
-																src="./assets/images/reset-shape.svg"
-																alt></button>
-													</td>
-												</tr>
-												<tr>
-													<td>Diagnostic cost/ <br>
-														patient/year</td>
-													<td>
-														<span class="boston-sminput"><em class="currency-sign"></em><em
-																id="diagnostic_cost">0</em></span>
-													</td>
-													<td>
-														<span class="boston-sminput disabled"><em
-																class="currency-sign"></em><em
-																id="diagnostic_cost_dis">0</em></span>
-													</td>
-													<td></td>
-												</tr>
-												<tr>
-													<td></td>
-													<td colspan="2"><span class="down-arrow-indicator"></span></td>
-													<td></td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-									<div class="refcustom-box">
-										<div class="refcustom-item">
-											<span>Reference <br> value</span>
-											<i class="ref-pink"></i>
-											<i class="ref-gray"></i>
-										</div>
-										<div class="refcustom-item">
-											<span>Custom <br> value</span>
-											<div class="ref-custom"></div>
-										</div>
-									</div>
-								</div>
-
-								<div class="iconvalue-box diagnosisBenifits-box">
-									<h6>Benefit with Boston Scientific/patient/year</h6>
-									<div class="iconvalue-pic-box">
-										<h2><em class="currency-sign"></em><span id="boston_scientific"
-												class="deepblue-text">43.60</span>
-										</h2>
-									</div>
-
-								</div>
-
-								<div class="calcinput-table total-diagnostic-cost">
 									<table>
+
+										<thead>
+
+											<tr>
+
+												<th></th>
+
+												<th>Patients <br> (n)</th>
+
+												<th>% <br> Boston <br> Scientific</th>
+
+											</tr>
+
+										</thead>
+
 										<tbody>
+
 											<tr>
-												<td>Total diagnostic cost <br> (100% of patients)</td>
-												<td>
-													<span class="boston-sminput"><em class="currency-sign"></em><span
-															class="deepblue-text"
-															id="tot_diagnostic_cost">XX,XXX</span></span>
-												</td>
-												<td>
-													<span class="boston-sminput disabled"><em
-															class="text-deepgray currency-sign">€</em><span
-															class="text-deepgray"
-															id="tot_diagnostic_cost_dis">XX,XXX</span></span>
-												</td>
-												<td>
-													<button class="reset-btn ui-hide"><img
-															src="./assets/images/reset-shape.svg" alt></button>
-												</td>
+
+												<td><span class="aside-cinput-title">ICM:</span></td>
+
+												<td><span class="aside-cinput-value icm_display">XX</span></td>
+
+												<td><span class="aside-cinput-value icm_percent_display">20</span></td>
+
 											</tr>
+
 											<tr>
-												<td></td>
-												<td colspan="2"><span class="down-arrow-indicator"></span></td>
-												<td></td>
+
+												<td><span class="aside-cinput-title">TV-ICD:</span> </td>
+
+												<td><span class="aside-cinput-value tvicd_display">XX</span></td>
+
+												<td><span class="aside-cinput-value tvicd_percent_display">XX</span></td>
+
 											</tr>
+
+											<tr>
+
+												<td><span class="aside-cinput-title">CRT-D:</span> </td>
+
+												<td><span class="aside-cinput-value crtd_display">XX</span></td>
+
+												<td><span class="aside-cinput-value crtd_display_percent">XX</span></td>
+
+											</tr>
+
+											<tr>
+
+												<td><span class="aside-cinput-title">S-ICD:</span> </td>
+
+												<td><span class="aside-cinput-value sicd_display">XX</span></td>
+
+												<td><span class="aside-cinput-value sicd_display_percent">XX</span></td>
+
+											</tr>
+
 										</tbody>
+
 									</table>
+
+									<button id="diagnosis_modal_open" class="both-direct-btn open-modal-btn"><img
+											src="./assets/images/left-right-arrow.svg" alt></button>
+
 								</div>
 
-								<div class="iconvalue-box diagnosisTotalBenifits-box">
-									<h6>Total benefit with Boston Scientific/year <br> with current % Boston Scientific</h6>
-									<div class="iconvalue-pic-box multiuser">
-										<h2>
-											<div class="currency-sign">€</div><span class="deepblue-text"
-												id="tot_boston_scientific">XX,XXX</span>
-										</h2>
-									</div>
-									<button class="tabular-view-btn open-modal-btn"
-										id="diagnosis_tabular_modal_btn">
-										<img src="./assets/images/tabular-bg.svg" alt>
-										View <br> tabular <br> data
-									</button>
-								</div>
+								<h3>Remote monitoring (RM):</h3>
 
-								<div class="gradient-stroke-wrapper aside-modal boston-modal"
-									id="diagnosis-modal">
-									<div class="gradient-stroke">
-										<span class="gradient-stroke-line-hider"></span>
-										<button class="cut-modal"><img src="./assets/images/x-cut.svg"
-												alt></button>
-										<div class="diagnosis-modal-content">
-											<div class="boston-row">
-												<div class="col-6">
-													<div class="iconvalue-box">
-														<p>Benefit with Boston DoneScientific/patient/year </p>
-														<div class="iconvalue-profile-pic">
-															<img class src="./assets/images/profile.svg" alt>
-														</div>
-														<h2><em class="currency-sign"></em><em
-																id="modal_boston_scientific">43.60</em></h2>
-													</div>
-												</div>
-												<div class="col-6">
-													<div class="iconvalue-box">
-														<p>Total benefit with Boston Scientific/year with current % Boston Scientific</p>
-														<div class="iconvalue-profile-pic">
-															<img class src="./assets/images/multi-user.svg" alt>
-														</div>
-														<h2><em class="currency-sign"></em><em
-																id="modal_tot_boston_scientific">XX,XXX</em></h2>
-													</div>
-												</div>
-											</div>
+								<div class="aside-table-wrapper aside-remote-table">
 
-											<div class="boston-slider">
-												<h5>SHARE ADJUSTER</h5>
-												<div class="boston-slider-input-wrapper">
-													<input class="boston-slider-input" type="range" step="1"
-														id="diagnosis_slider" min="0" max="100"
-														value="20">
-													<div class="input-mirror"></div>
-													<div class="range-thumb"></div>
-													<span class="range-value-indicator range-0">0%</span>
-													<span class="range-value-indicator range-25">25%</span>
-													<span class="range-value-indicator range-50">50%</span>
-													<span class="range-value-indicator range-75">75%</span>
-													<span class="range-value-indicator range-100">100%</span>
-													<span class="range-value-indicator range-result">20%</span>
-												</div>
-												<button
-													class="blue-btn small-btn diagnosis-recalculate">CALCULATE</button>
-											</div>
+									<table>
 
-											<div class="iconvalue-box iconvalue-full">
-												<h6>Total benefit with Boston Scientific/year <br> with adjusted % Boston Scientific</h6>
-												<div class="iconvalue-pic-box multiuser">
-													<h2 class="text65px"><em class="currency-sign"></em><em
-															id="modified_tot_boston_scientific">XX,XXX</em></h2>
-												</div>
-											</div>
+										<thead>
 
-										</div>
-									</div>
-								</div>
+											<tr>
 
-								<div class="boston-modal gradient-border tabular-modal-wrapper"
-									id="diagnosis-tabular-modal-wrapper">
-									<div class="tabular-modal">
-										<div class="modal-header">
-											<h5>Tabular data</h5>
-											<button class="cut-modal"><img src="./assets/images/x-cut-orange.svg"
-													alt></button>
-										</div>
+												<th></th>
 
-										<ul class="tabular-list">
-											<li class="tr">
-												<span class="th">ICM: False positives</span>
-												<span class="th">LUX-Dx™ ICM</span>
-												<span class="th">
-													<div>ICMs weighted
-														<br> industry <br>
-														<div class="d-inline" data-sup="1">average</div>
-													</div>
-												</span>
-											</li>
-											<li class="tr">
-												<span class="td">% false positives<sup>1</sup></span>
-												<span class="td" id="table_false_positive">33.3%</span>
-												<span class="td" id="table_false_positive_dis">57.5%</span>
-											</li>
-											<li class="tr">
-												<span class="td">Total costs for false positive<sup>2</sup></span>
-												<span class="th"><em class="currency-sign"></em><span
-														id="table_tot_cost_false">180</span></span>
-												<span class="th"><em class="currency-sign"></em><span
-														id="table_tot_cost_false_dis">180</span></span>
-											</li>
-										</ul>
+												<th>%</th>
 
-										<ul class="tabular-list">
-											<li class="tr">
-												<span class="td">Diagnostic cost/patient/year</span>
-												<span class="td"><em class="currency-sign"></em><span
-														id="table_diagnostic_cost">15</span></span>
-												<span class="td"><em class="currency-sign"></em><span
-														id="table_diagnostic_cost_dis">29</span></span>
-											</li>
-											<li class="tr">
-												<span class="td">Total diagnostic cost (100% of patients)</span>
-												<span class="th"><em class="currency-sign"></em><em
-														id="table_tot_diagnostic_cost">XX,XXX</em></span>
-												<span class="th"><em class="currency-sign"></em><em
-														id="table_tot_diagnostic_cost_dis">XX,XXX</em></span>
-											</li>
-										</ul>
+												<th>Patients <br> (n)</th>
 
-										<ul class="tabular-footer">
-											<li class="tr">
-												<span class="th">Benefit with Boston Scientific/patient/year </span>
-												<span class="td-pic">
-													<h3><em class="currency-sign"></em><em
-															id="table_boston_scientific">43.60</em></h3>
-												</span>
+											</tr>
 
-											</li>
-											<li class="tr">
-												<span class="th">Total benefit with Boston Scientific/year <br> with current % Boston Scientific</span>
-												<span class="td-pic multiuser">
-													<h3><em class="currency-sign"></em><em
-															id="table_tot_boston_scientific">XX,XXX</em></h3>
-												</span>
+										</thead>
 
-											</li>
-										</ul>
+										<tbody>
 
-									</div>
-								</div>
+											<tr>
 
-								<div class="container caution-text">
-									<h6>References:</h6>
-									<ol>
-										<li>Kamani SH, Middeldrop ME, Evans S et al. Accuracy of implantable
-											loop recorders: A multi-centre,
-											multi-device comparison of false positive alert burden in remote
-											transmissions. <br> Heart Rhythm
-											2024;21(5):S187. DOI:
-											https://doi.org/10.1016/j.hrthm.2024.03.635</li>
-										<li>Estimated at average hourly cost for physician (cardiology) +
-											nurse based on average salary (for
-											EMEA region) in 2023 (source: salaryexplorer.com)</li>
-									</ol>
+												<td><span class="aside-cinput-title">TV-ICD, CRT-D & <br> S-ICD
+
+														patients</span>:</td>
+
+												<td><span class="aside-cinput-value remote_monitred_percent">XX</span></td>
+
+												<td><span class="aside-cinput-value tot_remote_monitoed">XX</span></td>
+
+											</tr>
+
+											<tr>
+
+												<td><span class="aside-cinput-title">HeartLogic™ <br>
+
+														patients</span>:</td>
+
+												<td><span class="aside-cinput-value heart_logic_percent">XX</span></td>
+
+												<td><span class="aside-cinput-value tot_heart_logic">XX</span></td>
+
+											</tr>
+
+
+
+										</tbody>
+
+									</table>
+
 								</div>
 
 							</div>
 
-							<div class="boston-tab-content boston-tab-content-therapy">
 
-								<h5 class="tab-content-heading">Device Longevity: ICD & CRT-D</h5>
 
-								<div class="bulb-rates-box gradient-border longevity-bulb-box">
-									<div class="bulb-rates-box-inner">
-										<img src="./assets/images/bulb.svg" alt class="bulb-rates-pic">
-										<div class="bulb-rates-body">
-											<div class="media-top">
-												Boston Scientific tachycardia devices offer <br>
-												<strong>extended longevity vs. competitors,<sup>1,2</sup> resulting
-													in <br>
-													cost savings for hospitals over the long term</strong> <br>
-												<small>through:</small>
-											</div>
-											<div class="bullets">
-												<p><i class="dot"></i><strong>Reduced need for replacement
-														devices</strong></p>
-												<p><i class="dot"></i><strong>Avoidance of replacement-related
-														complications</strong></p>
-											</div>
+							<div class="aside-small-btns">
 
-										</div>
-									</div>
-								</div>
+								<a href="#" class="blue-btn small-btn amend-input">AMEND INPUTS</a>
 
-								<div class="refcustom-box-wrapper average-refcustom">
-									<div class="refcustom-box">
-										<div class="refcustom-item">
-											<span>Reference <br> value</span>
-											<i class="ref-pink"></i>
-											<i class="ref-gray"></i>
-										</div>
-										<div class="refcustom-item">
-											<span>Custom <br> value</span>
-											<div class="ref-custom"></div>
-										</div>
-									</div>
-									<div class="average-row">
-										<div class="average-col">
-											<h6>ICD average yearly cost/patient/ <br>
-												year (Longevity: 15 years)<sup>1,2</sup></h6>
-											<input type="hidden" name="tot_icd_cost" id="tot_icd_cost" value="0">
-											<input type="hidden" name="tot_icd_cost_dis" id="tot_icd_cost_dis"
-												value="0">
-											<div class="label-inputs-wrapper tr-reset">
-												<ul class="label-inputs">
-													<li class="label-input bold-calcinput">
-														<label for>Boston <br> Scientific</label>
-														<input type="text" name="icd_bos_science" id="icd_bos_science"
-															class="boston-sminput validate-number-input" value="1,735"
-															data-value="1735"
-															data-symbol="currency">
-													</li>
-													<li class="label-input bold-calcinput">
-														<label for class="text-deepgray">Industry <br> average</label>
-														<input type="text" name="icd_bos_science_dis"
-															id="icd_bos_science_dis"
-															class="boston-sminput validate-number-input disabled"
-															value="1,945" data-value="1945"
-															data-symbol="currency">
-													</li>
-												</ul>
-												<button class="reset-btn therapy_reset_btn"><img
-														src="./assets/images/reset-shape.svg"
-														alt></button>
-											</div>
-											<span class="down-arrow-indicator"></span>
-											<div class="iconvalue-box">
-												<h6>Benefit with Boston Scientific/patient (ICD)/year
-												</h6>
-												<div class="iconvalue-profile-pic">
-													<img class src="./assets/images/profile.svg" alt>
-												</div>
-												<h2><em class="currency-sign"></em><em
-														id="tot_icd_bos_science">0</em></h2>
-
-											</div>
-										</div>
-										<div class="average-col">
-											<h6>CRT-D average yearly cost/patient/
-												year (Longevity: 10 years)<sup>1,2</sup></h6>
-											<input type="hidden" name="tot_crtd_cost" id="tot_crtd_cost"
-												value="0">
-											<input type="hidden" name="tot_crtd_cost_dis" id="tot_crtd_cost_dis"
-												value="0">
-											<div class="label-inputs-wrapper tr-reset">
-												<ul class="label-inputs">
-													<li class="label-input bold-calcinput">
-														<label for>Boston <br> Scientific</label>
-														<input type="text" name="crtd_bos_science" id="crtd_bos_science"
-															class="boston-sminput validate-number-input" value="3,244"
-															data-value="3244"
-															data-symbol="currency">
-													</li>
-													<li class="label-input bold-calcinput">
-														<label for class="text-deepgray">Industry <br> average</label>
-														<input type="text" name="crtd_bos_science_dis"
-															id="crtd_bos_science_dis"
-															class="boston-sminput validate-number-input disabled"
-															value="3,729" data-value="3729"
-															data-symbol="currency">
-													</li>
-												</ul>
-												<button class="reset-btn therapy_reset_btn"><img
-														src="./assets/images/reset-shape.svg"
-														alt></button>
-											</div>
-											<span class="down-arrow-indicator"></span>
-											<div class="iconvalue-box">
-												<h6>Benefit with Boston Scientific/ patient (CRT-D)/year
-												</h6>
-												<div class="iconvalue-profile-pic">
-													<img class src="./assets/images/profile.svg" alt>
-												</div>
-												<h2><em class="currency-sign"></em><em
-														id="tot_crtd_bos_science">0</em></h2>
-
-											</div>
-										</div>
-									</div>
-								</div>
-								<span class="down-arrow-indicator average-row-down-indicator"></span>
-								<div
-									class="iconvalue-box iconvalue-smheight iconvalue-big-pic icdTotal-benifits">
-									<h6>Total Benefit with Boston Scientific/year</h6>
-									<div class="iconvalue-pic-box">
-										<h2><em class="currency-sign"></em><em
-												id="tot_bos_science">XX,XXX</em></h2>
-									</div>
-									<button
-										class="tabular-view-btn open-modal-btn icd-crtd-table-modal-btn">
-										<img src="./assets/images/tabular-bg.svg" alt>
-										View <br> tabular <br> data
-									</button>
-								</div>
-
-								<h5 class="tab-content-heading">Transvenous Lead Extraction (TLE):
-									S-ICD</h5>
-								<div class="bulb-rates-box gradient-border extraction-bulb-box">
-									<div class="bulb-rates-box-inner">
-										<img src="./assets/images/bulb.svg" alt class="bulb-rates-pic">
-										<div class="bulb-rates-body">
-											<div class="media-top">
-												<p>The Atlas Randomised Controlled Trial<sup>3</sup> confirmed that
-													<br>
-													<strong>serious lead-related complications</strong> <br>
-													occur in
-												</p>
-											</div>
-											<div class="percendiff-wrapper">
-												<ul class="percendiff">
-													<li>
-														<span class="only-text">only</span>
-														<h2>0.4%</h2>
-														<strong>in S-ICD patients</strong>
-													</li>
-													<li>vs.</li>
-													<li>
-														<h2>4.8%</h2>
-														<strong>of TV-ICD patients</strong>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div class="refcustom-box-wrapper emblem-refcustom-box">
-									<div class="refcustom-box">
-										<div class="refcustom-item">
-											<span>Reference <br> value</span>
-											<i class="ref-pink"></i>
-											<i class="ref-gray"></i>
-										</div>
-										<div class="refcustom-item">
-											<span>Custom <br> value</span>
-											<div class="ref-custom"></div>
-										</div>
-									</div>
-									<div class="emblem-table-wrapper">
-										<div class="calcinput-table bold-calcinput">
-											<table>
-												<thead>
-													<tr>
-														<th></th>
-														<th>Emblem <br> MRI S-ICD<sup>™</sup></th>
-														<th>TV-ICD</th>
-														<th></th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr class="tr-reset">
-														<td>Infections rate/ <br> patient/year<sup>3</sup></td>
-														<td>
-															<input class="boston-sminput validate-number-input percent-value"
-																type="text"
-																name="infection_rate" data-symbol="percentage"
-																id="infection_rate" value="0.4%"
-																data-value="0.4%">
-														</td>
-														<td>
-															<input
-																class="boston-sminput validate-number-input percent-value disabled"
-																type="text"
-																data-symbol="percentage" name="infection_rate_dis"
-																id="infection_rate_dis" value="4.8%"
-																data-value="4.8%">
-														</td>
-														<td>
-															<button class="reset-btn therapy_reset_btn"><img
-																	src="./assets/images/reset-shape.svg"
-																	alt></button>
-														</td>
-													</tr>
-													<tr class="tr-reset">
-														<td>TLE procedure cost<sup>4,5</sup></td>
-														<td>
-															<input class="boston-sminput validate-number-input" type="text"
-																name="tle_production_cost"
-																id="tle_production_cost" value="17,000" data-value="17000"
-																data-symbol="currency">
-														</td>
-														<td>
-															<input class="boston-sminput validate-number-input disabled"
-																type="text"
-																name="tle_production_cost_dis" id="tle_production_cost_dis"
-																value="17,000"
-																data-value="17000" data-symbol="currency">
-														</td>
-														<td>
-															<button class="reset-btn therapy_reset_btn"><img
-																	src="./assets/images/reset-shape.svg"
-																	alt></button>
-														</td>
-													</tr>
-													<tr>
-														<td>TLE cost/ <br> patient/year</td>
-														<td>
-															<span class="boston-sminput"><em class="currency-sign"></em><em
-																	id="tle_cost_year">XX,XXX</em></span>
-														</td>
-														<td>
-															<span class="boston-sminput disabled"><em
-																	class="currency-sign"></em><em
-																	id="tle_cost_year_dis">XX,XXX</em></span>
-														</td>
-														<td></td>
-													</tr>
-													<tr>
-														<td></td>
-														<td colspan="2"><span class="down-arrow-indicator"></span></td>
-														<td></td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-								<div class="icdyear-benefits">
-									<div class="iconvalue-box iconvalue-smheight">
-										<h6>Benefit with Boston Scientific/ <br> patient/year
-										</h6>
-										<div class="iconvalue-pic-box">
-											<h2><em class="currency-sign"></em><em
-													id="icd_benifit_year">748</em></h2>
-										</div>
-									</div>
-								</div>
-								<div class="total-tle-wrapper">
-									<div class="calcinput-table bold-calcinput">
-										<table>
-
-											<tbody>
-												<tr>
-													<td>Total TLE cost</td>
-													<td>
-														<span class="boston-sminput"><em class="currency-sign"></em><em
-																id="tot_tle_cost">XX,XXX</em></span>
-													</td>
-													<td>
-														<span class="boston-sminput disabled"><em
-																class="currency-sign"></em><em
-																id="tot_tle_cost_dis">XX,XXX</em></span>
-													</td>
-													<td>
-														<button class="reset-btn ui-hide"><img
-																src="./assets/images/reset-shape.svg" alt></button>
-													</td>
-												</tr>
-												<tr>
-													<td></td>
-													<td colspan="2"><span class="down-arrow-indicator"></span></td>
-													<td></td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-								<div class="icdyear-benefits">
-									<div class="iconvalue-box iconvalue-smheight">
-										<h6>Total benefit with Boston Scientific/year
-										</h6>
-										<div class="iconvalue-pic-box multiuser">
-											<h2><em class="currency-sign"></em><em
-													id="tot_icd_benifit_year">XX,XXX</em></h2>
-										</div>
-										<button class="tabular-view-btn open-modal-btn sicd-table-modal-btn">
-											<img src="./assets/images/tabular-bg.svg" alt>
-											View <br> tabular <br> data
-										</button>
-									</div>
-								</div>
-								<div class="gradient-stroke-wrapper aside-modal boston-modal"
-									id="therapy-modal">
-									<div class="gradient-stroke">
-										<span class="gradient-stroke-line-hider"></span>
-										<button class="cut-modal"><img src="./assets/images/x-cut.svg"
-												alt></button>
-										<div class="benefits-row-wrapper">
-											<div class="benefits-row">
-												<div class="benifits-col left-col">
-													<h5>Longevity benefit</h5>
-													<ul class="numicon-box">
-														<li class="numicon-box-item">
-															<h6>Benefit with Boston Scientific/
-																patient (ICD)/year
-															</h6>
-															<div class="numicon-box-content">
-																<span><em class="currency-sign"></em><em
-																		id="modal_tot_icd_bos_science">XX</em></span>
-																<img src="./assets/images/profile.svg" alt>
-															</div>
-														</li>
-														<li class="numicon-box-item">
-															<h6>
-																<h6>Benefit with Boston Scientific/ patient (CRT-D)/year
-																</h6>
-															</h6>
-															<div class="numicon-box-content">
-																<span><em class="currency-sign"></em><em
-																		id="modal_tot_crtd_bos_science">XX</em></span>
-																<img src="./assets/images/profile.svg" alt>
-															</div>
-														</li>
-													</ul>
-													<span class="down-arrow-indicator"></span>
-													<div class="iconvalue-box">
-														<p class="text18px">Total benefit with Boston Scientific/year:
-															Longevity
-														</p>
-														<div class="iconvalue-profile-pic">
-															<img class src="./assets/images/multi-user.svg" alt>
-														</div>
-														<h2><em class="currency-sign"></em><em
-																id="modal_tot_bos_science">XX,XXX</em></h2>
-													</div>
-												</div>
-												<div class="benifits-col right-col ">
-													<h5>TLE benefit</h5>
-													<ul class="numicon-box">
-														<li class="numicon-box-item">
-															<h6>Benefit with Boston Scientific/
-																patient (S-ICD)/year
-															</h6>
-															<div class="numicon-box-content numicon-img-on">
-																<div class="numicon-img-box">
-
-																	<img class src="./assets/images/profile.svg" alt>
-
-																	<span><em class="currency-sign"></em><em
-																			id="modal_icd_benifit_year">XX</em></span>
-																</div>
-															</div>
-														</li>
-													</ul>
-													<span class="down-arrow-indicator"></span>
-													<div class="iconvalue-box">
-														<p class="text18px">Total benefit with Boston Scientific/year: TLE
-															Reduction
-														</p>
-														<div class="iconvalue-profile-pic">
-															<img class src="./assets/images/multi-user.svg" alt>
-														</div>
-														<h2><em class="currency-sign"></em><em
-																id="modal_tot_icd_benifit_year">XX,XXX</em></h2>
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<div class="boston-slider">
-											<h5>SHARE ADJUSTER</h5>
-											<div class="boston-slider-field">
-												<label for class="boston-slider-label">TV-ICD</label>
-												<div class="boston-slider-input-wrapper">
-													<input class="boston-slider-input" type="range" step="1"
-														id="modal_slider_tvicd" min="0"
-														max="100">
-													<div class="input-mirror"></div>
-													<div class="range-thumb"></div>
-													<span class="range-value-indicator range-0">0%</span>
-													<span class="range-value-indicator range-25">25%</span>
-													<span class="range-value-indicator range-50">50%</span>
-													<span class="range-value-indicator range-75">75%</span>
-													<span class="range-value-indicator range-100">100%</span>
-													<span class="range-value-indicator range-result">20%</span>
-
-												</div>
-											</div>
-											<div class="boston-slider-field">
-												<label for class="boston-slider-label">S-ICD</label>
-												<div class="boston-slider-input-wrapper">
-													<input class="boston-slider-input" type="range" step="1"
-														id="modal_slider_sicd" min="0"
-														max="100">
-													<div class="input-mirror"></div>
-													<div class="range-thumb"></div>
-													<span class="range-value-indicator range-0">0%</span>
-													<span class="range-value-indicator range-25">25%</span>
-													<span class="range-value-indicator range-50">50%</span>
-													<span class="range-value-indicator range-75">75%</span>
-													<span class="range-value-indicator range-100">100%</span>
-													<span class="range-value-indicator range-result">20%</span>
-
-												</div>
-											</div>
-											<div class="boston-slider-field">
-												<label for class="boston-slider-label">CRT-D</label>
-												<div class="boston-slider-input-wrapper">
-													<input class="boston-slider-input" type="range" step="1"
-														id="modal_slider_crtd" min="0"
-														max="100">
-													<div class="input-mirror"></div>
-													<div class="range-thumb"></div>
-													<span class="range-value-indicator range-0">0%</span>
-													<span class="range-value-indicator range-25">25%</span>
-													<span class="range-value-indicator range-50">50%</span>
-													<span class="range-value-indicator range-75">75%</span>
-													<span class="range-value-indicator range-100">100%</span>
-													<span class="range-value-indicator range-result">20%</span>
-
-												</div>
-											</div>
-											<button
-												class="blue-btn small-btn therapy-recalculate">CALCULATE</button>
-										</div>
-
-										<div class="boston-row therapy-total-benefit">
-											<div class="col-6">
-												<div class="iconvalue-box">
-													<p class="text24px">Total benefit with Boston Scientific/year:
-														Longevity
-													</p>
-													<div class="iconvalue-profile-pic">
-														<img class src="./assets/images/multi-user.svg" alt>
-													</div>
-													<h2><em class="currency-sign"></em><em
-															id="cal_modal_tot_bos_science">XX,XXX</em></h2>
-												</div>
-											</div>
-											<div class="col-6">
-												<div class="iconvalue-box">
-													<p class="text24px">Total benefit with Boston Scientific/year: TLE
-														Reduction
-													</p>
-													<div class="iconvalue-profile-pic">
-														<img class src="./assets/images/multi-user.svg" alt>
-													</div>
-													<h2><em class="currency-sign"></em><em
-															id="cal_modal_tot_icd_benifit_year">XX,XXX</em></h2>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
-								<div class="boston-modal gradient-border tabular-modal-wrapper"
-									id="therapy-device-tabular-modal-wrapper">
-									<div class="tabular-modal">
-										<div class="modal-header">
-											<h5>Tabular data</h5>
-											<button class="cut-modal"><img src="./assets/images/x-cut-orange.svg"
-													alt></button>
-										</div>
-
-										<ul class="tabular-list">
-											<li class="tr">
-												<span class="th">Device longevity: ICD & CRT-D</span>
-												<span class="th">Boston <br> Scientific</span>
-												<span class="th">Industry <br> average</span>
-											</li>
-											<li class="tr">
-												<span class="td">
-													<div>Longevity ICD average yearly cost <br>
-														(15 years)/patient/year<sup>1,2</sup> </div>
-												</span>
-												<span class="td"><em class="currency-sign"></em><span
-														id="table_icd_bos_science">1,735</span></span>
-												<span class="td"><em class="currency-sign"></em><span
-														id="table_icd_bos_science_dis">1,945</span></span>
-											</li>
-											<li class="tr">
-												<span class="td">
-													<div>
-														Longevity CRT-D average yearly cost <br> (10
-														years)/patient/year<sup>1,2</sup>
-													</div>
-												</span>
-												<span class="td"><em class="currency-sign"></em><span
-														id="table_crtd_bos_science">0</span></span>
-												<span class="td"><em class="currency-sign"></em><span
-														id="table_crtd_bos_science_dis">0</span></span>
-											</li>
-										</ul>
-
-										<ul class="tabular-list">
-											<li class="tr">
-												<span class="td">Total ICD cost</span>
-												<span class="td"><em class="currency-sign"></em><span
-														id="table_tot_icd_cost">0</span></span>
-												<span class="td"><em class="currency-sign"></em><span
-														id="table_tot_icd_cost_dis">0</span></span>
-											</li>
-											<li class="tr">
-												<span class="td">Total CRT-D cost</span>
-												<span class="td"><em class="currency-sign"></em><em
-														id="table_tot_crtd_cost">0</em></span>
-												<span class="td"><em class="currency-sign"></em><em
-														id="table_tot_crtd_cost_dis">0</em></span>
-											</li>
-										</ul>
-
-										<ul class="tabular-footer">
-											<li class="tr">
-												<span class="th">Benefit with Boston Scientific/patient
-													(ICD)/year</span>
-												<span class="td-pic">
-													<h3><em class="currency-sign"></em><em
-															id="table_tot_icd_bos_science">211</em></h3>
-												</span>
-											</li>
-											<li class="tr">
-												<span class="th">Benefit with Boston Scientific/patient
-													(CRT-D)/year</span>
-												<span class="td-pic">
-													<h3><em class="currency-sign"></em><em
-															id="table_tot_crtd_bos_science">486</em></h3>
-												</span>
-											</li>
-											<li class="tr">
-												<span class="th">Total Benefit with Boston Scientific/year</span>
-												<span class="td-pic multiuser">
-													<h3><em class="currency-sign"></em><em
-															id="table_tot_bos_science">XX,XXX</em>
-													</h3>
-												</span>
-
-											</li>
-										</ul>
-
-									</div>
-								</div>
-								<div class="boston-modal gradient-border tabular-modal-wrapper"
-									id="therapy-tle-tabular-modal-wrapper">
-									<div class="tabular-modal">
-										<div class="modal-header">
-											<h5>Tabular data</h5>
-											<button class="cut-modal"><img src="./assets/images/x-cut-orange.svg"
-													alt></button>
-										</div>
-
-										<ul class="tabular-list">
-											<li class="tr">
-												<span class="th">Transvenous leads extraction (TLE): S-ICD</span>
-												<span class="th">Emblem <br> MRI S-ICD™</span>
-												<span class="th">TV-ICD</span>
-											</li>
-											<li class="tr">
-												<span class="td">
-													<div>Infections rate/patient/year<sup>3</sup></div>
-												</span>
-												<span class="td" id="table_infection_rate">0.4%</span>
-												<span class="td" id="table_infection_rate_dis">4.8%</span>
-											</li>
-											<li class="tr">
-												<span class="td">
-													<div>
-														TLE procedure cost<sup>4,5</sup>
-													</div>
-												</span>
-												<span class="td"><em class="currency-sign"></em><span
-														id="table_tle_production_cost">17,000</span>
-												</span>
-												<span class="td"><em class="currency-sign"></em><span
-														id="table_tle_production_cost_dis">17,000</span></span>
-											</li>
-										</ul>
-
-										<ul class="tabular-list">
-											<li class="tr">
-												<span class="td">TLE cost/patient/year</span>
-												<span class="td"><em class="currency-sign"></em><span
-														id="table_tle_cost_year">68</span></span>
-												<span class="td"><em class="currency-sign"></em><span
-														id="table_tle_cost_year_dis">816</span></span>
-											</li>
-											<li class="tr">
-												<span class="td">Total TLE cost</span>
-												<span class="td"><em class="currency-sign"></em><em
-														id="table_tot_tle_cost">XXX,XXX</em></span>
-												<span class="td"><em class="currency-sign"></em><em
-														id="table_tot_tle_cost_dis">XXX,XXX</em></span>
-											</li>
-										</ul>
-
-										<ul class="tabular-footer">
-											<li class="tr">
-												<span class="th">Benefit with Boston Scientific/patient/year</span>
-												<span class="td-pic">
-													<h3><em class="currency-sign"></em><em
-															id="table_icd_benifit_year">748</em></h3>
-												</span>
-											</li>
-											<li class="tr">
-												<span class="th">Total Benefit with Boston Scientific/year</span>
-												<span class="td-pic multiuser">
-													<h3><em class="currency-sign"></em><em
-															id="table_tot_icd_benifit_year">XX,XXX</em></h3>
-												</span>
-
-											</li>
-										</ul>
-
-									</div>
-								</div>
-								<div class="container caution-text">
-									<h6>References:</h6>
-									<ol>
-										<li>Boriani G, Braunschweig F, Deharo JC et al. Impact of extending
-											device longevity on the long-term
-											costs of implantable cardioverter-defibrillator therapy: a modelling
-											study with a 15-year time
-											horizon. Europace 2013;15(10):1453-62. doi:
-											10.1093/europace/eut133.</li>
-										<li>Boriani G, Merino J, Wright DJ et al. Battery longevity of
-											implantable cardioverter-defibrillators
-											and cardiac resynchronization therapy defibrillators:
-											technical, clinical and economic aspects. An expert review paper from
-											EHRA. Europace
-											2018;20(12):1882-97 doi: 10.1093/europace/euy066.</li>
-										<li>Healey JS et al. Late-breaking clinical trials LB-733: The ATLAS
-											Trial. Presented at Heart Rhythm
-											Society 2022.</li>
-										<li>Brough CEP, Rao A, Haycox AR et al. Real-world costs of
-											transvenous lead extraction: the challenge
-											for reimbursement. Europace 2019;21(2):290-7.
-											doi: 10.1093/europace/euy291.</li>
-										<li>Gould J, Sidhu BS, Porter B et al. Financial and resource costs of
-											transvenous lead extraction in
-											a high- volume lead extraction centre.
-											Heart 2020; 2020;106:931-7. doi:10.1136/heartjnl-2019-315839.</li>
-									</ol>
-								</div>
-							</div>
-
-							<div class="boston-tab-content boston-tab-content-monitoring">
-								<h5 class="tab-content-heading">Remote monitoring</h5>
-
-								<div class="bulb-rates-box gradient-border costcare-bulb-box">
-									<div class="bulb-rates-box-inner">
-										<img src="./assets/images/bulb.svg" alt class="bulb-rates-pic">
-										<div class="bulb-rates-body">
-											<div class="media-top fx-center">
-												<p><strong class="costcare-txt">Cost of care<sup>1</sup>
-														for</strong></p>
-											</div>
-											<div class="percendiff-wrapper">
-												<ul class="percendiff percendiff-monitoring">
-													<li>
-														<strong>Remotely <br> monitored patients</strong>
-														<h2><em class="currency-sign"></em><span>1,512</span></h2>
-													</li>
-													<li>vs.</li>
-													<li>
-														<strong>Non-remotely <br> monitored patients</strong>
-														<h2><em class="currency-sign"></em><span>4,888</span></h2>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div class="refcustom-box-wrapper">
-									<div class="refcustom-box">
-										<div class="refcustom-item">
-											<span>Reference <br> value</span>
-											<i class="ref-pink"></i>
-											<i class="ref-gray"></i>
-										</div>
-										<div class="refcustom-item">
-											<span>Custom <br> value</span>
-											<div class="ref-custom"></div>
-										</div>
-									</div>
-									<div class="calcinput-table heartlogic-calcinput">
-										<table>
-											<thead>
-												<tr>
-													<th></th>
-													<th>Latitude<sup>™</sup>/ <br> HeartLogic<sup>™</sup></th>
-													<th>Other RPM <br> technology</th>
-													<th></th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr class="tr-reset">
-													<td>Cost of care/ <br> patient/year, <br> hospital
-														perspective<sup>1</sup></td>
-													<td>
-														<input class="boston-sminput validate-number-input sst-bold"
-															data-symbol="currency"
-															type="text" name id="remote_monitored" value="1,512"
-															data-value="1512"
-															data-symbol="currency">
-													</td>
-													<td>
-														<input
-															class="boston-sminput disabled validate-number-input sst-bold"
-															data-symbol="currency"
-															type="text" name id="remote_monitored_dis" value="4,888"
-															data-value="4888"
-															data-symbol="currency">
-													</td>
-													<td>
-														<button class="reset-btn monitoring-reset-btn"><img
-																src="./assets/images/reset-shape.svg"
-																alt></button>
-													</td>
-												</tr>
-												<tr>
-													<td></td>
-													<td colspan="2"><span
-															class="down-arrow-indicator mt0px"></span></td>
-													<td></td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-
-								<div class="iconvalue-box iconvalue-smheight mw415px">
-									<h6>Benefit with Boston Scientific/ <br> patient/year
-									</h6>
-									<div class="iconvalue-profile-pic">
-										<img class src="./assets/images/profile.svg" alt>
-									</div>
-									<h2><em class="currency-sign"></em><em
-											id="remote_monitored_benifit">3,376</em></h2>
-
-								</div>
-
-								<div class="total-cost-wrapper">
-									<div class="calcinput-table bold-calcinput">
-										<table>
-
-											<tbody>
-												<tr>
-													<td>Total cost</td>
-													<td>
-														<span class="boston-sminput"><em class="currency-sign"></em><em
-																id="tot_remote_monitored">XX,XXX</em></span>
-													</td>
-													<td>
-														<span class="boston-sminput disabled"><em
-																class="currency-sign"></em><em
-																id="tot_remote_monitored_dis">XX,XXX</em></span>
-													</td>
-													<td>
-														<button class=" therapy_reset_btn ui-hide"><img
-																src="./assets/images/reset-shape.svg"
-																alt></button>
-													</td>
-												</tr>
-												<tr>
-													<td></td>
-													<td colspan="2"><span class="down-arrow-indicator"></span></td>
-													<td></td>
-												</tr>
-
-											</tbody>
-										</table>
-									</div>
-								</div>
-
-								<div
-									class="iconvalue-box iconvalue-smheight mw415px monitoring-iconvalue">
-									<h6>Total benefit with Boston Scientific/year
-									</h6>
-									<div class="iconvalue-profile-pic">
-										<img class src="./assets/images/multi-user.svg" alt>
-									</div>
-									<h2><em class="currency-sign"></em><em
-											id="tot_remote_monitored_benifit">XX,XXX</em></h2>
-									<button
-										class="tabular-view-btn open-modal-btn monitoring-crtd-tabular-modal-btn">
-										<img src="./assets/images/tabular-bg.svg" alt>
-										View <br> tabular <br> data
-									</button>
-								</div>
-
-								<h5 class="tab-content-heading">HeartLogic™</h5>
-								<div class="heartloginTM-box">
-									<div class="bulb-rates-box gradient-border longevity-bulb-box">
-										<div class="bulb-rates-box-inner align-items-start">
-											<img src="./assets/images/bulb.svg" alt class="bulb-rates-pic">
-											<div class="bulb-rates-body">
-												<div class="media-top text-left">
-													<strong class="sst-bold">HEARTLOGIC™:</strong>
-												</div>
-												<div class="bullets heartlogic bullet-gap">
-													<p class="text-left"><i class="dot"></i><strong>REDUCES the number
-															of hospitalisations <br>
-															& length of stay </strong>for decompensated heart
-														failure<sup>2,3</sup></p>
-													<p class="text-left"><i class="dot"></i><strong>SIGNIFICANTLY
-															REDUCES the costs per patient <br>
-														</strong>for the healthcare system <sup>2,3</sup></p>
-												</div>
-
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div class="refcustom-box-wrapper heartLogic-refcustom-box">
-									<div class="refcustom-box">
-										<div class="refcustom-item">
-											<span>Reference <br> value</span>
-											<i class="ref-pink"></i>
-											<i class="ref-gray"></i>
-										</div>
-										<div class="refcustom-item">
-											<span>Custom <br> value</span>
-											<div class="ref-custom"></div>
-										</div>
-									</div>
-									<div class="calcinput-table heart-calcinput heartLogic-sup">
-										<table>
-											<thead>
-												<tr>
-													<th></th>
-													<th>HeartLogic™</th>
-													<th>Other heart <br>
-														failure diagnostic <br>
-														technology</th>
-													<th></th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr class="tr-reset">
-													<td>Average hospitalisations <br>
-														/patient/year (n<div class="d-inline" data-sup="2">)</div>
-													</td>
-													<td>
-														<input class="boston-sminput validate-number-input sst-bold"
-															data-symbol="dot" type="text"
-															id="avg_hospitalisation" data-value="0.08" value="0.08">
-													</td>
-													<td>
-														<input
-															class="boston-sminput disabled validate-number-input sst-bold"
-															data-symbol="dot"
-															type="text" id="avg_hospitalisation_dis" data-value="0.29"
-															value="0.29">
-													</td>
-													<td>
-														<button class="reset-btn monitoring-reset-btn"><img
-																src="./assets/images/reset-shape.svg"
-																alt></button>
-													</td>
-												</tr>
-												<tr class="tr-reset">
-													<td>Length of <br>
-														hospitalisation (days<div class="d-inline" data-sup="2">)</div>
-													</td>
-													<td>
-														<input class="boston-sminput validate-number-input sst-bold"
-															data-symbol="dot" type="text"
-															id="len_hospitalisation" data-value="5.00" value="5.00">
-													</td>
-													<td>
-														<input
-															class="boston-sminput disabled validate-number-input sst-bold"
-															data-symbol="dot"
-															type="text" id="len_hospitalisation_dis" data-value="8.20"
-															value="8.20">
-													</td>
-													<td>
-														<button class="reset-btn monitoring-reset-btn"><img
-																src="./assets/images/reset-shape.svg"
-																alt></button>
-													</td>
-												</tr>
-												<tr class="tr-reset">
-													<td>Hospitalisation cost <br>
-														/da<div class="d-inline" data-sup="3">y</div>
-													</td>
-													<td>
-														<input class="boston-sminput validate-number-input sst-bold"
-															data-symbol="currency"
-															type="text" id="hospitalisation_cost" data-value="815"
-															value="815">
-													</td>
-													<td>
-														<input
-															class="boston-sminput disabled validate-number-input sst-bold"
-															data-symbol="currency"
-															type="text" id="hospitalisation_cost_dis" data-value="815"
-															value="815">
-													</td>
-													<td>
-														<button class="reset-btn monitoring-reset-btn"><img
-																src="./assets/images/reset-shape.svg"
-																alt></button>
-													</td>
-												</tr>
-												<tr class="tr-reset">
-													<td>ICD/CRT-D cost/ <br>
-														patient/year</td>
-													<td>
-														<input class="boston-sminput validate-number-input sst-bold"
-															data-symbol="currency"
-															type="text" id="icd_crtd_cost" data-value="326" value="326">
-													</td>
-													<td>
-														<input
-															class="boston-sminput disabled validate-number-input sst-bold"
-															data-symbol="currency"
-															type="text" id="icd_crtd_cost_dis" data-value="1938"
-															value="1,938">
-													</td>
-													<td>
-														<button class="reset-btn monitoring-reset-btn"><img
-																src="./assets/images/reset-shape.svg"
-																alt></button>
-													</td>
-												</tr>
-												<tr>
-													<td></td>
-													<td colspan="2"><span class="down-arrow-indicator"></span></td>
-													<td></td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-
-								<div class="iconvalue-box iconvalue-smheight mw462px">
-									<h6>Boston Scientific <br>
-										benefit/patient/year</h6>
-									<div class="iconvalue-profile-pic">
-										<img class src="./assets/images/profile.svg" alt>
-									</div>
-									<h2><em class="currency-sign"></em><em
-											id="hospitalisation_benifit">1,612</em></h2>
-
-								</div>
-
-								<div class="total-cost-wrapper">
-									<div class="calcinput-table bold-calcinput">
-										<table>
-
-											<tbody>
-												<tr>
-													<td>Total cost</td>
-													<td>
-														<span class="boston-sminput"><em class="currency-sign"></em><em
-																id="tot_hospitalisation_cost">XX,XXX</em></span>
-													</td>
-													<td>
-														<span class="boston-sminput disabled"><em
-																class="currency-sign"></em><em
-																id="tot_hospitalisation_cost_dis">XX,XXX</em></span>
-													</td>
-													<td>
-														<button class="reset-btn ui-hide"><img
-																src="./assets/images/reset-shape.svg" alt></button>
-													</td>
-												</tr>
-												<tr>
-													<td></td>
-													<td colspan="2"><span class="down-arrow-indicator"></span></td>
-													<td></td>
-												</tr>
-
-											</tbody>
-										</table>
-									</div>
-								</div>
-
-								<div
-									class="iconvalue-box iconvalue-smheight mw415px monitoring-iconvalue">
-									<h6>Total Benefit with Boston Scientific/year</h6>
-									<div class="iconvalue-profile-pic">
-										<img class src="./assets/images/multi-user.svg" alt>
-									</div>
-									<h2><em class="currency-sign"></em><em
-											id="tot_hospitalisation_benifit">XX,XXX</em></h2>
-									<button
-										class="tabular-view-btn open-modal-btn monitoring-heart-tabular-modal-btn">
-										<img src="./assets/images/tabular-bg.svg" alt>
-										View <br> tabular <br> data
-									</button>
-								</div>
-
-								<div class="container caution-text">
-									<h6>References:</h6>
-									<ol>
-										<li>Marini M, Videsott L, Dalle Fratte CF et al. Economic analysis of
-											remote monitoring in patients
-											with implantable cardioverter defibrillators or cardiac
-											resynchronization therapy defibrillators in
-											the Trento area, Italy. Front Cardiovasc Med 2023;10. doi:
-											10.3389/fcvm.2023.1151167.</li>
-										<li>ICD or CRT >1 year from: Treskes RW, Beles M, Caputo ML et al.
-											Clinical and economic impact of
-											HeartLogic™ compared with standard care in heart failure patients.
-											ESC Heart Fail 2021;8(2):1541-51.
-											doi: 10.1002/ehf2.13252.</li>
-										<li>Average German tariff for 1 day of hospitalisation</li>
-									</ol>
-								</div>
-
-								<div
-									class="boston-modal gradient-border tabular-modal-wrapper crtd-tabular-modal-wrapper"
-									id="monitoring-crtd-tabular-modal-wrapper">
-									<div class="tabular-modal">
-										<div class="modal-header">
-											<h5>Tabular data</h5>
-											<button class="cut-modal"><img src="./assets/images/x-cut-orange.svg"
-													alt></button>
-										</div>
-
-										<ul class="tabular-list">
-											<li class="tr">
-												<span class="th">Remote monitoring</span>
-												<span class="th">
-													<div>Latitude<sup>™</sup>/ <br> HeartLogic<sup>™</sup></div>
-												</span>
-												<span class="th">Other RPM <br> technology</span>
-											</li>
-											<li class="tr">
-												<span class="td">
-													<div>Cost of care/patient/year, hospital perspective<sup>1</sup>
-													</div>
-												</span>
-												<span class="td"><em class="currency-sign"></em><span
-														id="tbl_remote_monitored">1,512</span></span>
-												<span class="td"><em class="currency-sign"></em><span
-														id="tbl_remote_monitored_dis">4,888</span></span>
-											</li>
-											<li class="tr">
-												<span class="td">Total cost</span>
-												<span class="td"><em class="currency-sign"></em><em
-														id="tbl_tot_remote_monitored">XX,XXX</em></span>
-												<span class="td"><em class="currency-sign"></em><em
-														id="tbl_tot_remote_monitored_dis">XX,XXX</em></span>
-											</li>
-										</ul>
-
-										<ul class="tabular-footer">
-											<li class="tr">
-												<span class="th">Benefit with Boston Scientific/patient/year</span>
-												<span class="td-pic">
-													<h3><em class="currency-sign"></em><em
-															id="tbl_remote_monitored_benifit">3,376</em></h3>
-												</span>
-											</li>
-											<li class="tr">
-												<span class="th">Total Benefit with Boston Scientific/ year</span>
-												<span class="td-pic multiuser">
-													<h3><em><em class="currency-sign"></em><em
-																id="tbl_tot_remote_monitored_benifit">XXX,XXX</em></em></h3>
-												</span>
-											</li>
-										</ul>
-									</div>
-								</div>
-
-								<div
-									class="boston-modal gradient-border tabular-modal-wrapper heart-tabular-modal-wrapper"
-									id="monitoring-heart-tabular-modal-wrapper">
-									<div class="tabular-modal">
-										<div class="modal-header">
-											<h5>Tabular data</h5>
-											<button class="cut-modal"><img src="./assets/images/x-cut-orange.svg"
-													alt></button>
-										</div>
-
-										<ul class="tabular-list">
-											<li class="tr">
-												<span class="th">HeartLogic<sup>™</sup></span>
-												<span class="th">
-													<div>HeartLogic™</div>
-												</span>
-												<span class="th">Other heart <br> failure <br> diagnostic <br>
-													technology</span>
-											</li>
-											<li class="tr">
-												<span class="td">
-													<div>Average hospitalisations/patient/year (n)<sup>2</sup></div>
-												</span>
-												<span class="td" id="tbl_avg_hospitalisation">0.08</span>
-												<span class="td" id="tbl_avg_hospitalisation_dis">0.29</span>
-											</li>
-											<li class="tr">
-												<span class="td">
-													<div>Average hospitalisations/patient/year (n)<sup>2</sup></div>
-												</span>
-												<span class="td" id="tbl_len_hospitalisation">5.00</span>
-												<span class="td" id="tbl_len_hospitalisation_dis">8.20</span>
-											</li>
-											<li class="tr">
-												<span class="td">
-													<div>Average hospitalisations/patient/year (n)<sup>2</sup></div>
-												</span>
-												<span class="td"><em class="currency-sign"></em><span
-														id="tbl_hospitalisation_cost">815</span></span>
-												<span class="td"><em class="currency-sign"></em><span
-														id="tbl_hospitalisation_cost-dis">815</span></span>
-											</li>
-										</ul>
-
-										<ul class="tabular-list">
-
-											<li class="tr">
-												<span class="td">ICD/CRT-D cost/patient/year</span>
-												<span class="td"><em class="currency-sign"></em><span
-														id="tbl_icd_crtd_cost">326</span></span>
-												<span class="td"><em class="currency-sign"></em><span
-														id="tbl_icd_crtd_cost_dis">1,938</span></span>
-											</li>
-
-											<li class="tr">
-												<span class="td">Total cost</span>
-												<span class="td"><em class="currency-sign"></em><em
-														id="tbl_tot_hospitalisation_cost">XX,XXX</em></span>
-												<span class="td"><em class="currency-sign"></em><em
-														id="tbl_tot_hospitalisation_cost_dis">XX,XXX</em></span>
-											</li>
-										</ul>
-
-										<ul class="tabular-footer">
-											<li class="tr">
-												<span class="th">Benefit with Boston Scientific/patient/year</span>
-												<span class="td-pic">
-													<h3><em class="currency-sign"></em><em
-															id="tbl_hospitalisation_benifit">1,612</em></h3>
-												</span>
-											</li>
-											<li class="tr">
-												<span class="th">Total Benefit with Boston Scientific/year</span>
-												<span class="td-pic multiuser">
-													<h3><em class="currency-sign"></em><em
-															id="tbl_tot_hospitalisation_benifit">XX,XXX</em></h3>
-												</span>
-
-											</li>
-										</ul>
-
-									</div>
-								</div>
+								<a href="index.html" class="blue-btn small-btn">RESTART</a>
 
 							</div>
 
-							<div class="boston-tab-content boston-tab-content-portfolio">
-								<div class="analysis-canvas-wrapper">
-									<h5 class="tab-content-heading text-left">Economic impact across
-										portfolio</h5>
 
-									<div class="analysis-canvas">
-										<div>
-											<div class="analysis-text-item">
-												<h6>Boston Scientific</h6>
-												<span><em class="currency-sign"></em><em
-														id="Eco_impact">XXX,XXX</em></span>
-											</div>
-											<div class="analysis-text-item gray-analysis-text-item">
-												<h6>Competitor</h6>
-												<span><em class="currency-sign"></em><em
-														id="Eco_impact_dis">XXX,XXX</em></span>
-											</div>
-										</div>
-										<div class="analysis-graphs">
-											<div class="analysis-graphs-canvas">
-												<canvas id="economic-portfolio-graph"></canvas>
-												<p class="text-center portfolio-currency-k">Euros (K)</p>
-											</div>
-										</div>
 
-									</div>
-								</div>
+							<div class="aside-shortdesc-box">
 
-								<div class="iconvalue-box iconvalue-smbg mw530px">
-									<h6 class="text21px">Total Benefit with Boston Scientific</h6>
-									<div class="iconvalue-pic-box">
-										<h2 class="text50px"><em class="currency-sign"></em><em
-												id="Eco_impact_dif">XXX,XXX</em></h2>
-									</div>
-								</div>
+								<p><strong>CRT-D:</strong> Cardiac resynchronisation
 
-								<div class="bulbtonnes-box-wrapper">
-									<h5 class="tab-content-heading text-left">Environmental impact of
-										HeartLogic™</h5>
-									<div class="bulbtonnes-box">
-										<svg width="100%" height="100%" fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-											class="gradient-svg-stroke">
-											<style>
-											.stroke-rect {
-												width: calc(100% - 2px);
-												height: calc(100% - 2px);
-											}
-										</style>
-											<rect class="stroke-rect" x="1" y="1" rx="5"
-												stroke="url(#paint0_linear_57_2)" stroke-width="2" />
-											<defs>
-												<lineargradient id="paint0_linear_57_2" x1="-38" y1="672.5"
-													x2="1412" y2="665.5"
-													gradientUnits="userSpaceOnUse">
-													<stop stop-color="#4D93FE" />
-													<stop offset="1" stop-color="#C34CFF" />
-												</lineargradient>
-											</defs>
-										</svg>
-										<img src="./assets/images/bulb.svg" alt class="bulb-pic">
-										<div class="skypercentage-bulb-box">
+									therapy-defbrillator </p>
 
-											<div class="skypercentage-box">
-												<img src="./assets/images/Cloud.svg" alt class="sky-pic">
-												<p>HeartLogic™ <br>
-													reduces greenhouse <br>
-													gas emissions by</p>
-												<strong>88%<sup>1</sup></strong>
-											</div>
-										</div>
-										<div class="cartonnes-box">
-											<img src="./assets/images/car.svg" alt class="car-pic">
-											<div class="cartonnes-numb">
-												<strong>71</strong>
-												<em>tonnes</em>
-											</div>
-											<span>of waste <br>
-												per 1,000 <br>
-												patients per year<sup>2</sup></span>
-										</div>
-									</div>
-								</div>
+								<p><strong>ICM:</strong> Insertable cardiac monitor</p>
 
-								<div class="analysis-canvas-wrapper ghg-analysis">
-									<h6>Greenhouse gas (GHG) emissions</h6>
-									<div class="analysis-canvas">
-										<div>
-											<div class="analysis-text-item">
-												<h6>HeartLogic<sup>™</sup></h6>
-												<span><em id="GHG_emission">XX,XXX</em> <em>kg</em></span>
-											</div>
-											<div class="analysis-text-item gray-analysis-text-item">
-												<h6>No HeartLogic<sup>™</sup></h6>
-												<span><em id="GHG_emission_dis">XX,XXX</em> <em>kg</em></span>
-											</div>
-										</div>
-										<div class="analysis-graphs">
-											<div class="analysis-graphs-canvas">
-												<canvas id="ghg-graph"></canvas>
-											</div>
-										</div>
-									</div>
-								</div>
+								<p><strong>S-ICD:</strong> Subcutaneous-implantable
 
-								<div class="iconvalue-box iconvalue-smbg no-iconvalue-bg mw530px">
-									<h6 class="text21px">Total difference with HeartLogic™: GHG
-									</h6>
-									<div class="iconvalue-pic-box">
-										<h2 class="text50px"><em id="GHG_emission_dif">XX,XXX</em> kg</h2>
-									</div>
-								</div>
+									cardioverter-defbrillator </p>
 
-								<div class="analysis-canvas-wrapper ghg-analysis">
-									<h6>Hospital waste</h6>
-									<div class="analysis-canvas">
-										<div>
-											<div class="analysis-text-item">
-												<h6>HeartLogic<sup>™</sup></h6>
-												<span><em id="HW_waste">XX,XXX</em> <em>kg</em></span>
-											</div>
-											<div class="analysis-text-item gray-analysis-text-item">
-												<h6>No HeartLogic<sup>™</sup></h6>
-												<span><em id="HW_waste_dis">XX,XXX</em> <em>kg</em></span>
-											</div>
-										</div>
-										<div class="analysis-graphs">
-											<div class="analysis-graphs-canvas">
-												<canvas id="hospital-waste"></canvas>
-											</div>
-										</div>
-									</div>
-								</div>
+								<p><strong>TV-ICD:</strong> Transvenous-implantable
 
-								<div class="iconvalue-box iconvalue-smbg no-iconvalue-bg mw530px">
-									<h6 class="text21px">Total difference with HeartLogic™: Hospital
-										waste</h6>
-									<div class="iconvalue-pic-box">
-										<h2 class="text50px"><em id="HW_waste_dif">XX,XXX</em> kg</h2>
-									</div>
-								</div>
-
-								<div class="container caution-text">
-									<h6>References:</h6>
-									<ol>
-										<li>Sustainable Care Pathways Guidance: Inpatient bed day module
-											published 2015, Surgical Procedure
-											Module Published 2015 Sustainable Care Pathways Guidance –
-											Sustainable Healthcare <br> Coalition:
-											(https://shcoalition.org/sustainable-care-pathways-guidance)</li>
-										<li>Data on fle Boston Scientific</li>
-									</ol>
-								</div>
-
-								<div
-									class="gradient-stroke-wrapper aside-modal boston-modal portfolio-modal"
-									id="portfolio-modal">
-									<div class="gradient-stroke">
-										<span class="gradient-stroke-line-hider"></span>
-										<button class="cut-modal"><img src="./assets/images/x-cut.svg"
-												alt></button>
-										<div class="portfolio-modal-content">
-											<div class="analysis-canvas-wrapper portfolio-economic-analysis">
-												<h5 class="tab-content-heading">Economic impact across
-													portfolio</h5>
-												<div class="analysis-canvas">
-													<div>
-														<div class="analysis-text-item">
-															<h6>Boston Scientific</h6>
-															<span><em class="currency-sign"></em><em
-																	id="modal_Eco_impact">XXX,XXX</em></span>
-														</div>
-														<div class="analysis-text-item gray-analysis-text-item">
-															<h6>Competitor</h6>
-															<span><em class="currency-sign"></em><em
-																	id="modal_Eco_impact_dis">XXX,XXX</em></span>
-														</div>
-													</div>
-													<div class="analysis-graphs">
-														<div class="analysis-graphs-canvas">
-															<canvas id="economic-modal-portfolio-graph"></canvas>
-														</div>
-													</div>
-												</div>
-											</div>
-
-											<div class="portfolio-diff">
-												<div
-													class="iconvalue-box iconvalue-smheight iconvalue-big-pic mw666px">
-													<h6>Total Benefit with Boston Scientific</h6>
-													<div class="iconvalue-pic-box">
-														<h2><em class="currency-sign"></em><em
-																id="modal_Eco_impact_dif">XX,XXX</em></h2>
-													</div>
-												</div>
-											</div>
-
-											<div class="boston-slider portfolio-boston-slider">
-												<h5>SHARE ADJUSTER</h5>
-												<div class="boston-slider-field">
-													<label for class="boston-slider-label">DIAGNOSTIC <br>
-														DEVICES*</label>
-													<div class="boston-slider-input-wrapper">
-														<input class="boston-slider-input" type="range" step="1"
-															id="portfolio_slider_1" min="0"
-															max="100">
-														<div class="input-mirror"></div>
-														<div class="range-thumb"></div>
-														<span class="range-value-indicator range-0">0%</span>
-														<span class="range-value-indicator range-25">25%</span>
-														<span class="range-value-indicator range-50">50%</span>
-														<span class="range-value-indicator range-75">75%</span>
-														<span class="range-value-indicator range-100">100%</span>
-														<span class="range-value-indicator range-result">20%</span>
-
-													</div>
-												</div>
-												<div class="boston-slider-field">
-													<label for class="boston-slider-label">TV-ICD</label>
-													<div class="boston-slider-input-wrapper">
-														<input class="boston-slider-input" type="range" step="1"
-															id="portfolio_slider_2" min="0"
-															max="100">
-														<div class="input-mirror"></div>
-														<div class="range-thumb"></div>
-														<span class="range-value-indicator range-0">0%</span>
-														<span class="range-value-indicator range-25">25%</span>
-														<span class="range-value-indicator range-50">50%</span>
-														<span class="range-value-indicator range-75">75%</span>
-														<span class="range-value-indicator range-100">100%</span>
-														<span class="range-value-indicator range-result">20%</span>
-
-													</div>
-												</div>
-												<div class="boston-slider-field">
-													<label for class="boston-slider-label">S-ICD</label>
-													<div class="boston-slider-input-wrapper">
-														<input class="boston-slider-input" type="range" step="1"
-															id="portfolio_slider_3" min="0"
-															max="100">
-														<div class="input-mirror"></div>
-														<div class="range-thumb"></div>
-														<span class="range-value-indicator range-0">0%</span>
-														<span class="range-value-indicator range-25">25%</span>
-														<span class="range-value-indicator range-50">50%</span>
-														<span class="range-value-indicator range-75">75%</span>
-														<span class="range-value-indicator range-100">100%</span>
-														<span class="range-value-indicator range-result">20%</span>
-
-													</div>
-												</div>
-												<div class="boston-slider-field">
-													<label for class="boston-slider-label">CRT-D</label>
-													<div class="boston-slider-input-wrapper">
-														<input class="boston-slider-input" type="range" step="1"
-															id="portfolio_slider_4" min="0"
-															max="100">
-														<div class="input-mirror"></div>
-														<div class="range-thumb"></div>
-														<span class="range-value-indicator range-0">0%</span>
-														<span class="range-value-indicator range-25">25%</span>
-														<span class="range-value-indicator range-50">50%</span>
-														<span class="range-value-indicator range-75">75%</span>
-														<span class="range-value-indicator range-100">100%</span>
-														<span class="range-value-indicator range-result">20%</span>
-
-													</div>
-												</div>
-
-												<button
-													class="blue-btn small-btn portfolio-recalculate">CALCULATE</button>
-											</div>
-
-											<div class="iconvalue-box iconvalue-full">
-												<h6> Total Benefit with Boston Scientific/year</h6>
-												<div class="iconvalue-pic-box multiuser multiuser-big">
-													<h2 class="text65px"><em class="currency-sign"></em><em
-															id="cal_modal_Eco_impact_dis">XX,XXX</em></h2>
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</div>
+									cardioverter-defbrillator</p>
 
 							</div>
 
 						</div>
+
+
+
+					</aside>
+
+
+
+					<div class="boston-tab-contents">
+
+
+
+						<div class="boston-tab-content boston-tab-content-diagnosis">
+
+
+
+							<div class="bulb-rates-box gradient-border icmLux-box">
+
+								<div class="bulb-rates-box-inner align-items-start">
+
+									<img src="./assets/images/bulb.svg" alt class="bulb-rates-pic">
+
+									<div class="bulb-rates-body">
+
+										<div class="media-top">
+
+											<p><strong>Lux-Dx<sup>™</sup> ICM reduces false positive rates by</strong></p>
+
+											<h4>~42%</h4>
+
+										</div>
+
+										<p>vs. other ICMs on the market, <br>
+
+											<strong>increasing diagnostic efficiency</strong><sup>1</sup>
+
+										</p>
+
+									</div>
+
+								</div>
+
+
+
+							</div>
+
+							<div class="refcustom-box-wrapper">
+
+								<div class="calcinput-table">
+
+									<table>
+
+										<thead>
+
+											<tr>
+
+												<th></th>
+
+												<th>LUX-Dx™ <br> ICM</th>
+
+												<th>ICMs weighted <br>
+
+													<div class="d-inline" data-sup="1">industry average</div>
+
+												</th>
+
+												<th></th>
+
+											</tr>
+
+										</thead>
+
+										<tbody>
+
+											<tr>
+
+												<td>% False <br> positives<sup>1</sup></td>
+
+												<td>
+
+													<input class="boston-sminput validate-number-input percent-value" data-symbol="percentage"
+														type="text" id="false_positive" value="24.1%" data-value="24.1%">
+
+												</td>
+
+												<td>
+
+													<input class="boston-sminput disabled validate-number-input percent-value"
+														data-symbol="percentage" type="text" id="false_positive_dis" value="57.5%"
+														data-value="57.5%">
+
+												</td>
+
+												<td>
+
+													<button class="reset-btn diagnosis_reset_btn"><img src="./assets/images/reset-shape.svg"
+															alt></button>
+
+												</td>
+
+											</tr>
+
+											<tr>
+
+												<td>Total costs for <br> false positive<sup>2</sup></td>
+
+												<td>
+
+													<input class="boston-sminput validate-number-input" data-symbol="currency" type="text"
+														id="tot_cost_false" value="180" data-value="180">
+
+												</td>
+
+												<td>
+
+													<input class="boston-sminput disabled validate-number-input" data-symbol="currency"
+														type="text" id="tot_cost_false_dis" value="180" data-value="180">
+
+												</td>
+
+												<td>
+
+													<button class="reset-btn diagnosis_reset_btn"><img src="./assets/images/reset-shape.svg"
+															alt></button>
+
+												</td>
+
+											</tr>
+
+											<tr>
+
+												<td>Diagnostic cost/ <br>
+
+													patient/year</td>
+
+												<td>
+
+													<span class="boston-sminput"><em class="currency-sign"></em><em
+															id="diagnostic_cost">0</em></span>
+
+												</td>
+
+												<td>
+
+													<span class="boston-sminput disabled"><em class="currency-sign"></em><em
+															id="diagnostic_cost_dis">0</em></span>
+
+												</td>
+
+												<td></td>
+
+											</tr>
+
+											<tr>
+
+												<td></td>
+
+												<td colspan="2"><span class="down-arrow-indicator"></span></td>
+
+												<td></td>
+
+											</tr>
+
+										</tbody>
+
+									</table>
+
+								</div>
+
+								<div class="refcustom-box">
+
+									<div class="refcustom-item">
+
+										<span>Reference <br> value</span>
+
+										<i class="ref-pink"></i>
+
+										<i class="ref-gray"></i>
+
+									</div>
+
+									<div class="refcustom-item">
+
+										<span>Custom <br> value</span>
+
+										<div class="ref-custom"></div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+
+
+							<div class="iconvalue-box diagnosisBenifits-box">
+
+								<h6>Benefit with Boston Scientific/patient/year</h6>
+
+								<div class="iconvalue-pic-box">
+
+									<h2><em class="currency-sign"></em><span id="boston_scientific" class="deepblue-text">43.60</span>
+
+									</h2>
+
+								</div>
+
+
+
+							</div>
+
+
+
+							<div class="calcinput-table total-diagnostic-cost">
+
+								<table>
+
+									<tbody>
+
+										<tr>
+
+											<td>Total diagnostic cost <br> <span class="sst-roman">(100% of patients)</span></td>
+
+											<td>
+
+												<span class="boston-sminput"><em class="currency-sign"></em><span class="deepblue-text"
+														id="tot_diagnostic_cost">XX,XXX</span></span>
+
+											</td>
+
+											<td>
+
+												<span class="boston-sminput disabled"><em class="text-deepgray currency-sign">€</em><span
+														class="text-deepgray" id="tot_diagnostic_cost_dis">XX,XXX</span></span>
+
+											</td>
+
+											<td>
+
+												<button class="reset-btn ui-hide"><img src="./assets/images/reset-shape.svg" alt></button>
+
+											</td>
+
+										</tr>
+
+										<tr>
+
+											<td></td>
+
+											<td colspan="2"><span class="down-arrow-indicator"></span></td>
+
+											<td></td>
+
+										</tr>
+
+									</tbody>
+
+								</table>
+
+							</div>
+
+
+
+							<div class="iconvalue-box diagnosisTotalBenifits-box">
+
+								<h6>Total benefit with Boston Scientific/year <br> <span class="sst-roman">with current % Boston
+
+										Scientific</span></h6>
+
+								<div class="iconvalue-pic-box multiuser">
+
+									<h2>
+
+										<div class="currency-sign">€</div><span class="deepblue-text"
+											id="tot_boston_scientific">XX,XXX</span>
+
+									</h2>
+
+								</div>
+
+								<button class="tabular-view-btn open-modal-btn" id="diagnosis_tabular_modal_btn">
+
+									<img src="./assets/images/tabular-bg.svg" alt>
+
+									View <br> tabular <br> data
+
+								</button>
+
+							</div>
+
+
+
+							<div class="gradient-stroke-wrapper aside-modal boston-modal" id="diagnosis-modal">
+
+								<div class="gradient-stroke">
+
+									<span class="gradient-stroke-line-hider"></span>
+
+									<button class="cut-modal"><img src="./assets/images/x-cut.svg" alt></button>
+
+									<div class="diagnosis-modal-content">
+
+										<div class="boston-row">
+
+											<div class="col-6">
+
+												<div class="iconvalue-box">
+
+													<p>Benefit with Boston Scientific/patient/year </p>
+
+													<div class="iconvalue-profile-pic">
+
+														<img class src="./assets/images/profile.svg" alt>
+
+													</div>
+
+													<h2><em class="currency-sign"></em><em id="modal_boston_scientific">43.60</em></h2>
+
+												</div>
+
+											</div>
+
+											<div class="col-6">
+
+												<div class="iconvalue-box">
+
+													<p>Total benefit with Boston Scientific/year <br> <span class="sst-roman">with current %
+
+															Boston Scientific</span></p>
+
+													<div class="iconvalue-profile-pic">
+
+														<img class src="./assets/images/multi-user.svg" alt>
+
+													</div>
+
+													<h2><em class="currency-sign"></em><em id="modal_tot_boston_scientific">XX,XXX</em></h2>
+
+												</div>
+
+											</div>
+
+										</div>
+
+
+
+										<div class="boston-slider">
+
+											<h5>SHARE ADJUSTER</h5>
+
+											<div class="boston-slider-input-wrapper">
+
+												<input class="boston-slider-input" type="range" step="1" id="diagnosis_slider" min="0" max="100"
+													value="20">
+
+												<div class="input-mirror"></div>
+
+												<div class="range-thumb"></div>
+
+												<span class="range-value-indicator range-0">0%</span>
+
+												<span class="range-value-indicator range-25">25%</span>
+
+												<span class="range-value-indicator range-50">50%</span>
+
+												<span class="range-value-indicator range-75">75%</span>
+
+												<span class="range-value-indicator range-100">100%</span>
+
+												<span class="range-value-indicator range-result">20%</span>
+
+											</div>
+
+											<button class="blue-btn small-btn diagnosis-recalculate">CALCULATE</button>
+
+										</div>
+
+
+
+										<div class="iconvalue-box iconvalue-full">
+
+											<h6>Total benefit with Boston Scientific/year <br> <span class="sst-roman">with adjusted % Boston
+
+													Scientific</span></h6>
+
+											<div class="iconvalue-pic-box multiuser">
+
+												<h2 class="text65px"><em class="currency-sign"></em><em
+														id="modified_tot_boston_scientific">XX,XXX</em></h2>
+
+											</div>
+
+										</div>
+
+
+
+									</div>
+
+								</div>
+
+							</div>
+
+
+
+							<div class="boston-modal gradient-border tabular-modal-wrapper" id="diagnosis-tabular-modal-wrapper">
+
+								<div class="tabular-modal">
+
+									<div class="modal-header">
+
+										<h5>Tabular data</h5>
+
+										<button class="cut-modal"><img src="./assets/images/x-cut-orange.svg" alt></button>
+
+									</div>
+
+
+
+									<ul class="tabular-list">
+
+										<li class="tr">
+
+											<span class="th">ICM: False positives</span>
+
+											<span class="th">LUX-Dx™ ICM</span>
+
+											<span class="th">
+
+												<div>ICMs weighted
+
+													<br> industry <br>
+
+													<div class="d-inline" data-sup="1">average</div>
+
+												</div>
+
+											</span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="td">% false positives<sup>1</sup></span>
+
+											<span class="td" id="table_false_positive">33.3%</span>
+
+											<span class="td" id="table_false_positive_dis">57.5%</span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="td">Total costs for false positive<sup>2</sup></span>
+
+											<span class="th"><em class="currency-sign"></em><span id="table_tot_cost_false">180</span></span>
+
+											<span class="th"><em class="currency-sign"></em><span
+													id="table_tot_cost_false_dis">180</span></span>
+
+										</li>
+
+									</ul>
+
+
+
+									<ul class="tabular-list">
+
+										<li class="tr">
+
+											<span class="td">Diagnostic cost/patient/year</span>
+
+											<span class="td"><em class="currency-sign"></em><span id="table_diagnostic_cost">15</span></span>
+
+											<span class="td"><em class="currency-sign"></em><span
+													id="table_diagnostic_cost_dis">29</span></span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="td">Total diagnostic cost (100% of patients)</span>
+
+											<span class="th"><em class="currency-sign"></em><em
+													id="table_tot_diagnostic_cost">XX,XXX</em></span>
+
+											<span class="th"><em class="currency-sign"></em><em
+													id="table_tot_diagnostic_cost_dis">XX,XXX</em></span>
+
+										</li>
+
+									</ul>
+
+
+
+									<ul class="tabular-footer">
+
+										<li class="tr">
+
+											<span class="th">Benefit with Boston Scientific/patient/year </span>
+
+											<span class="td-pic">
+
+												<h3><em class="currency-sign"></em><em id="table_boston_scientific">43.60</em></h3>
+
+											</span>
+
+
+
+										</li>
+
+										<li class="tr">
+
+											<span class="th" style="flex-direction: column;align-items: flex-start;">Total benefit with Boston
+
+												Scientific/year <br>
+
+												<p class="sst-roman">with current % Boston Scientific</p>
+
+											</span>
+
+											<span class="td-pic multiuser">
+
+												<h3><em class="currency-sign"></em><em id="table_tot_boston_scientific">XX,XXX</em></h3>
+
+											</span>
+
+
+
+										</li>
+
+									</ul>
+
+
+
+								</div>
+
+							</div>
+
+
+
+							<div class="container caution-text">
+
+								<h6>References:</h6>
+
+								<ol>
+
+									<li>Kamani SH, Middeldrop ME, Evans S et al. Accuracy of implantable
+
+										loop recorders: A multi-centre,
+
+										multi-device comparison of false positive alert burden in remote
+
+										transmissions. <br> Heart Rhythm
+
+										2024;21(5):S187. DOI:
+
+										https://doi.org/10.1016/j.hrthm.2024.03.635</li>
+
+									<li id="diagnosis-caution">Estimated at average hourly cost for physician (cardiology) +
+
+										nurse based on average salary (for
+
+										EMEA region) in 2023 (source: salaryexplorer.com)</li>
+
+								</ol>
+
+							</div>
+
+
+
+						</div>
+
+
+
+						<div class="boston-tab-content boston-tab-content-therapy">
+
+
+
+							<h5 class="tab-content-heading">Device Longevity: ICD & CRT-D</h5>
+
+
+
+							<div class="bulb-rates-box gradient-border longevity-bulb-box">
+
+								<div class="bulb-rates-box-inner">
+
+									<img src="./assets/images/bulb.svg" alt class="bulb-rates-pic">
+
+									<div class="bulb-rates-body">
+
+										<div class="media-top">
+
+											Boston Scientific tachycardia devices offer <br>
+
+											<strong>extended longevity vs. competitors,<sup>1,2</sup> resulting
+
+												in <br>
+
+												cost savings for hospitals over the long term</strong> <br>
+
+											<small>through:</small>
+
+										</div>
+
+										<div class="bullets">
+
+											<p><i class="dot"></i><strong>Reduced need for replacement
+
+													devices</strong></p>
+
+											<p><i class="dot"></i><strong>Avoidance of replacement-related
+
+													complications</strong></p>
+
+										</div>
+
+
+
+									</div>
+
+								</div>
+
+							</div>
+
+
+
+							<div class="refcustom-box-wrapper average-refcustom">
+
+								<div class="refcustom-box">
+
+									<div class="refcustom-item">
+
+										<span>Reference <br> value</span>
+
+										<i class="ref-pink"></i>
+
+										<i class="ref-gray"></i>
+
+									</div>
+
+									<div class="refcustom-item">
+
+										<span>Custom <br> value</span>
+
+										<div class="ref-custom"></div>
+
+									</div>
+
+								</div>
+
+								<div class="average-row">
+
+									<div class="average-col">
+
+										<h6>TV-ICD average yearly cost/patient/ <br>
+
+											year (Longevity: 15 years)<sup>1,2</sup></h6>
+
+										<input type="hidden" name="tot_icd_cost" id="tot_icd_cost" value="0">
+
+										<input type="hidden" name="tot_icd_cost_dis" id="tot_icd_cost_dis" value="0">
+
+										<div class="label-inputs-wrapper tr-reset">
+
+											<ul class="label-inputs">
+
+												<li class="label-input">
+
+													<label for>Boston <br> Scientific</label>
+
+													<input type="text" name="icd_bos_science" id="icd_bos_science"
+														class="boston-sminput validate-number-input" value="1,735" data-value="1735"
+														data-symbol="currency">
+
+												</li>
+
+												<li class="label-input">
+
+													<label for class="text-deepgray">Industry <br> average</label>
+
+													<input type="text" name="icd_bos_science_dis" id="icd_bos_science_dis"
+														class="boston-sminput validate-number-input disabled" value="1,945" data-value="1945"
+														data-symbol="currency">
+
+												</li>
+
+											</ul>
+
+											<button class="reset-btn therapy_reset_btn"><img src="./assets/images/reset-shape.svg"
+													alt></button>
+
+										</div>
+
+										<span class="down-arrow-indicator"></span>
+
+										<div class="iconvalue-box">
+
+											<h6>Benefit with Boston Scientific/patient (TV-ICD)/year
+
+											</h6>
+
+											<div class="iconvalue-profile-pic">
+
+												<img class src="./assets/images/profile.svg" alt>
+
+											</div>
+
+											<h2><em class="currency-sign"></em><em id="tot_icd_bos_science">0</em></h2>
+
+
+
+										</div>
+
+									</div>
+
+									<div class="average-col">
+
+										<h6>CRT-D average yearly cost/patient/
+
+											year (Longevity: 10 years)<sup>1,2</sup></h6>
+
+										<input type="hidden" name="tot_crtd_cost" id="tot_crtd_cost" value="0">
+
+										<input type="hidden" name="tot_crtd_cost_dis" id="tot_crtd_cost_dis" value="0">
+
+										<div class="label-inputs-wrapper tr-reset">
+
+											<ul class="label-inputs">
+
+												<li class="label-input">
+
+													<label for>Boston <br> Scientific</label>
+
+													<input type="text" name="crtd_bos_science" id="crtd_bos_science"
+														class="boston-sminput validate-number-input" value="3,244" data-value="3244"
+														data-symbol="currency">
+
+												</li>
+
+												<li class="label-input">
+
+													<label for class="text-deepgray">Industry <br> average</label>
+
+													<input type="text" name="crtd_bos_science_dis" id="crtd_bos_science_dis"
+														class="boston-sminput validate-number-input disabled" value="3,729" data-value="3729"
+														data-symbol="currency">
+
+												</li>
+
+											</ul>
+
+											<button class="reset-btn therapy_reset_btn"><img src="./assets/images/reset-shape.svg"
+													alt></button>
+
+										</div>
+
+										<span class="down-arrow-indicator"></span>
+
+										<div class="iconvalue-box">
+
+											<h6>Benefit with Boston Scientific/ patient (CRT-D)/year
+
+											</h6>
+
+											<div class="iconvalue-profile-pic">
+
+												<img class src="./assets/images/profile.svg" alt>
+
+											</div>
+
+											<h2><em class="currency-sign"></em><em id="tot_crtd_bos_science">0</em></h2>
+
+
+
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+							<span class="down-arrow-indicator average-row-down-indicator"></span>
+
+							<div class="iconvalue-box iconvalue-smheight iconvalue-big-pic icdTotal-benifits">
+
+								<h6>Total benefit with Boston Scientific/year <br> <span class="sst-roman">with current % Boston
+
+										Scientific</span></h6>
+
+								<div class="iconvalue-pic-box">
+
+									<h2><em class="currency-sign"></em><em id="tot_bos_science">XX,XXX</em></h2>
+
+								</div>
+
+								<button class="tabular-view-btn open-modal-btn icd-crtd-table-modal-btn">
+
+									<img src="./assets/images/tabular-bg.svg" alt>
+
+									View <br> tabular <br> data
+
+								</button>
+
+							</div>
+
+
+
+							<h5 class="tab-content-heading">Transvenous Lead Extraction (TLE):
+
+								S-ICD</h5>
+
+							<div class="bulb-rates-box gradient-border extraction-bulb-box">
+
+								<div class="bulb-rates-box-inner">
+
+									<img src="./assets/images/bulb.svg" alt class="bulb-rates-pic">
+
+									<div class="bulb-rates-body">
+
+										<div class="media-top">
+
+											<p>The Atlas Randomised Controlled Trial<sup>3</sup> confirmed that
+
+												<br>
+
+												<strong>serious lead-related complications</strong> <br>
+
+												occur in
+
+											</p>
+
+										</div>
+
+										<div class="percendiff-wrapper">
+
+											<ul class="percendiff">
+
+												<li>
+
+													<span class="only-text">only</span>
+
+													<h2>0.4%</h2>
+
+													<strong>in S-ICD patients</strong>
+
+												</li>
+
+												<li>vs.</li>
+
+												<li>
+
+													<h2>4.8%</h2>
+
+													<strong>of TV-ICD patients</strong>
+
+												</li>
+
+											</ul>
+
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+
+
+							<div class="refcustom-box-wrapper emblem-refcustom-box">
+
+								<div class="refcustom-box">
+
+									<div class="refcustom-item">
+
+										<span>Reference <br> value</span>
+
+										<i class="ref-pink"></i>
+
+										<i class="ref-gray"></i>
+
+									</div>
+
+									<div class="refcustom-item">
+
+										<span>Custom <br> value</span>
+
+										<div class="ref-custom"></div>
+
+									</div>
+
+								</div>
+
+								<div class="emblem-table-wrapper">
+
+									<div class="calcinput-table">
+
+										<table>
+
+											<thead>
+
+												<tr>
+
+													<th></th>
+
+													<th>EMBLEM <br> MRI S-ICD<sup>™</sup></th>
+
+													<th>TV-ICD</th>
+
+													<th></th>
+
+												</tr>
+
+											</thead>
+
+											<tbody>
+
+												<tr class="tr-reset">
+
+													<td>Infections rate/ <br> patient/year<sup>3</sup></td>
+
+													<td>
+
+														<input class="boston-sminput validate-number-input percent-value" type="text"
+															name="infection_rate" data-symbol="percentage" id="infection_rate" value="0.4%"
+															data-value="0.4%">
+
+													</td>
+
+													<td>
+
+														<input class="boston-sminput validate-number-input percent-value disabled" type="text"
+															data-symbol="percentage" name="infection_rate_dis" id="infection_rate_dis" value="4.8%"
+															data-value="4.8%">
+
+													</td>
+
+													<td>
+
+														<button class="reset-btn therapy_reset_btn"><img src="./assets/images/reset-shape.svg"
+																alt></button>
+
+													</td>
+
+												</tr>
+
+												<tr class="tr-reset">
+
+													<td>TLE procedure cost<sup>4,5</sup></td>
+
+													<td>
+
+														<input class="boston-sminput validate-number-input" type="text" name="tle_production_cost"
+															id="tle_production_cost" value="17,000" data-value="17000" data-symbol="currency">
+
+													</td>
+
+													<td>
+
+														<input class="boston-sminput validate-number-input disabled" type="text"
+															name="tle_production_cost_dis" id="tle_production_cost_dis" value="17,000"
+															data-value="17000" data-symbol="currency">
+
+													</td>
+
+													<td>
+
+														<button class="reset-btn therapy_reset_btn"><img src="./assets/images/reset-shape.svg"
+																alt></button>
+
+													</td>
+
+												</tr>
+
+												<tr>
+
+													<td>TLE cost/ <br> patient/year</td>
+
+													<td>
+
+														<span class="boston-sminput"><em class="currency-sign"></em><em
+																id="tle_cost_year">XX,XXX</em></span>
+
+													</td>
+
+													<td>
+
+														<span class="boston-sminput disabled"><em class="currency-sign"></em><em
+																id="tle_cost_year_dis">XX,XXX</em></span>
+
+													</td>
+
+													<td></td>
+
+												</tr>
+
+												<tr>
+
+													<td></td>
+
+													<td colspan="2"><span class="down-arrow-indicator"></span></td>
+
+													<td></td>
+
+												</tr>
+
+											</tbody>
+
+										</table>
+
+									</div>
+
+								</div>
+
+							</div>
+
+							<div class="icdyear-benefits">
+
+								<div class="iconvalue-box iconvalue-smheight">
+
+									<h6>Benefit with Boston Scientific/ <br> patient/year
+
+									</h6>
+
+									<div class="iconvalue-pic-box">
+
+										<h2><em class="currency-sign"></em><em id="icd_benifit_year">748</em></h2>
+
+									</div>
+
+								</div>
+
+							</div>
+
+							<div class="total-tle-wrapper">
+
+								<div class="calcinput-table">
+
+									<table>
+
+
+
+										<tbody>
+
+											<tr>
+
+												<td>Total TLE cost <br> <span class="sst-roman">(100% of patients)</span></td>
+
+												<td>
+
+													<span class="boston-sminput"><em class="currency-sign"></em><em
+															id="tot_tle_cost">XX,XXX</em></span>
+
+												</td>
+
+												<td>
+
+													<span class="boston-sminput disabled"><em class="currency-sign"></em><em
+															id="tot_tle_cost_dis">XX,XXX</em></span>
+
+												</td>
+
+												<td>
+
+													<button class="reset-btn ui-hide"><img src="./assets/images/reset-shape.svg" alt></button>
+
+												</td>
+
+											</tr>
+
+											<tr>
+
+												<td></td>
+
+												<td colspan="2"><span class="down-arrow-indicator"></span></td>
+
+												<td></td>
+
+											</tr>
+
+										</tbody>
+
+									</table>
+
+								</div>
+
+							</div>
+
+							<div class="icdyear-benefits">
+
+								<div class="iconvalue-box iconvalue-smheight">
+
+									<h6>Total benefit with Boston Scientific/year <br> <span class="sst-roman">with current % Boston
+
+											Scientific</span>
+
+									</h6>
+
+									<div class="iconvalue-pic-box multiuser">
+
+										<h2><em class="currency-sign"></em><em id="tot_icd_benifit_year">XX,XXX</em></h2>
+
+									</div>
+
+									<button class="tabular-view-btn open-modal-btn sicd-table-modal-btn">
+
+										<img src="./assets/images/tabular-bg.svg" alt>
+
+										View <br> tabular <br> data
+
+									</button>
+
+								</div>
+
+							</div>
+
+							<div class="gradient-stroke-wrapper aside-modal boston-modal" id="therapy-modal">
+
+								<div class="gradient-stroke">
+
+									<span class="gradient-stroke-line-hider"></span>
+
+									<button class="cut-modal"><img src="./assets/images/x-cut.svg" alt></button>
+
+									<div class="benefits-row-wrapper">
+
+										<div class="benefits-row">
+
+											<div class="benifits-col left-col">
+
+												<h5>Longevity benefit</h5>
+
+												<ul class="numicon-box">
+
+													<li class="numicon-box-item">
+
+														<h6>Benefit with Boston Scientific/
+
+															patient (TV-ICD)/year
+
+														</h6>
+
+														<div class="numicon-box-content">
+
+															<span><em class="currency-sign"></em><em id="modal_tot_icd_bos_science">XX</em></span>
+
+															<img src="./assets/images/profile.svg" alt>
+
+														</div>
+
+													</li>
+
+													<li class="numicon-box-item">
+
+
+
+														<h6>Benefit with Boston Scientific/ patient (CRT-D)/year
+
+														</h6>
+
+
+
+														<div class="numicon-box-content">
+
+															<span><em class="currency-sign"></em><em id="modal_tot_crtd_bos_science">XX</em></span>
+
+															<img src="./assets/images/profile.svg" alt>
+
+														</div>
+
+													</li>
+
+												</ul>
+
+												<span class="down-arrow-indicator"></span>
+
+												<div class="iconvalue-box">
+
+													<p class="text18px benefit-iconnumb-heading">Total benefit with Boston Scientific/ <br> year:
+
+														Longevity <br> <span class="sst-roman">with current % Boston Scientific</span>
+
+													</p>
+
+													<div class="iconvalue-profile-pic">
+
+														<img class src="./assets/images/multi-user.svg" alt>
+
+													</div>
+
+													<h2><em class="currency-sign"></em><em id="modal_tot_bos_science">XX,XXX</em></h2>
+
+												</div>
+
+											</div>
+
+											<div class="benifits-col right-col ">
+
+												<h5>TLE benefit</h5>
+
+												<ul class="numicon-box">
+
+													<li class="numicon-box-item">
+
+														<h6>Benefit with Boston Scientific/ <br>
+
+															patient (S-ICD)/year
+
+														</h6>
+
+														<div class="numicon-box-content numicon-img-on">
+
+															<div class="numicon-img-box">
+
+
+
+																<img class src="./assets/images/profile.svg" alt>
+
+
+
+																<span><em class="currency-sign"></em><em id="modal_icd_benifit_year">XX</em></span>
+
+															</div>
+
+														</div>
+
+													</li>
+
+												</ul>
+
+												<span class="down-arrow-indicator"></span>
+
+												<div class="iconvalue-box">
+
+													<p class="text18px benefit-iconnumb-heading">Total benefit with Boston Scientific/ <br>
+
+														year: TLE Reduction with S-ICD
+
+													</p>
+
+													<div class="iconvalue-profile-pic">
+
+														<img class src="./assets/images/multi-user.svg" alt>
+
+													</div>
+
+													<h2><em class="currency-sign"></em><em id="modal_tot_icd_benifit_year">XX,XXX</em></h2>
+
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+
+
+
+									<div class="boston-slider">
+
+										<h5>SHARE ADJUSTER</h5>
+
+										<div class="boston-slider-field">
+
+											<label for class="boston-slider-label">TV-ICD</label>
+
+											<div class="boston-slider-input-wrapper">
+
+												<input class="boston-slider-input" type="range" step="1" id="modal_slider_tvicd" min="0"
+													max="100">
+
+												<div class="input-mirror"></div>
+
+												<div class="range-thumb"></div>
+
+												<span class="range-value-indicator range-0">0%</span>
+
+												<span class="range-value-indicator range-25">25%</span>
+
+												<span class="range-value-indicator range-50">50%</span>
+
+												<span class="range-value-indicator range-75">75%</span>
+
+												<span class="range-value-indicator range-100">100%</span>
+
+												<span class="range-value-indicator range-result">20%</span>
+
+
+
+											</div>
+
+										</div>
+
+
+
+										<div class="boston-slider-field">
+
+											<label for class="boston-slider-label">CRT-D</label>
+
+											<div class="boston-slider-input-wrapper">
+
+												<input class="boston-slider-input" type="range" step="1" id="modal_slider_crtd" min="0"
+													max="100">
+
+												<div class="input-mirror"></div>
+
+												<div class="range-thumb"></div>
+
+												<span class="range-value-indicator range-0">0%</span>
+
+												<span class="range-value-indicator range-25">25%</span>
+
+												<span class="range-value-indicator range-50">50%</span>
+
+												<span class="range-value-indicator range-75">75%</span>
+
+												<span class="range-value-indicator range-100">100%</span>
+
+												<span class="range-value-indicator range-result">20%</span>
+
+
+
+											</div>
+
+										</div>
+
+										<button class="blue-btn small-btn therapy-recalculate">CALCULATE</button>
+
+									</div>
+
+
+
+									<div class="boston-row therapy-total-benefit">
+
+										<div class="col-6">
+
+											<div class="iconvalue-box">
+
+												<p class="text24px">Total benefit with <br> Boston Scientific/ year:
+
+													Longevity <br> <span class="sst-roman">with adjusted % Boston Scientific</span>
+
+												</p>
+
+												<div class="iconvalue-profile-pic">
+
+													<img class src="./assets/images/multi-user.svg" alt>
+
+												</div>
+
+												<h2><em class="currency-sign"></em><em id="cal_modal_tot_bos_science">XX,XXX</em></h2>
+
+											</div>
+
+										</div>
+
+										<div class="col-6">
+
+											<div class="iconvalue-box">
+
+												<p class="text24px">Total benefit with <br>
+
+													Boston Scientific/year: <br>
+
+													TLE Reduction with S-ICD
+
+												</p>
+
+												<div class="iconvalue-profile-pic">
+
+													<img class src="./assets/images/multi-user.svg" alt>
+
+												</div>
+
+												<h2><em class="currency-sign"></em><em id="cal_modal_tot_icd_benifit_year">XX,XXX</em></h2>
+
+											</div>
+
+										</div>
+
+									</div>
+
+
+
+								</div>
+
+							</div>
+
+							<div class="boston-modal gradient-border tabular-modal-wrapper" id="therapy-device-tabular-modal-wrapper">
+
+								<div class="tabular-modal">
+
+									<div class="modal-header">
+
+										<h5>Tabular data</h5>
+
+										<button class="cut-modal"><img src="./assets/images/x-cut-orange.svg" alt></button>
+
+									</div>
+
+
+
+									<ul class="tabular-list">
+
+										<li class="tr">
+
+											<span class="th">Device longevity: TV-ICD & CRT-D</span>
+
+											<span class="th">Boston <br> Scientific</span>
+
+											<span class="th">Industry <br> average</span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="td">
+
+												<div>Longevity TV-ICD average yearly cost <br>
+
+													(15 years)/patient/year<sup>1,2</sup> </div>
+
+											</span>
+
+											<span class="td"><em class="currency-sign"></em><span
+													id="table_icd_bos_science">1,735</span></span>
+
+											<span class="td"><em class="currency-sign"></em><span
+													id="table_icd_bos_science_dis">1,945</span></span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="td">
+
+												<div>
+
+													Longevity CRT-D average yearly cost <br> (10
+
+													years)/patient/year<sup>1,2</sup>
+
+												</div>
+
+											</span>
+
+											<span class="td"><em class="currency-sign"></em><span id="table_crtd_bos_science">0</span></span>
+
+											<span class="td"><em class="currency-sign"></em><span
+													id="table_crtd_bos_science_dis">0</span></span>
+
+										</li>
+
+									</ul>
+
+
+
+									<ul class="tabular-list">
+
+										<li class="tr">
+
+											<span class="td">Total TV-ICD cost (100% of patients)</span>
+
+											<span class="td"><em class="currency-sign"></em><span id="table_tot_icd_cost">0</span></span>
+
+											<span class="td"><em class="currency-sign"></em><span id="table_tot_icd_cost_dis">0</span></span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="td">Total CRT-D cost (100% of patients)</span>
+
+											<span class="td"><em class="currency-sign"></em><em id="table_tot_crtd_cost">0</em></span>
+
+											<span class="td"><em class="currency-sign"></em><em id="table_tot_crtd_cost_dis">0</em></span>
+
+										</li>
+
+									</ul>
+
+
+
+									<ul class="tabular-footer">
+
+										<li class="tr">
+
+											<span class="th">Benefit with Boston Scientific/ <br> patient
+
+												(TV-ICD)/year</span>
+
+											<span class="td-pic">
+
+												<h3><em class="currency-sign"></em><em id="table_tot_icd_bos_science">211</em></h3>
+
+											</span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="th">Benefit with Boston Scientific/ <br> patient
+
+												(CRT-D)/year</span>
+
+											<span class="td-pic">
+
+												<h3><em class="currency-sign"></em><em id="table_tot_crtd_bos_science">486</em></h3>
+
+											</span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="th" style="flex-direction: column;align-items: flex-start;">Total benefit with Boston
+
+												Scientific/year <br>
+
+												<p class="sst-roman">with current % Boston Scientific</p>
+
+											</span>
+
+											<span class="td-pic multiuser">
+
+												<h3><em class="currency-sign"></em><em id="table_tot_bos_science">XX,XXX</em>
+
+												</h3>
+
+											</span>
+
+
+
+										</li>
+
+									</ul>
+
+
+
+								</div>
+
+							</div>
+
+							<div class="boston-modal gradient-border tabular-modal-wrapper" id="therapy-tle-tabular-modal-wrapper">
+
+								<div class="tabular-modal">
+
+									<div class="modal-header">
+
+										<h5>Tabular data</h5>
+
+										<button class="cut-modal"><img src="./assets/images/x-cut-orange.svg" alt></button>
+
+									</div>
+
+
+
+									<ul class="tabular-list">
+
+										<li class="tr">
+
+											<span class="th">Transvenous leads extraction (TLE): S-ICD</span>
+
+											<span class="th">EMBLEM <br> MRI S-ICD™</span>
+
+											<span class="th">TV-ICD</span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="td">
+
+												<div>Infections rate/patient/year<sup>3</sup></div>
+
+											</span>
+
+											<span class="td" id="table_infection_rate">0.4%</span>
+
+											<span class="td" id="table_infection_rate_dis">4.8%</span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="td">
+
+												<div>
+
+													TLE procedure cost<sup>4,5</sup>
+
+												</div>
+
+											</span>
+
+											<span class="td"><em class="currency-sign"></em><span id="table_tle_production_cost">17,000</span>
+
+											</span>
+
+											<span class="td"><em class="currency-sign"></em><span
+													id="table_tle_production_cost_dis">17,000</span></span>
+
+										</li>
+
+									</ul>
+
+
+
+									<ul class="tabular-list">
+
+										<li class="tr">
+
+											<span class="td">TLE cost/patient/year</span>
+
+											<span class="td"><em class="currency-sign"></em><span id="table_tle_cost_year">68</span></span>
+
+											<span class="td"><em class="currency-sign"></em><span
+													id="table_tle_cost_year_dis">816</span></span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="td">Total TLE cost (100% of patients)</span>
+
+											<span class="td"><em class="currency-sign"></em><em id="table_tot_tle_cost">XXX,XXX</em></span>
+
+											<span class="td"><em class="currency-sign"></em><em
+													id="table_tot_tle_cost_dis">XXX,XXX</em></span>
+
+										</li>
+
+									</ul>
+
+
+
+									<ul class="tabular-footer">
+
+										<li class="tr">
+
+											<span class="th">Benefit with Boston Scientific/patient/year</span>
+
+											<span class="td-pic">
+
+												<h3><em class="currency-sign"></em><em id="table_icd_benifit_year">748</em></h3>
+
+											</span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="th" style="flex-direction: column;align-items: flex-start;">Total benefit with Boston
+
+												Scientific/year <br>
+
+												<p class="sst-roman">with current % Boston Scientific</p>
+
+											</span>
+
+											<span class="td-pic multiuser">
+
+												<h3><em class="currency-sign"></em><em id="table_tot_icd_benifit_year">XX,XXX</em></h3>
+
+											</span>
+
+
+
+										</li>
+
+									</ul>
+
+
+
+								</div>
+
+							</div>
+
+							<div class="container caution-text">
+
+								<h6>References:</h6>
+
+								<ol>
+
+									<li>Boriani G, Braunschweig F, Deharo JC et al. Impact of extending
+
+										device longevity on the long-term
+
+										costs of implantable cardioverter-defibrillator therapy: a modelling
+
+										study with a 15-year time
+
+										horizon. Europace 2013;15(10):1453-62. doi:
+
+										10.1093/europace/eut133.</li>
+
+									<li>Boriani G, Merino J, Wright DJ et al. Battery longevity of
+
+										implantable cardioverter-defibrillators
+
+										and cardiac resynchronization therapy defibrillators:
+
+										technical, clinical and economic aspects. An expert review paper from
+
+										EHRA. Europace
+
+										2018;20(12):1882-97 doi: 10.1093/europace/euy066.</li>
+
+									<li>Healey JS et al. Late-breaking clinical trials LB-733: The ATLAS
+
+										Trial. Presented at Heart Rhythm
+
+										Society 2022.</li>
+
+									<li>Brough CEP, Rao A, Haycox AR et al. Real-world costs of
+
+										transvenous lead extraction: the challenge
+
+										for reimbursement. Europace 2019;21(2):290-7.
+
+										doi: 10.1093/europace/euy291.</li>
+
+									<li>Gould J, Sidhu BS, Porter B et al. Financial and resource costs of
+
+										transvenous lead extraction in
+
+										a high- volume lead extraction centre.
+
+										Heart 2020; 2020;106:931-7. doi:10.1136/heartjnl-2019-315839.</li>
+
+								</ol>
+
+							</div>
+
+						</div>
+
+
+
+						<div class="boston-tab-content boston-tab-content-monitoring">
+
+							<h5 class="tab-content-heading">Remote monitoring</h5>
+
+
+
+							<div class="bulb-rates-box gradient-border costcare-bulb-box">
+
+								<div class="bulb-rates-box-inner">
+
+									<img src="./assets/images/bulb.svg" alt class="bulb-rates-pic">
+
+									<div class="bulb-rates-body">
+
+										<div class="media-top fx-center">
+
+											<p><strong class="costcare-txt">Cost of care<sup>1</sup>
+
+													for</strong></p>
+
+										</div>
+
+										<div class="percendiff-wrapper">
+
+											<ul class="percendiff percendiff-monitoring">
+
+												<li>
+
+													<strong>Remotely <br> monitored patients</strong>
+
+													<h2><em class="currency-sign"></em><span id="remote_monitored_text">1,512</span></h2>
+
+												</li>
+
+												<li>vs.</li>
+
+												<li>
+
+													<strong>Non-remotely <br> monitored patients</strong>
+
+													<h2><em class="currency-sign"></em><span id="remote_monitored_dis_text">4,888</span></h2>
+
+												</li>
+
+											</ul>
+
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+
+
+							<div class="refcustom-box-wrapper">
+
+								<div class="refcustom-box">
+
+									<div class="refcustom-item">
+
+										<span>Reference <br> value</span>
+
+										<i class="ref-pink"></i>
+
+										<i class="ref-gray"></i>
+
+									</div>
+
+									<div class="refcustom-item">
+
+										<span>Custom <br> value</span>
+
+										<div class="ref-custom"></div>
+
+									</div>
+
+								</div>
+
+								<div class="calcinput-table heartlogic-calcinput">
+
+									<table>
+
+										<thead>
+
+											<tr>
+
+												<th></th>
+
+												<th>LATITUDE<sup>™</sup></th>
+
+												<th>No remote <br> monitoring</th>
+
+												<th></th>
+
+											</tr>
+
+										</thead>
+
+										<tbody>
+
+											<tr class="tr-reset">
+
+												<td>Cost of care/ <br> patient/year, <br> hospital
+
+													perspective<sup>1</sup></td>
+
+												<td>
+
+													<input class="boston-sminput validate-number-input" data-symbol="currency" type="text" name
+														id="remote_monitored" value="1,512" data-value="1512" data-symbol="currency">
+
+												</td>
+
+												<td>
+
+													<input class="boston-sminput disabled validate-number-input" data-symbol="currency"
+														type="text" name id="remote_monitored_dis" value="4,888" data-value="4888"
+														data-symbol="currency">
+
+												</td>
+
+												<td>
+
+													<button class="reset-btn monitoring-reset-btn"><img src="./assets/images/reset-shape.svg"
+															alt></button>
+
+												</td>
+
+											</tr>
+
+											<tr>
+
+												<td></td>
+
+												<td colspan="2"><span class="down-arrow-indicator mt0px"></span></td>
+
+												<td></td>
+
+											</tr>
+
+										</tbody>
+
+									</table>
+
+								</div>
+
+							</div>
+
+
+
+							<div class="iconvalue-box iconvalue-smheight mw415px">
+
+								<h6>Benefit with Boston Scientific/ <br> patient/year
+
+								</h6>
+
+								<div class="iconvalue-profile-pic">
+
+									<img class src="./assets/images/profile.svg" alt>
+
+								</div>
+
+								<h2><em class="currency-sign"></em><em id="remote_monitored_benifit">3,376</em></h2>
+
+
+
+							</div>
+
+
+
+							<div class="total-cost-wrapper">
+
+								<div class="calcinput-table">
+
+									<table>
+
+
+
+										<tbody>
+
+											<tr>
+
+												<td>Total cost <br> <span class="sst-roman">(100% of patients)</span></td>
+
+												<td>
+
+													<span class="boston-sminput"><em class="currency-sign"></em><em
+															id="tot_remote_monitored">XX,XXX</em></span>
+
+												</td>
+
+												<td>
+
+													<span class="boston-sminput disabled"><em class="currency-sign"></em><em
+															id="tot_remote_monitored_dis">XX,XXX</em></span>
+
+												</td>
+
+												<td>
+
+													<button class=" therapy_reset_btn ui-hide"><img src="./assets/images/reset-shape.svg"
+															alt></button>
+
+												</td>
+
+											</tr>
+
+											<tr>
+
+												<td></td>
+
+												<td colspan="2"><span class="down-arrow-indicator"></span></td>
+
+												<td></td>
+
+											</tr>
+
+
+
+										</tbody>
+
+									</table>
+
+								</div>
+
+							</div>
+
+
+
+							<div class="iconvalue-box iconvalue-smheight mw415px monitoring-iconvalue">
+
+								<h6>Total benefit with Boston Scientific/year <br> <span class="sst-roman">with current % Boston
+
+										Scientific</span>
+
+								</h6>
+
+								<div class="iconvalue-profile-pic">
+
+									<img class src="./assets/images/multi-user.svg" alt>
+
+								</div>
+
+								<h2><em class="currency-sign"></em><em id="tot_remote_monitored_benifit">XX,XXX</em></h2>
+
+								<button class="tabular-view-btn open-modal-btn monitoring-crtd-tabular-modal-btn">
+
+									<img src="./assets/images/tabular-bg.svg" alt>
+
+									View <br> tabular <br> data
+
+								</button>
+
+							</div>
+
+
+
+							<h5 class="tab-content-heading">HeartLogic™</h5>
+
+							<div class="heartloginTM-box">
+
+								<div class="bulb-rates-box gradient-border longevity-bulb-box">
+
+									<div class="bulb-rates-box-inner align-items-start">
+
+										<img src="./assets/images/bulb.svg" alt class="bulb-rates-pic">
+
+										<div class="bulb-rates-body">
+
+											<div class="media-top text-left">
+
+												<strong class="sst-bold">HEARTLOGIC™:</strong>
+
+											</div>
+
+											<div class="bullets heartlogic bullet-gap">
+
+												<p class="text-left"><i class="dot"></i><strong>REDUCES the number
+
+														of hospitalisations <br>
+
+														& length of stay </strong>for decompensated heart
+
+													failure<sup>2,3</sup></p>
+
+												<p class="text-left"><i class="dot"></i><strong>SIGNIFICANTLY
+
+														REDUCES the costs per patient <br>
+
+													</strong>for the healthcare system <sup>2,3</sup></p>
+
+											</div>
+
+
+
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+
+
+							<div class="refcustom-box-wrapper heartLogic-refcustom-box">
+
+								<div class="refcustom-box">
+
+									<div class="refcustom-item">
+
+										<span>Reference <br> value</span>
+
+										<i class="ref-pink"></i>
+
+										<i class="ref-gray"></i>
+
+									</div>
+
+									<div class="refcustom-item">
+
+										<span>Custom <br> value</span>
+
+										<div class="ref-custom"></div>
+
+									</div>
+
+								</div>
+
+								<div class="calcinput-table heart-calcinput heartLogic-sup">
+
+									<table>
+
+										<thead>
+
+											<tr>
+
+												<th></th>
+
+												<th>HeartLogic™</th>
+
+												<th>None - remote
+
+													<br>monitoring only
+
+												</th>
+
+												<th></th>
+
+											</tr>
+
+										</thead>
+
+										<tbody>
+
+											<tr class="tr-reset">
+
+												<td>Average hospitalisations <br>
+
+													/patient/year (n<div class="d-inline" data-sup="2">)</div>
+
+												</td>
+
+												<td>
+
+													<input class="boston-sminput validate-number-input" data-symbol="dot" type="text"
+														id="avg_hospitalisation" data-value="0.08" value="0.08">
+
+												</td>
+
+												<td>
+
+													<input class="boston-sminput disabled validate-number-input" data-symbol="dot" type="text"
+														id="avg_hospitalisation_dis" data-value="0.29" value="0.29">
+
+												</td>
+
+												<td>
+
+													<button class="reset-btn monitoring-reset-btn"><img src="./assets/images/reset-shape.svg"
+															alt></button>
+
+												</td>
+
+											</tr>
+
+											<tr class="tr-reset">
+
+												<td>Length of <br>
+
+													hospitalisation (days<div class="d-inline" data-sup="2">)</div>
+
+												</td>
+
+												<td>
+
+													<input class="boston-sminput validate-number-input" data-symbol="dot" type="text"
+														id="len_hospitalisation" data-value="5.00" value="5.00">
+
+												</td>
+
+												<td>
+
+													<input class="boston-sminput disabled validate-number-input" data-symbol="dot" type="text"
+														id="len_hospitalisation_dis" data-value="8.20" value="8.20">
+
+												</td>
+
+												<td>
+
+													<button class="reset-btn monitoring-reset-btn"><img src="./assets/images/reset-shape.svg"
+															alt></button>
+
+												</td>
+
+											</tr>
+
+											<tr class="tr-reset">
+
+												<td>Hospitalisation cost <br>
+
+													/da<div class="d-inline" data-sup="3">y</div>
+
+												</td>
+
+												<td>
+
+													<input class="boston-sminput validate-number-input" data-symbol="currency" type="text"
+														id="hospitalisation_cost" data-value="815" value="815">
+
+												</td>
+
+												<td>
+
+													<input class="boston-sminput disabled validate-number-input" data-symbol="currency"
+														type="text" id="hospitalisation_cost_dis" data-value="815" value="815">
+
+												</td>
+
+												<td>
+
+													<button class="reset-btn monitoring-reset-btn"><img src="./assets/images/reset-shape.svg"
+															alt></button>
+
+												</td>
+
+											</tr>
+
+											<tr class="tr-reset">
+
+												<td>ICD/CRT-D cost/ <br>
+
+													patient/year</td>
+
+												<td>
+
+													<input class="boston-sminput validate-number-input" data-symbol="currency" type="text"
+														id="icd_crtd_cost" data-value="326" value="326">
+
+												</td>
+
+												<td>
+
+													<input class="boston-sminput disabled validate-number-input" data-symbol="currency"
+														type="text" id="icd_crtd_cost_dis" data-value="1938" value="1,938">
+
+												</td>
+
+												<td>
+
+													<button class="reset-btn monitoring-reset-btn"><img src="./assets/images/reset-shape.svg"
+															alt></button>
+
+												</td>
+
+											</tr>
+
+											<tr>
+
+												<td></td>
+
+												<td colspan="2"><span class="down-arrow-indicator"></span></td>
+
+												<td></td>
+
+											</tr>
+
+										</tbody>
+
+									</table>
+
+								</div>
+
+							</div>
+
+
+
+							<div class="iconvalue-box iconvalue-smheight mw462px">
+
+								<h6>Boston Scientific <br>
+
+									benefit/patient/year</h6>
+
+								<div class="iconvalue-profile-pic">
+
+									<img class src="./assets/images/profile.svg" alt>
+
+								</div>
+
+								<h2><em class="currency-sign"></em><em id="hospitalisation_benifit">1,612</em></h2>
+
+
+
+							</div>
+
+
+
+							<div class="total-cost-wrapper">
+
+								<div class="calcinput-table">
+
+									<table>
+
+
+
+										<tbody>
+
+											<tr>
+
+												<td>Total cost <br> <span class="sst-roman">(100% of patients)</span></td>
+
+												<td>
+
+													<span class="boston-sminput"><em class="currency-sign"></em><em
+															id="tot_hospitalisation_cost">XX,XXX</em></span>
+
+												</td>
+
+												<td>
+
+													<span class="boston-sminput disabled"><em class="currency-sign"></em><em
+															id="tot_hospitalisation_cost_dis">XX,XXX</em></span>
+
+												</td>
+
+												<td>
+
+													<button class="reset-btn ui-hide"><img src="./assets/images/reset-shape.svg" alt></button>
+
+												</td>
+
+											</tr>
+
+											<tr>
+
+												<td></td>
+
+												<td colspan="2"><span class="down-arrow-indicator"></span></td>
+
+												<td></td>
+
+											</tr>
+
+
+
+										</tbody>
+
+									</table>
+
+								</div>
+
+							</div>
+
+
+
+							<div class="iconvalue-box iconvalue-smheight mw415px monitoring-iconvalue">
+
+								<h6>Total benefit with Boston Scientific/year <br> <span class="sst-roman">with current % Boston
+
+										Scientific</span></h6>
+
+								<div class="iconvalue-profile-pic">
+
+									<img class src="./assets/images/multi-user.svg" alt>
+
+								</div>
+
+								<h2><em class="currency-sign"></em><em id="tot_hospitalisation_benifit">XX,XXX</em></h2>
+
+								<button class="tabular-view-btn open-modal-btn monitoring-heart-tabular-modal-btn">
+
+									<img src="./assets/images/tabular-bg.svg" alt>
+
+									View <br> tabular <br> data
+
+								</button>
+
+							</div>
+
+
+
+							<div class="container caution-text">
+
+								<h6>References:</h6>
+
+								<ol>
+
+									<li>Marini M, Videsott L, Dalle Fratte CF et al. Economic analysis of
+
+										remote monitoring in patients
+
+										with implantable cardioverter defibrillators or cardiac
+
+										resynchronization therapy defibrillators in
+
+										the Trento area, Italy. Front Cardiovasc Med 2023;10. doi:
+
+										10.3389/fcvm.2023.1151167.</li>
+
+									<li>ICD or CRT >1 year from: Treskes RW, Beles M, Caputo ML et al.
+
+										Clinical and economic impact of
+
+										HeartLogic™ compared with standard care in heart failure patients.
+
+										ESC Heart Fail 2021;8(2):1541-51.
+
+										doi: 10.1002/ehf2.13252.</li>
+
+									<li id="monitoring-caution">Average German tariff for 1 day of hospitalisation</li>
+
+								</ol>
+
+							</div>
+
+
+
+							<div class="boston-modal gradient-border tabular-modal-wrapper crtd-tabular-modal-wrapper"
+								id="monitoring-crtd-tabular-modal-wrapper">
+
+								<div class="tabular-modal">
+
+									<div class="modal-header">
+
+										<h5>Tabular data</h5>
+
+										<button class="cut-modal"><img src="./assets/images/x-cut-orange.svg" alt></button>
+
+									</div>
+
+
+
+									<ul class="tabular-list">
+
+										<li class="tr">
+
+											<span class="th">Remote monitoring</span>
+
+											<span class="th">
+
+												<div>LATITUDE<sup>™</sup></div>
+
+											</span>
+
+											<span class="th">No remote <br>monitoring</span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="td">
+
+												<div>Cost of care/patient/year, hospital perspective<sup>1</sup>
+
+												</div>
+
+											</span>
+
+											<span class="td"><em class="currency-sign"></em><span
+													id="tbl_remote_monitored">1,512</span></span>
+
+											<span class="td"><em class="currency-sign"></em><span
+													id="tbl_remote_monitored_dis">4,888</span></span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="td">Total cost (100% of patients)</span>
+
+											<span class="td"><em class="currency-sign"></em><em
+													id="tbl_tot_remote_monitored">XX,XXX</em></span>
+
+											<span class="td"><em class="currency-sign"></em><em
+													id="tbl_tot_remote_monitored_dis">XX,XXX</em></span>
+
+										</li>
+
+									</ul>
+
+
+
+									<ul class="tabular-footer">
+
+										<li class="tr">
+
+											<span class="th">Benefit with Boston Scientific/patient/year</span>
+
+											<span class="td-pic">
+
+												<h3><em class="currency-sign"></em><em id="tbl_remote_monitored_benifit">3,376</em></h3>
+
+											</span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="th" style="flex-direction: column;align-items: flex-start;">Total benefit with Boston
+
+												Scientific/year <br>
+
+												<p class="sst-roman">with current % Boston Scientific</p>
+
+											</span>
+
+											<span class="td-pic multiuser">
+
+												<h3><em><em class="currency-sign"></em><em
+															id="tbl_tot_remote_monitored_benifit">XXX,XXX</em></em></h3>
+
+											</span>
+
+										</li>
+
+									</ul>
+
+								</div>
+
+							</div>
+
+
+
+							<div class="boston-modal gradient-border tabular-modal-wrapper heart-tabular-modal-wrapper"
+								id="monitoring-heart-tabular-modal-wrapper">
+
+								<div class="tabular-modal">
+
+									<div class="modal-header">
+
+										<h5>Tabular data</h5>
+
+										<button class="cut-modal"><img src="./assets/images/x-cut-orange.svg" alt></button>
+
+									</div>
+
+
+
+									<ul class="tabular-list">
+
+										<li class="tr">
+
+											<span class="th">HeartLogic<sup>™</sup></span>
+
+											<span class="th">
+
+												<div>HeartLogic™</div>
+
+											</span>
+
+											<span class="th">None - remote <br>monitoring only</span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="td">
+
+												<div>Average hospitalisations/patient/year (n)<sup>2</sup></div>
+
+											</span>
+
+											<span class="td" id="tbl_avg_hospitalisation">0.08</span>
+
+											<span class="td" id="tbl_avg_hospitalisation_dis">0.29</span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="td">
+
+												<div>Average hospitalisations/patient/year (n)<sup>2</sup></div>
+
+											</span>
+
+											<span class="td" id="tbl_len_hospitalisation">5.00</span>
+
+											<span class="td" id="tbl_len_hospitalisation_dis">8.20</span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="td">
+
+												<div>Average hospitalisations/patient/year (n)<sup>2</sup></div>
+
+											</span>
+
+											<span class="td"><em class="currency-sign"></em><span
+													id="tbl_hospitalisation_cost">815</span></span>
+
+											<span class="td"><em class="currency-sign"></em><span
+													id="tbl_hospitalisation_cost-dis">815</span></span>
+
+										</li>
+
+									</ul>
+
+
+
+									<ul class="tabular-list">
+
+
+
+										<li class="tr">
+
+											<span class="td">ICD/CRT-D cost/patient/year</span>
+
+											<span class="td"><em class="currency-sign"></em><span id="tbl_icd_crtd_cost">326</span></span>
+
+											<span class="td"><em class="currency-sign"></em><span
+													id="tbl_icd_crtd_cost_dis">1,938</span></span>
+
+										</li>
+
+
+
+										<li class="tr">
+
+											<span class="td">Total cost (100% of patients)</span>
+
+											<span class="td"><em class="currency-sign"></em><em
+													id="tbl_tot_hospitalisation_cost">XX,XXX</em></span>
+
+											<span class="td"><em class="currency-sign"></em><em
+													id="tbl_tot_hospitalisation_cost_dis">XX,XXX</em></span>
+
+										</li>
+
+									</ul>
+
+
+
+									<ul class="tabular-footer">
+
+										<li class="tr">
+
+											<span class="th">Benefit with Boston Scientific/patient/year</span>
+
+											<span class="td-pic">
+
+												<h3><em class="currency-sign"></em><em id="tbl_hospitalisation_benifit">1,612</em></h3>
+
+											</span>
+
+										</li>
+
+										<li class="tr">
+
+											<span class="th" style="flex-direction: column;align-items: flex-start;">Total benefit with Boston
+
+												Scientific/year <br>
+
+												<p class="sst-roman">with current % Boston Scientific</p>
+
+											</span>
+
+											<span class="td-pic multiuser">
+
+												<h3><em class="currency-sign"></em><em id="tbl_tot_hospitalisation_benifit">XX,XXX</em></h3>
+
+											</span>
+
+
+
+										</li>
+
+									</ul>
+
+
+
+								</div>
+
+							</div>
+
+
+
+						</div>
+
+
+
+						<div class="boston-tab-content boston-tab-content-portfolio">
+
+							<div class="analysis-canvas-wrapper">
+
+								<h5 class="tab-content-heading text-left">Economic impact across
+
+									portfolio</h5>
+
+
+
+								<div class="analysis-canvas">
+
+									<div>
+
+										<div class="analysis-text-item">
+
+											<h6>Boston Scientific</h6>
+
+											<span><em class="currency-sign"></em><em id="Eco_impact">XXX,XXX</em></span>
+
+										</div>
+
+										<div class="analysis-text-item gray-analysis-text-item">
+
+											<h6>Competitor</h6>
+
+											<span><em class="currency-sign"></em><em id="Eco_impact_dis">XXX,XXX</em></span>
+
+										</div>
+
+									</div>
+
+									<div class="analysis-graphs">
+
+										<div class="analysis-graphs-canvas">
+
+											<canvas id="economic-portfolio-graph"></canvas>
+
+											<p class="text-center portfolio-currency-k">Euros (K)</p>
+
+										</div>
+
+									</div>
+
+
+
+								</div>
+
+							</div>
+
+
+
+							<div class="iconvalue-box iconvalue-smbg mw530px">
+
+								<h6 class="text21px">Total benefit with Boston Scientific <br> <span class="sst-roman">with current %
+
+										Boston Scientific</span></h6>
+
+								<div class="iconvalue-pic-box">
+
+									<h2 class="text50px"><em class="currency-sign"></em><em id="Eco_impact_dif">XXX,XXX</em></h2>
+
+								</div>
+
+								<button class="tabular-view-btn view-impact-btn open-modal-btn" data-target="portfolio-environment">
+
+									<img src="./assets/images/environmental-icon.svg" alt="">
+
+									<span>View environmental impact</span>
+
+								</button>
+
+							</div>
+
+
+
+							<div class="boston-modal gradient-border tabular-modal-wrapper" id="portfolio-environment">
+
+								<div class="tabular-modal">
+
+									<button class="cut-modal"><img src="./assets/images/x-cut-orange.svg" alt></button>
+
+									<div class="bulbtonnes-box-wrapper">
+
+										<h5 class="tab-content-heading text-left">Environmental impact of
+
+											HeartLogic™</h5>
+
+										<div class="bulbtonnes-box">
+
+											<img src="./assets/images/bulb.svg" alt class="bulb-pic">
+
+											<div class="skypercentage-bulb-box">
+
+
+
+												<div class="skypercentage-box">
+
+													<img src="./assets/images/Cloud.svg" alt class="sky-pic">
+
+													<p>HeartLogic™ <br>
+
+														reduces greenhouse <br>
+
+														gas emissions by</p>
+
+													<strong>88%<sup>1</sup></strong>
+
+												</div>
+
+											</div>
+
+											<div class="cartonnes-box">
+
+												<img src="./assets/images/car.svg" alt class="car-pic">
+
+												<div class="cartonnes-numb">
+
+													<strong>71</strong>
+
+													<em>tonnes</em>
+
+												</div>
+
+												<span>of waste <br>
+
+													per 1,000 <br>
+
+													patients per year<sup>2</sup></span>
+
+											</div>
+
+										</div>
+
+									</div>
+
+
+
+									<div class="analysis-canvas-wrapper ghg-analysis">
+
+										<h6>Greenhouse gas (GHG) emissions</h6>
+
+										<div class="analysis-canvas">
+
+											<div>
+
+												<div class="analysis-text-item">
+
+													<h6>HeartLogic<sup>™</sup></h6>
+
+													<span><em id="GHG_emission">XX,XXX</em> <em>kg</em></span>
+
+												</div>
+
+												<div class="analysis-text-item gray-analysis-text-item">
+
+													<h6>No HeartLogic<sup>™</sup></h6>
+
+													<span><em id="GHG_emission_dis">XX,XXX</em> <em>kg</em></span>
+
+												</div>
+
+											</div>
+
+											<div class="analysis-graphs">
+
+												<div class="analysis-graphs-canvas">
+
+													<canvas id="ghg-graph"></canvas>
+
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+
+
+
+									<div class="iconvalue-box iconvalue-smbg no-iconvalue-bg mw530px">
+
+										<h6 class="text21px">Total difference with HeartLogic™: GHG
+
+										</h6>
+
+										<div class="iconvalue-pic-box">
+
+											<h2 class="text50px"><em id="GHG_emission_dif">XX,XXX</em> kg</h2>
+
+										</div>
+
+									</div>
+
+
+
+									<div class="analysis-canvas-wrapper ghg-analysis">
+
+										<h6>Hospital waste</h6>
+
+										<div class="analysis-canvas">
+
+											<div>
+
+												<div class="analysis-text-item">
+
+													<h6>HeartLogic<sup>™</sup></h6>
+
+													<span><em id="HW_waste">XX,XXX</em> <em>kg</em></span>
+
+												</div>
+
+												<div class="analysis-text-item gray-analysis-text-item">
+
+													<h6>No HeartLogic<sup>™</sup></h6>
+
+													<span><em id="HW_waste_dis">XX,XXX</em> <em>kg</em></span>
+
+												</div>
+
+											</div>
+
+											<div class="analysis-graphs">
+
+												<div class="analysis-graphs-canvas">
+
+													<canvas id="hospital-waste"></canvas>
+
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+
+
+
+									<div class="iconvalue-box iconvalue-smbg no-iconvalue-bg mw530px">
+
+										<h6 class="text21px">Total difference with HeartLogic™: Hospital
+
+											waste</h6>
+
+										<div class="iconvalue-pic-box">
+
+											<h2 class="text50px"><em id="HW_waste_dif">XX,XXX</em> kg</h2>
+
+										</div>
+
+									</div>
+
+
+
+									<div class="container caution-text">
+
+										<h6>References:</h6>
+
+										<ol>
+
+											<li>Sustainable Care Pathways Guidance: Inpatient bed day module
+
+												published 2015, Surgical Procedure
+
+												Module Published 2015 Sustainable Care Pathways Guidance –
+
+												Sustainable Healthcare <br> Coalition:
+
+												(https://shcoalition.org/sustainable-care-pathways-guidance)</li>
+
+											<li>Data on fle Boston Scientific</li>
+
+										</ol>
+
+									</div>
+
+
+
+
+
+								</div>
+
+							</div>
+
+
+
+							<div class="gradient-stroke-wrapper aside-modal boston-modal portfolio-modal" id="portfolio-modal">
+
+								<div class="gradient-stroke">
+
+									<span class="gradient-stroke-line-hider"></span>
+
+									<button class="cut-modal"><img src="./assets/images/x-cut.svg" alt></button>
+
+									<div class="portfolio-modal-content">
+
+										<div class="analysis-canvas-wrapper portfolio-economic-analysis">
+
+											<h5 class="tab-content-heading">Economic impact across
+
+												portfolio</h5>
+
+											<div class="analysis-canvas">
+
+												<div>
+
+													<div class="analysis-text-item">
+
+														<h6>Boston Scientific</h6>
+
+														<span><em class="currency-sign"></em><em id="modal_Eco_impact">XXX,XXX</em></span>
+
+													</div>
+
+													<div class="analysis-text-item gray-analysis-text-item">
+
+														<h6>Competitor</h6>
+
+														<span><em class="currency-sign"></em><em id="modal_Eco_impact_dis">XXX,XXX</em></span>
+
+													</div>
+
+												</div>
+
+												<div class="analysis-graphs">
+
+													<div class="analysis-graphs-canvas">
+
+														<canvas id="economic-modal-portfolio-graph"></canvas>
+
+													</div>
+
+												</div>
+
+											</div>
+
+										</div>
+
+
+
+										<div class="portfolio-diff">
+
+											<div class="iconvalue-box iconvalue-smheight iconvalue-big-pic mw666px">
+
+												<h6>Total benefit with Boston Scientific <br> <span class="sst-roman">with current % Boston
+
+														Scientific</span></h6>
+
+												<div class="iconvalue-pic-box">
+
+													<h2><em class="currency-sign"></em><em id="modal_Eco_impact_dif">XX,XXX</em></h2>
+
+												</div>
+
+											</div>
+
+										</div>
+
+
+
+										<div class="boston-slider portfolio-boston-slider">
+
+											<h5>SHARE ADJUSTER</h5>
+
+											<div class="boston-slider-field">
+
+												<label for class="boston-slider-label">DIAGNOSTIC <br>
+
+													DEVICES*</label>
+
+												<div class="boston-slider-input-wrapper">
+
+													<input class="boston-slider-input" type="range" step="1" id="portfolio_slider_1" min="0"
+														max="100">
+
+													<div class="input-mirror"></div>
+
+													<div class="range-thumb"></div>
+
+													<span class="range-value-indicator range-0">0%</span>
+
+													<span class="range-value-indicator range-25">25%</span>
+
+													<span class="range-value-indicator range-50">50%</span>
+
+													<span class="range-value-indicator range-75">75%</span>
+
+													<span class="range-value-indicator range-100">100%</span>
+
+													<span class="range-value-indicator range-result">20%</span>
+
+
+
+												</div>
+
+											</div>
+
+											<div class="boston-slider-field">
+
+												<label for class="boston-slider-label">TV-ICD</label>
+
+												<div class="boston-slider-input-wrapper">
+
+													<input class="boston-slider-input" type="range" step="1" id="portfolio_slider_2" min="0"
+														max="100">
+
+													<div class="input-mirror"></div>
+
+													<div class="range-thumb"></div>
+
+													<span class="range-value-indicator range-0">0%</span>
+
+													<span class="range-value-indicator range-25">25%</span>
+
+													<span class="range-value-indicator range-50">50%</span>
+
+													<span class="range-value-indicator range-75">75%</span>
+
+													<span class="range-value-indicator range-100">100%</span>
+
+													<span class="range-value-indicator range-result">20%</span>
+
+
+
+												</div>
+
+											</div>
+
+
+
+											<div class="boston-slider-field">
+
+												<label for class="boston-slider-label">CRT-D</label>
+
+												<div class="boston-slider-input-wrapper">
+
+													<input class="boston-slider-input" type="range" step="1" id="portfolio_slider_4" min="0"
+														max="100">
+
+													<div class="input-mirror"></div>
+
+													<div class="range-thumb"></div>
+
+													<span class="range-value-indicator range-0">0%</span>
+
+													<span class="range-value-indicator range-25">25%</span>
+
+													<span class="range-value-indicator range-50">50%</span>
+
+													<span class="range-value-indicator range-75">75%</span>
+
+													<span class="range-value-indicator range-100">100%</span>
+
+													<span class="range-value-indicator range-result">20%</span>
+
+
+
+												</div>
+
+											</div>
+
+
+
+											<button class="blue-btn small-btn portfolio-recalculate">CALCULATE</button>
+
+										</div>
+
+
+
+										<div class="iconvalue-box iconvalue-full">
+
+											<h6> Total benefit with Boston Scientific/year <br> <span class="sst-roman"> with adjusted %
+
+													Boston Scientific</span></h6>
+
+											<div class="iconvalue-pic-box multiuser multiuser-big">
+
+												<h2 class="text65px"><em class="currency-sign"></em><em
+														id="cal_modal_Eco_impact_dis">XX,XXX</em></h2>
+
+											</div>
+
+										</div>
+
+
+
+									</div>
+
+								</div>
+
+							</div>
+
+
+
+						</div>
+
+
+
 					</div>
+
 				</div>
-			</div>
-		</main>
 
-		<div class="portrait-overlay">
-			<div class="portrait-overlay__content">
-				<span class="portrait-overlay__icon icon-portrait-to-landscape"></span>
-				<div class="head3">Use the app in <strong>landscape</strong> mode
-					please.</div>
 			</div>
+
 		</div>
 
-		<div class="small-overlay">
-			<div class="small-overlay__content">
-				<span class="small-overlay__icon icon-screen-size"></span>
-				<div class="head3">Screen size too small <br>Minimum supported
-					screensize is <strong>1024px</strong> by <strong>768px</strong></div>
-			</div>
+	</main>
+
+
+
+	<div class="portrait-overlay">
+
+		<div class="portrait-overlay__content">
+
+			<span class="portrait-overlay__icon icon-portrait-to-landscape"></span>
+
+			<div class="head3">Use the app in <strong>landscape</strong> mode
+
+				please.</div>
+
 		</div>
 
-		<script src="assets/scripts/build/main.js"></script>
-		<script>
+	</div>
+
+
+
+	<div class="small-overlay">
+
+		<div class="small-overlay__content">
+
+			<span class="small-overlay__icon icon-screen-size"></span>
+
+			<div class="head3">Screen size too small <br>Minimum supported
+
+				screensize is <strong>1024px</strong> by <strong>768px</strong></div>
+
+		</div>
+
+	</div>
+
+
+
+	<script src="assets/scripts/build/main.js"></script>
+
+	<script>
+
+
+
 
 
 	</script>
-	</body>
+
+</body>
+
+
 
 </html>
