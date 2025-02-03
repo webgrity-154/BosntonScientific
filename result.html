@@ -2454,26 +2454,40 @@
 
 													patient/year</td>
 
+												<!-- <td>
+
+													<input class="boston-sminput" data-symbol="currency" type="text" id="icd_crtd_cost"
+														data-value="326" value="326">
+
+												</td>
+
 												<td>
 
-													<input class="boston-sminput validate-number-input" data-symbol="currency" type="text"
-														id="icd_crtd_cost" data-value="326" value="326">
+													<input class="boston-sminput disabled" data-symbol="currency" type="text"
+														id="icd_crtd_cost_dis" data-value="1938" value="1,938">
+
+												</td> -->
+
+												<td>
+
+													<span class="boston-sminput"><em class="currency-sign"></em><em
+															id="icd_crtd_cost">XX,XXX</em></span>
 
 												</td>
 
 												<td>
 
-													<input class="boston-sminput disabled validate-number-input" data-symbol="currency"
-														type="text" id="icd_crtd_cost_dis" data-value="1938" value="1,938">
+													<span class="boston-sminput disabled"><em class="currency-sign"></em><em
+															id="icd_crtd_cost_dis">XX,XXX</em></span>
 
 												</td>
 
-												<td>
+												<!-- <td>
 
 													<button class="reset-btn monitoring-reset-btn"><img src="./assets/images/reset-shape.svg"
 															alt></button>
 
-												</td>
+												</td> -->
 
 											</tr>
 
@@ -2792,7 +2806,7 @@
 
 											<span class="td">
 
-												<div>Average hospitalisations/patient/year (n)<sup>2</sup></div>
+												<div>Length of hospitalisation (days)<sup>2</sup></div>
 
 											</span>
 
@@ -2806,7 +2820,7 @@
 
 											<span class="td">
 
-												<div>Average hospitalisations/patient/year (n)<sup>2</sup></div>
+												<div>Hospitalisation cost/day <sup>3</sup></div>
 
 											</span>
 
@@ -2814,7 +2828,7 @@
 													id="tbl_hospitalisation_cost">815</span></span>
 
 											<span class="td"><em class="currency-sign"></em><span
-													id="tbl_hospitalisation_cost-dis">815</span></span>
+													id="tbl_hospitalisation_cost_dis">815</span></span>
 
 										</li>
 
