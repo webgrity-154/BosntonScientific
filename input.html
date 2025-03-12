@@ -1,252 +1,286 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en-US" translate="no">
-
-<head>
-	<meta charset="utf-8">
-	<title>Boston Scientific - Heartlogic&trade; - Heart Failure
-		Diagonistic</title>
-	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
-	<meta content="true" name="HandheldFriendly">
-	<link href="assets/styles/main.css" rel="stylesheet">
-
-	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-	<meta http-equiv="Pragma" content="no-cache" />
-	<meta http-equiv="Expires" content="0" />
-</head>
-
-<body class="input-page">
-	<header class="header-sec">
-		<p class="bg-top-gradient"></p>
-		<div class="container">
-			<div class="result-header-content">
-				<p class="logo"><img src="./assets/images/logo-full.svg" width="89" height="40" alt="logo" /></p>
-				<div class="header-right">
-					<h4>CARDIAC RHYTHM MANAGEMENT </h4>
-					<h5>Portfolio Value Calculator</h5>
-					<p>
-						<span class="hospital-name"></span>
-						<span class="country-name"></span>
-					</p>
-				</div>
-			</div>
-		</div>
-	</header>
-	<main>
-		<div class="cinput-sec" style="display: block;">
-			<div class="container">
-				<div class="cinput-row">
-					<div class="cinput-header">
-						<h2>Customer inputs</h2>
-						<strong>Which devices/technologies <br> do you use in your
-							centre?</strong>
-					</div>
-					<div class="cinput-body">
-						<div class="cinput-tables">
-							<form action="result.html" id="amend-input-form">
-								<input name="country" type="hidden" id="country">
-								<input name="hospital" type="hidden" id="hospital">
-								<table class="cinput-checks-table" id="cinput-checks-table">
-									<thead>
-										<tr>
-											<th></th>
-											<th>Total number <br> of patients <small>(per year or under
-													management)</small></th>
-											<th>% <br> Boston Scientific</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>
-												<div class="cinput-title-wrapper">
-													<span class="cinput-title">ICM?</span>
-													<label class="boston-circle-radio"><input type="radio" name="customer-icm"
-															value="yes">YES</label>
-													<label class="boston-circle-radio"><input type="radio" name="customer-icm"
-															value="no">NO</label>
-												</div>
-											</td>
-											<td><input class="boston-input validate-number-input" name="icm_input" type="number"
-													autocomplete="off" min="0" value="0" tabindex="-1" id="amend-icm-total-input"></td>
-											<td><input class="boston-input validate-number-input percent-value" name="icm_input_percent"
-													type="number" autocomplete="off" min="0" max="100" value="0" tabindex="-1"
-													id="amend-icm-percent-input"></td>
-										</tr>
-										<tr>
-											<td>
-												<div class="cinput-title-wrapper">
-													<span class="cinput-title">TV-ICD?</span>
-													<label class="boston-circle-radio"><input type="radio" name="customer-tv-icd"
-															value="yes">YES</label>
-													<label class="boston-circle-radio"><input type="radio" name="customer-tv-icd"
-															value="no">NO</label>
-												</div>
-											</td>
-											<td><input class="boston-input validate-number-input remote-monitor-input" autocomplete="off"
-													type="number" name="tv_icd" min="0" value="0" tabindex="-1" id="amend-icd-total-input"></td>
-											<td><input class="boston-input validate-number-input percent-value" type="number"
-													autocomplete="off" min="0" name="tv_icd_percent" value="0" tabindex="-1"
-													id="amend-icd-percent-input"></td>
-										</tr>
-										<tr>
-											<td>
-												<div class="cinput-title-wrapper">
-													<span class="cinput-title">CRT-D?</span>
-													<label class="boston-circle-radio"><input type="radio" name="customer-crt-d"
-															value="yes">YES</label>
-													<label class="boston-circle-radio"><input type="radio" name="customer-crt-d"
-															value="no">NO</label>
-												</div>
-											</td>
-											<td><input class="boston-input validate-number-input remote-monitor-input" name="crt_d"
-													type="number" autocomplete="off" min="0" value="0" tabindex="-1" id="amend-crt-total-input">
-											</td>
-											<td><input class="boston-input validate-number-input percent-value" type="number"
-													autocomplete="off" min="0" name="crt_d_percent" value="0" tabindex="-1"
-													id="amend-crt-percent-input"></td>
-										</tr>
-										<tr>
-											<td>
-												<div class="cinput-title-wrapper">
-													<span class="cinput-title">S-ICD?</span>
-													<label class="boston-circle-radio"><input type="radio" name="customer-s-icd"
-															value="yes">YES</label>
-													<label class="boston-circle-radio"><input type="radio" name="customer-s-icd"
-															value="no">NO</label>
-												</div>
-											</td>
-											<td><input class="boston-input validate-number-input remote-monitor-input" name="s_icd"
-													type="number" autocomplete="off" min="0" value="0" id="sicd-total-input" tabindex="-1"></td>
-											<td><input class="boston-input validate-number-input percent-value disabled bostonInp"
-													type="number" autocomplete="off" min="0" name="s_icd_percent" value="0" tabindex="-1"
-													id="sicd-percentage-input" style="pointer-events: none;"></td>
-										</tr>
-
-									</tbody>
-								</table>
-
-								<table class="cinput-remote-table">
-									<thead>
-										<tr>
-											<th>
-												<div class="cinput-title-wrapper">
-													<span class="cinput-title">Remote monitoring</span>
-												</div>
-											</th>
-											<th>%</th>
-											<th>Number of <br> patients</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>
-												<div class="cinput-title-wrapper">
-													<span class="cinput-title">TV-ICD, CRT-D and S-ICD patients on
-														remote monitoring</span>
-												</div>
-											</td>
-											<td><input
-													class="boston-input validate-number-input remote-monitored-percent remote-monitor-input-percent percent-value"
-													min="0" name="remote_monitored_percent" type="number" autocomplete="off" value="0"
-													id="amend-percent-input1"></td>
-											<td>
-												<div class="moreinfo-wrapper">
-													<input class="disabled remote-monitored bostonInp" name="tot_remote_monitored" type="text"
-														autocomplete="off" value="0" tabindex="-1" id="amend-patient-input2"
-														style="pointer-events: none;">
-													<button class="moreinfo-btn" type="button" tabindex="-1"><img src="./assets/images/i.svg"
-															alt></button>
-													<div class="moreinfo-content">
-														<div class="moreinfo-content-inner">
-															<img src="./assets/images/shape1.png" alt class="moreinfo-shape">
-															<p><strong>n. Remotely monitored patients</strong></p>
-															<p>=</p>
-															<p>% Remotely monitored patients</p>
-															<p><strong>x</strong></p>
-															<p>(n. TV-ICD + n. S-ICD + n. CRT-D )</p>
-														</div>
-													</div>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="cinput-title-wrapper">
-													<span class="cinput-title">Remotely monitored <br> patients on
-														HeartLogic<sup>™</sup></span>
-												</div>
-											</td>
-											<td><input
-													class="boston-input validate-number-input remote-monitor-input-percent monitored-heartlogic-precent percent-value"
-													name="heartlogic_precent" min="0" type="number" autocomplete="off" value="0"
-													id="amend-patient-input3"></td>
-											<td>
-												<div class="moreinfo-wrapper">
-													<input class="disabled monitored-heartlogic bostonInp" name="tot_heartlogic" type="text"
-														autocomplete="off" value="0" tabindex="-1" id="amend-patient-input4"
-														style="pointer-events: none;">
-													<button class="moreinfo-btn" type="button" tabindex="-1"><img src="./assets/images/i.svg"
-															alt></button>
-													<div class="moreinfo-content">
-														<div class="moreinfo-content-inner">
-															<img src="./assets/images/shape1.png" alt class="moreinfo-shape">
-															<p><strong>n. Remotely monitored patients on
-																	HeartLogic</strong></p>
-															<p>= </p>
-															<p>% Remotely monitored patients on HeartLogic </p>
-															<p><strong>x</strong></p>
-															<p>n. Remotely monitored patients</p>
-														</div>
-													</div>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td colspan="2">
-												<input type="submit" value="Submit" class="blue-btn">
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</form>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-
-		<div class="container caution-text">
-			<p>CAUTION: The law restricts these devices to sale by or on the order of a
-				physician. Indications,
-				contraindications, warnings, and instructions for use can be found in the
-				product labelling supplied with each
-				device or at
-				www.IFU-BSCI.com. Products shown for INFORMATION purposes only and may not
-				be approved or for sale in certain
-				countries.© 2024 Boston Scientific Corporation or its affiliates. All
-				rights reserved. CRM-1849807-AA</p>
-		</div>
-	</main>
-
-	<div class="portrait-overlay">
-		<div class="portrait-overlay__content">
-			<span class="portrait-overlay__icon icon-portrait-to-landscape"></span>
-			<div class="head3">Use the app in <strong>landscape</strong> mode
-				please.</div>
-		</div>
-	</div>
-
-	<div class="small-overlay">
-		<div class="small-overlay__content">
-			<span class="small-overlay__icon icon-screen-size"></span>
-			<div class="head3">Screen size too small <br>Minimum supported
-				screensize is <strong>1024px</strong> by <strong>768px</strong></div>
-		</div>
-	</div>
-
-	<script src="assets/scripts/build/main.js"></script>
-
-</body>
-
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" translate="no">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Boston Scientific - Heartlogic&trade; - Heart Failure
+			Diagonistic</title>
+		<meta
+			content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+			name="viewport">
+		<meta content="true" name="HandheldFriendly">
+		<link href="assets/styles/main.css" rel="stylesheet">
+
+		<meta http-equiv="Cache-Control"
+			content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+	</head>
+
+	<body class="input-page">
+		<header class="header-sec">
+			<p class="bg-top-gradient"></p>
+			<div class="container">
+				<div class="result-header-content">
+					<p class="logo"><img src="./assets/images/logo-full.svg" width="89"
+							height="40" alt="logo" /></p>
+					<div class="header-right">
+						<h4>CARDIAC RHYTHM MANAGEMENT </h4>
+						<h5>Portfolio Value Calculator</h5>
+						<p>
+							<span class="hospital-name"></span>
+							<span class="country-name"></span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="cinput-sec" style="display: block;">
+				<div class="container">
+					<div class="cinput-row">
+						<div class="cinput-header">
+							<h2>Customer inputs</h2>
+							<strong>Which devices/technologies <br> do you use in your
+								centre?</strong>
+						</div>
+						<div class="cinput-body">
+							<div class="cinput-tables">
+								<form action="result.html" id="amend-input-form">
+									<input name="country" type="hidden" id="country">
+									<input name="hospital" type="hidden" id="hospital">
+									<table class="cinput-checks-table" id="cinput-checks-table">
+										<thead>
+											<tr>
+												<th></th>
+												<th>Total number <br> of patients <small>(per year or under
+														management)</small></th>
+												<th>% <br> Boston Scientific</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<div class="cinput-title-wrapper">
+														<span class="cinput-title">ICM?</span>
+														<label class="boston-circle-radio"><input type="radio"
+																name="customer-icm"
+																value="yes">YES</label>
+														<label class="boston-circle-radio"><input type="radio"
+																name="customer-icm"
+																value="no">NO</label>
+													</div>
+												</td>
+												<td><input class="boston-input validate-number-input"
+														name="icm_input" type="number"
+														autocomplete="off" min="0" value="0" tabindex="-1"
+														id="amend-icm-total-input"></td>
+												<td><input class="boston-input validate-number-input percent-value"
+														name="icm_input_percent"
+														type="number" autocomplete="off" min="0" max="100" value="0"
+														tabindex="-1" id="amend-icm-percent-input"></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="cinput-title-wrapper">
+														<span class="cinput-title">TV-ICD?</span>
+														<label class="boston-circle-radio"><input type="radio"
+																name="customer-tv-icd"
+																value="yes">YES</label>
+														<label class="boston-circle-radio"><input type="radio"
+																name="customer-tv-icd"
+																value="no">NO</label>
+													</div>
+												</td>
+												<td><input
+														class="boston-input validate-number-input remote-monitor-input"
+														autocomplete="off"
+														type="number" name="tv_icd" min="0" value="0" tabindex="-1"
+														id="amend-icd-total-input"></td>
+												<td><input class="boston-input validate-number-input percent-value"
+														type="number"
+														autocomplete="off" min="0" name="tv_icd_percent" value="0"
+														tabindex="-1" id="amend-icd-percent-input"></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="cinput-title-wrapper">
+														<span class="cinput-title">CRT-D?</span>
+														<label class="boston-circle-radio"><input type="radio"
+																name="customer-crt-d"
+																value="yes">YES</label>
+														<label class="boston-circle-radio"><input type="radio"
+																name="customer-crt-d"
+																value="no">NO</label>
+													</div>
+												</td>
+												<td><input
+														class="boston-input validate-number-input remote-monitor-input"
+														name="crt_d"
+														type="number" autocomplete="off" min="0" value="0" tabindex="-1"
+														id="amend-crt-total-input"></td>
+												<td><input class="boston-input validate-number-input percent-value"
+														type="number"
+														autocomplete="off" min="0" name="crt_d_percent" value="0"
+														tabindex="-1" id="amend-crt-percent-input"></td>
+											</tr>
+											<tr>
+												<td>
+													<div class="cinput-title-wrapper">
+														<span class="cinput-title">S-ICD?</span>
+														<label class="boston-circle-radio"><input type="radio"
+																name="customer-s-icd"
+																value="yes">YES</label>
+														<label class="boston-circle-radio"><input type="radio"
+																name="customer-s-icd"
+																value="no">NO</label>
+													</div>
+												</td>
+												<td><input
+														class="boston-input validate-number-input remote-monitor-input"
+														name="s_icd"
+														type="number" autocomplete="off" min="0" value="0"
+														id="sicd-total-input" tabindex="-1"></td>
+												<td><input
+														class="validate-number-input percent-value disabled bostonInp"
+														type="number"
+														autocomplete="off" min="0" name="s_icd_percent" value="0"
+														tabindex="-1" id="sicd-percentage-input"
+														style="pointer-events: none;"></td>
+											</tr>
+
+										</tbody>
+									</table>
+
+									<table class="cinput-remote-table">
+										<thead>
+											<tr>
+												<th>
+													<div class="cinput-title-wrapper">
+														<span class="cinput-title">Remote monitoring</span>
+													</div>
+												</th>
+												<th>%</th>
+												<th>Number of <br> patients</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<div class="cinput-title-wrapper">
+														<span class="cinput-title">TV-ICD, CRT-D and S-ICD patients on
+															remote monitoring</span>
+													</div>
+												</td>
+												<td><input
+														class="boston-input validate-number-input remote-monitored-percent remote-monitor-input-percent percent-value"
+														min="0" name="remote_monitored_percent" type="number"
+														autocomplete="off" value="0" id="amend-percent-input1"></td>
+												<td>
+													<div class="moreinfo-wrapper">
+														<input class="disabled remote-monitored bostonInp"
+															name="tot_remote_monitored" type="text"
+															autocomplete="off" value="0" tabindex="-1"
+															id="amend-patient-input2" style="pointer-events: none;">
+														<button class="moreinfo-btn" type="button" tabindex="-1"><img
+																src="./assets/images/i.svg"
+																alt></button>
+														<div class="moreinfo-content">
+															<div class="moreinfo-content-inner">
+																<img src="./assets/images/shape1.png" alt
+																	class="moreinfo-shape">
+																<p><strong>n. Remotely monitored patients</strong></p>
+																<p>=</p>
+																<p>% Remotely monitored patients</p>
+																<p><strong>x</strong></p>
+																<p>(n. TV-ICD + n. S-ICD + n. CRT-D )</p>
+															</div>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="cinput-title-wrapper">
+														<span class="cinput-title">Remotely monitored <br> patients on
+															HeartLogic<sup>™</sup></span>
+													</div>
+												</td>
+												<td><input
+														class="boston-input validate-number-input remote-monitor-input-percent monitored-heartlogic-precent percent-value"
+														name="heartlogic_precent" min="0" type="number" autocomplete="off"
+														value="0" id="amend-patient-input3"></td>
+												<td>
+													<div class="moreinfo-wrapper">
+														<input class="disabled monitored-heartlogic bostonInp"
+															name="tot_heartlogic" type="text"
+															autocomplete="off" value="0" tabindex="-1"
+															id="amend-patient-input4" style="pointer-events: none;">
+														<button class="moreinfo-btn" type="button" tabindex="-1"><img
+																src="./assets/images/i.svg"
+																alt></button>
+														<div class="moreinfo-content">
+															<div class="moreinfo-content-inner">
+																<img src="./assets/images/shape1.png" alt
+																	class="moreinfo-shape">
+																<p><strong>n. Remotely monitored patients on
+																		HeartLogic</strong></p>
+																<p>= </p>
+																<p>% Remotely monitored patients on HeartLogic </p>
+																<p><strong>x</strong></p>
+																<p>n. Remotely monitored patients</p>
+															</div>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td></td>
+												<td colspan="2">
+													<input type="submit" value="Submit" class="blue-btn">
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</form>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="container caution-text">
+				<p>CAUTION: The law restricts these devices to sale by or on the order of a
+					physician. Indications,
+					contraindications, warnings, and instructions for use can be found in the
+					product labelling supplied with each
+					device or at
+					www.IFU-BSCI.com. Products shown for INFORMATION purposes only and may not
+					be approved or for sale in certain
+					countries.© 2024 Boston Scientific Corporation or its affiliates. All
+					rights reserved. CRM-1849807-AA</p>
+			</div>
+		</main>
+
+		<div class="portrait-overlay">
+			<div class="portrait-overlay__content">
+				<span class="portrait-overlay__icon icon-portrait-to-landscape"></span>
+				<div class="head3">Use the app in <strong>landscape</strong> mode
+					please.</div>
+			</div>
+		</div>
+
+		<div class="small-overlay">
+			<div class="small-overlay__content">
+				<span class="small-overlay__icon icon-screen-size"></span>
+				<div class="head3">Screen size too small <br>Minimum supported
+					screensize is <strong>1024px</strong> by <strong>768px</strong></div>
+			</div>
+		</div>
+
+		<script src="assets/scripts/build/main.js"></script>
+
+	</body>
+
 </html>

@@ -21706,11 +21706,10 @@ const global_hospitalisation = {
 
 		'diagnosis': `Estimated at average hourly cost for physician (cardiology) + nurse based on average salary (Austria) in 2023 <br>
 
-(source: salaryexplorer.com)`,
+<a href="https://www.salaryexplorer.com/"
+											target="_blank"><u>(source: salaryexplorer.com)</u></a>`,
 
-		'monitoring': `Hadwiger M, et al. Cost Efectiveness and Resource Allocation (2022) 20:48* <br>
-
-*DRG tariff/cost divided by average length of stay of 5 days, per Treskes RW, et al. ESC Heart Fail. 2021 Apr;8(2):1541-1551.`,
+		'monitoring': `Grustam AS, Severens JL, De Massari D et al. Cost-Effectiveness Analysis in Telehealth: A Comparison between Home Telemonitoring, Nurse Telephone Support, and Usual Care in Chronic Heart Failure Management. Value Health 2018;21(7):772-82. <a href="https://doi.org/10.1016/j.jval.2017.11.011" target="_blank"><u>doi: 10.1016/j.jval.2017.11.011</u></a>`,
 
 	},
 
@@ -21724,9 +21723,10 @@ const global_hospitalisation = {
 
 		'diagnosis': `Estimated at average hourly cost for physician (cardiology) + nurse based on average salary (Belgium) in 2023 <br>
 
-(source: salaryexplorer.com)`,
+<a href="https://www.salaryexplorer.com/"
+											target="_blank"><u>(source: salaryexplorer.com)</u></a>`,
 
-		'monitoring': `Grustam A, et al. Value Health. 2018 Jul;21(7):772-782`,
+		'monitoring': `Grustam AS, Severens JL, De Massari D et al. Cost-Effectiveness Analysis in Telehealth: A Comparison between Home Telemonitoring, Nurse Telephone Support, and Usual Care in Chronic Heart Failure Management. Value Health 2018;21(7):772-82. <a href="https://doi.org/10.1016/j.jval.2017.11.011" target="_blank"><u>doi: 10.1016/j.jval.2017.11.011</u></a>`,
 
 	},
 
@@ -21740,9 +21740,10 @@ const global_hospitalisation = {
 
 		'diagnosis': `Estimated at average hourly cost for physician (cardiology) + nurse based on average salary (Czech Republic) in 2023 <br>
 
-(source: salaryexplorer.com)`,
+<a href="https://www.salaryexplorer.com/"
+											target="_blank"><u>(source: salaryexplorer.com)</u></a>`,
 
-		'monitoring': `Angerova Y, et al. Int J Rehabil Res. 2020;43(4):376-382`,
+		'monitoring': `Grustam AS, Severens JL, De Massari D et al. Cost-Effectiveness Analysis in Telehealth: A Comparison between Home Telemonitoring, Nurse Telephone Support, and Usual Care in Chronic Heart Failure Management. Value Health 2018;21(7):772-82. <a href="https://doi.org/10.1016/j.jval.2017.11.011" target="_blank"><u>doi: 10.1016/j.jval.2017.11.011</u></a>`,
 
 	},
 
@@ -21756,11 +21757,10 @@ const global_hospitalisation = {
 
 		'diagnosis': `Estimated at average hourly cost for physician (cardiology) + nurse based on average salary (Denmark) in 2023 <br>
 
-(source: salaryexplorer.com)`,
+<a href="https://www.salaryexplorer.com/"
+											target="_blank"><u>(source: salaryexplorer.com)</u></a>`,
 
-		'monitoring': `DRG 05MA04* 2021 <br>
-
-*DRG tariff/cost divided by average length of stay of 5 days, per Treskes RW, et al. ESC Heart Fail. 2021 Apr;8(2):1541-1551.`,
+		'monitoring': `Grustam AS, Severens JL, De Massari D et al. Cost-Effectiveness Analysis in Telehealth: A Comparison between Home Telemonitoring, Nurse Telephone Support, and Usual Care in Chronic Heart Failure Management. Value Health 2018;21(7):772-82. <a href="https://doi.org/10.1016/j.jval.2017.11.011" target="_blank"><u>doi: 10.1016/j.jval.2017.11.011</u></a>`,
 
 	},
 
@@ -21774,11 +21774,10 @@ const global_hospitalisation = {
 
 		'diagnosis': `Estimated at average hourly cost for physician (cardiology) + nurse based on average salary (Finland) in 2023 <br>
 
-(source: salaryexplorer.com)`,
+<a href="https://www.salaryexplorer.com/"
+											target="_blank"><u>(source: salaryexplorer.com)</u></a>`,
 
-		'monitoring': `DRG 127*: HOITOJAKSOTIETOKANTA, POIKKILEIKKAUSTARKASTELU (TUOTTAJA) 2019 <br>
-
-*DRG tariff/cost divided by average length of stay of 5 days, per Treskes RW, et al. ESC Heart Fail. 2021 Apr;8(2):1541-1551.`,
+		'monitoring': `Grustam AS, Severens JL, De Massari D et al. Cost-Effectiveness Analysis in Telehealth: A Comparison between Home Telemonitoring, Nurse Telephone Support, and Usual Care in Chronic Heart Failure Management. Value Health 2018;21(7):772-82. <a href="https://doi.org/10.1016/j.jval.2017.11.011" target="_blank"><u>doi: 10.1016/j.jval.2017.11.011</u></a>`,
 
 	},
 
@@ -21792,11 +21791,10 @@ const global_hospitalisation = {
 
 		'diagnosis': `Estimated at average hourly cost for physician (cardiology) + nurse based on average salary (France) in 2023 <br>
 
-(source: salaryexplorer.com)`,
+<a href="https://www.salaryexplorer.com/"
+											target="_blank"><u>(source: salaryexplorer.com)</u></a>`,
 
-		'monitoring': `Code 1753-1756* - Tariffe Arrete 2022 (public) <br>
-
-*DRG tariff/cost divided by average length of stay of 5 days, per Treskes RW, et al. ESC Heart Fail. 2021 Apr;8(2):1541-1551.`,
+		'monitoring': `Grustam AS, Severens JL, De Massari D et al. Cost-Effectiveness Analysis in Telehealth: A Comparison between Home Telemonitoring, Nurse Telephone Support, and Usual Care in Chronic Heart Failure Management. Value Health 2018;21(7):772-82. <a href="https://doi.org/10.1016/j.jval.2017.11.011" target="_blank"><u>doi: 10.1016/j.jval.2017.11.011</u></a>`,
 
 	},
 
@@ -21810,11 +21808,10 @@ const global_hospitalisation = {
 
 		'diagnosis': `Estimated at average hourly cost for physician (cardiology) + nurse based on average salary (Germany) in 2023 <br>
 
-(source: salaryexplorer.com)`,
+<a href="https://www.salaryexplorer.com/"
+											target="_blank"><u>(source: salaryexplorer.com)</u></a>`,
 
-		'monitoring': `Hadwiger M, et al. Cost Efectiveness and Resource Allocation (2022) 20:48* <br>
-
-*DRG tariff/cost divided by average length of stay of 5 days, per Treskes RW, et al. ESC Heart Fail. 2021 Apr;8(2):1541-1551.`,
+		'monitoring': `Grustam AS, Severens JL, De Massari D et al. Cost-Effectiveness Analysis in Telehealth: A Comparison between Home Telemonitoring, Nurse Telephone Support, and Usual Care in Chronic Heart Failure Management. Value Health 2018;21(7):772-82. <a href="https://doi.org/10.1016/j.jval.2017.11.011" target="_blank"><u>doi: 10.1016/j.jval.2017.11.011</u></a>`,
 
 	},
 
@@ -21828,11 +21825,10 @@ const global_hospitalisation = {
 
 		'diagnosis': `Estimated at average hourly cost for physician (cardiology) + nurse based on average salary (Greece) in 2023 <br>
 
-(source: salaryexplorer.com)`,
+<a href="https://www.salaryexplorer.com/"
+											target="_blank"><u>(source: salaryexplorer.com)</u></a>`,
 
-		'monitoring': `DRG K42M-X 2012* <br>
-
-*DRG tariff/cost divided by average length of stay of 5 days, per Treskes RW, et al. ESC Heart Fail. 2021 Apr;8(2):1541-1551.`,
+		'monitoring': `Grustam AS, Severens JL, De Massari D et al. Cost-Effectiveness Analysis in Telehealth: A Comparison between Home Telemonitoring, Nurse Telephone Support, and Usual Care in Chronic Heart Failure Management. Value Health 2018;21(7):772-82. <a href="https://doi.org/10.1016/j.jval.2017.11.011" target="_blank"><u>doi: 10.1016/j.jval.2017.11.011</u></a>`,
 
 	},
 
@@ -21846,11 +21842,10 @@ const global_hospitalisation = {
 
 		'diagnosis': `Estimated at average hourly cost for physician (cardiology) + nurse based on average salary (Ireland) in 2023 <br>
 
-(source: salaryexplorer.com)`,
+<a href="https://www.salaryexplorer.com/"
+											target="_blank"><u>(source: salaryexplorer.com)</u></a>`,
 
-		'monitoring': `DRG F62A/C* - ABF 2020 Admitted Patient Price List <br>
-
-*DRG tariff/cost divided by average length of stay of 5 days, per Treskes RW, et al. ESC Heart Fail. 2021 Apr;8(2):1541-1551.`,
+		'monitoring': `Grustam AS, Severens JL, De Massari D et al. Cost-Effectiveness Analysis in Telehealth: A Comparison between Home Telemonitoring, Nurse Telephone Support, and Usual Care in Chronic Heart Failure Management. Value Health 2018;21(7):772-82. <a href="https://doi.org/10.1016/j.jval.2017.11.011" target="_blank"><u>doi: 10.1016/j.jval.2017.11.011</u></a>`,
 
 	},
 
@@ -21864,11 +21859,10 @@ const global_hospitalisation = {
 
 		'diagnosis': `Estimated at average hourly cost for physician (cardiology) + nurse based on average salary (Italy) in 2023 <br>
 
-(source: salaryexplorer.com)`,
+<a href="https://www.salaryexplorer.com/"
+											target="_blank"><u>(source: salaryexplorer.com)</u></a>`,
 
-		'monitoring': `DRG 127* - Tariffario nazionale prestazioni ospedaliere 2013 <br>
-
-*DRG tariff/cost divided by average length of stay of 5 days, per Treskes RW, et al. ESC Heart Fail. 2021 Apr;8(2):1541-1551.`,
+		'monitoring': `Grustam AS, Severens JL, De Massari D et al. Cost-Effectiveness Analysis in Telehealth: A Comparison between Home Telemonitoring, Nurse Telephone Support, and Usual Care in Chronic Heart Failure Management. Value Health 2018;21(7):772-82. <a href="https://doi.org/10.1016/j.jval.2017.11.011" target="_blank"><u>doi: 10.1016/j.jval.2017.11.011</u></a>`,
 
 	},
 
@@ -21882,11 +21876,10 @@ const global_hospitalisation = {
 
 		'diagnosis': `Estimated at average hourly cost for physician (cardiology) + nurse based on average salary (Netherlands) in 2023 <br>
 
-(source: salaryexplorer.com)`,
+<a href="https://www.salaryexplorer.com/"
+											target="_blank"><u>(source: salaryexplorer.com)</u></a>`,
 
-		'monitoring': `Code 15B755/759/760* - Standaard prijslijst dbc-zorgproducten 2022 <br>
-
-*DRG tariff/cost divided by average length of stay of 5 days, per Treskes RW, et al. ESC Heart Fail. 2021 Apr;8(2):1541-1551.`,
+		'monitoring': `Grustam AS, Severens JL, De Massari D et al. Cost-Effectiveness Analysis in Telehealth: A Comparison between Home Telemonitoring, Nurse Telephone Support, and Usual Care in Chronic Heart Failure Management. Value Health 2018;21(7):772-82. <a href="https://doi.org/10.1016/j.jval.2017.11.011" target="_blank"><u>doi: 10.1016/j.jval.2017.11.011</u></a>`,
 
 	},
 
@@ -21900,11 +21893,10 @@ const global_hospitalisation = {
 
 		'diagnosis': `Estimated at average hourly cost for physician (cardiology) + nurse based on average salary (Norway) in 2023 <br>
 
-(source: salaryexplorer.com)`,
+<a href="https://www.salaryexplorer.com/"
+											target="_blank"><u>(source: salaryexplorer.com)</u></a>`,
 
-		'monitoring': `DRG 135/136* - Innsatsstyrt finansiering 2023 <br>
-
-*DRG tariff/cost divided by average length of stay of 5 days, per Treskes RW, et al. ESC Heart Fail. 2021 Apr;8(2):1541-1551.`,
+		'monitoring': `Grustam AS, Severens JL, De Massari D et al. Cost-Effectiveness Analysis in Telehealth: A Comparison between Home Telemonitoring, Nurse Telephone Support, and Usual Care in Chronic Heart Failure Management. Value Health 2018;21(7):772-82. <a href="https://doi.org/10.1016/j.jval.2017.11.011" target="_blank"><u>doi: 10.1016/j.jval.2017.11.011</u></a>`,
 
 	},
 
@@ -21918,11 +21910,10 @@ const global_hospitalisation = {
 
 		'diagnosis': `Estimated at average hourly cost for physician (cardiology) + nurse based on average salary (Poland) in 2023 <br>
 
-(source: salaryexplorer.com)`,
+<a href="https://www.salaryexplorer.com/"
+											target="_blank"><u>(source: salaryexplorer.com)</u></a>`,
 
-		'monitoring': `Romanek J, et al.Kardiol Pol. 2022;80(9):919-925* <br>
-
-*DRG tariff/cost divided by average length of stay of 5 days, per Treskes RW, et al. ESC Heart Fail. 2021 Apr;8(2):1541-1551.`,
+		'monitoring': `Grustam AS, Severens JL, De Massari D et al. Cost-Effectiveness Analysis in Telehealth: A Comparison between Home Telemonitoring, Nurse Telephone Support, and Usual Care in Chronic Heart Failure Management. Value Health 2018;21(7):772-82. <a href="https://doi.org/10.1016/j.jval.2017.11.011" target="_blank"><u>doi: 10.1016/j.jval.2017.11.011</u></a>`,
 
 	},
 
@@ -21936,11 +21927,10 @@ const global_hospitalisation = {
 
 		'diagnosis': `Estimated at average hourly cost for physician (cardiology) + nurse based on average salary (Portugal) in 2023 <br>
 
-(source: salaryexplorer.com)`,
+<a href="https://www.salaryexplorer.com/"
+											target="_blank"><u>(source: salaryexplorer.com)</u></a>`,
 
-		'monitoring': `DRG 194* - Tabela Nacional Grupos de Diagnostico Homogeneo 2018 <br>
-
-*DRG tariff/cost divided by average length of stay of 5 days, per Treskes RW, et al. ESC Heart Fail. 2021 Apr;8(2):1541-1551.`,
+		'monitoring': `Grustam AS, Severens JL, De Massari D et al. Cost-Effectiveness Analysis in Telehealth: A Comparison between Home Telemonitoring, Nurse Telephone Support, and Usual Care in Chronic Heart Failure Management. Value Health 2018;21(7):772-82. <a href="https://doi.org/10.1016/j.jval.2017.11.011" target="_blank"><u>doi: 10.1016/j.jval.2017.11.011</u></a>`,
 
 	},
 
@@ -21954,9 +21944,10 @@ const global_hospitalisation = {
 
 		'diagnosis': `Estimated at average hourly cost for physician (cardiology) + nurse based on average salary (Spain) in 2023 <br>
 
-(source: salaryexplorer.com)`,
+<a href="https://www.salaryexplorer.com/"
+											target="_blank"><u>(source: salaryexplorer.com)</u></a>`,
 
-		'monitoring': `Escobar et al. BMC Health Serv Res 20, 964 (2020)`,
+		'monitoring': `Grustam AS, Severens JL, De Massari D et al. Cost-Effectiveness Analysis in Telehealth: A Comparison between Home Telemonitoring, Nurse Telephone Support, and Usual Care in Chronic Heart Failure Management. Value Health 2018;21(7):772-82. <a href="https://doi.org/10.1016/j.jval.2017.11.011" target="_blank"><u>doi: 10.1016/j.jval.2017.11.011</u></a>`,
 
 	},
 
@@ -21970,11 +21961,10 @@ const global_hospitalisation = {
 
 		'diagnosis': `Estimated at average hourly cost for physician (cardiology) + nurse based on average salary (Sweden) in 2023 <br>
 
-(source: salaryexplorer.com)`,
+<a href="https://www.salaryexplorer.com/"
+											target="_blank"><u>(source: salaryexplorer.com)</u></a>`,
 
-		'monitoring': `Code E47A* - REGIONALA PRISER OCH ERSÄTTNINGAR FÖR SÖDRA SJUKVÅRDSREGIONEN 2023 <br>
-
-*DRG tariff/cost divided by average length of stay of 5 days, per Treskes RW, et al. ESC Heart Fail. 2021 Apr;8(2):1541-1551.`,
+		'monitoring': `Grustam AS, Severens JL, De Massari D et al. Cost-Effectiveness Analysis in Telehealth: A Comparison between Home Telemonitoring, Nurse Telephone Support, and Usual Care in Chronic Heart Failure Management. Value Health 2018;21(7):772-82. <a href="https://doi.org/10.1016/j.jval.2017.11.011" target="_blank"><u>doi: 10.1016/j.jval.2017.11.011</u></a>`,
 
 	},
 
@@ -21988,9 +21978,10 @@ const global_hospitalisation = {
 
 		'diagnosis': `Estimated at average hourly cost for physician (cardiology) + nurse based on average salary (Switzerland) in 2023 <br>
 
-(source: salaryexplorer.com)`,
+<a href="https://www.salaryexplorer.com/"
+											target="_blank"><u>(source: salaryexplorer.com)</u></a>`,
 
-		'monitoring': `Bramkamp et al. Cardiovasc Drugs Ther. 2007 Oct;21(5):389-98`,
+		'monitoring': `Grustam AS, Severens JL, De Massari D et al. Cost-Effectiveness Analysis in Telehealth: A Comparison between Home Telemonitoring, Nurse Telephone Support, and Usual Care in Chronic Heart Failure Management. Value Health 2018;21(7):772-82. <a href="https://doi.org/10.1016/j.jval.2017.11.011" target="_blank"><u>doi: 10.1016/j.jval.2017.11.011</u></a>`,
 
 	},
 
@@ -22004,11 +21995,10 @@ const global_hospitalisation = {
 
 		'diagnosis': `Estimated at average hourly cost for physician (cardiology) + nurse based on average salary (United Kingdom) in 2023 <br>
 
-(source: salaryexplorer.com)`,
+<a href="https://www.salaryexplorer.com/"
+											target="_blank"><u>(source: salaryexplorer.com)</u></a>`,
 
-		'monitoring': `Code EB02* - National tariff workbook 2022/2023 <br>
-
-*DRG tariff/cost divided by average length of stay of 5 days, per Treskes RW, et al. ESC Heart Fail. 2021 Apr;8(2):1541-1551.`,
+		'monitoring': `Grustam AS, Severens JL, De Massari D et al. Cost-Effectiveness Analysis in Telehealth: A Comparison between Home Telemonitoring, Nurse Telephone Support, and Usual Care in Chronic Heart Failure Management. Value Health 2018;21(7):772-82. <a href="https://doi.org/10.1016/j.jval.2017.11.011" target="_blank"><u>doi: 10.1016/j.jval.2017.11.011</u></a>`,
 
 	},
 
@@ -22461,7 +22451,6 @@ const Boston = {
 		$('.remote-monitored').val(total.toFixed(0))
 
 		$('.monitored-heartlogic').val(totalHeartLogic.toFixed(0))
-
 	},
 
 
@@ -22678,9 +22667,9 @@ const Boston = {
 
 						maxBarThickness: maxBarThickness, // Optional: Maximum bar thickness
 
-						categoryPercentage: 3.2, // Increase the bar width relative to category width
+						categoryPercentage: 0.8, // Increase the bar width relative to category width
 
-						barPercentage: 3.2
+						barPercentage: 0.8
 
 					},
 
@@ -22698,9 +22687,9 @@ const Boston = {
 
 						maxBarThickness: maxBarThickness, // Optional: Maximum bar thickness
 
-						categoryPercentage: 3.2, // Increase the bar width relative to category width
+						categoryPercentage: 0.8, // Increase the bar width relative to category width
 
-						barPercentage: 3.2
+						barPercentage: 0.8
 
 					}
 
@@ -22749,11 +22738,10 @@ const Boston = {
 						},
 
 						ticks: {
-
 							padding: 0,
-
-							// maxTicksLimit: 5,
-
+							autoSkip: false, // Ensures ticks are not skipped
+							maxRotation: 45, // Allows rotation up to 45 degrees when space is insufficient
+							minRotation: 20, // No rotation when space is sufficient
 						}
 
 					},
@@ -22792,6 +22780,52 @@ const Boston = {
 
 					}
 
+				},
+				animation: {
+					onComplete: function () {
+						let xScale = Boston.chart1.scales.x;
+						let rotationApplied = xScale.labelRotation; // Actual rotation in degrees
+						// console.log('X-axis tick rotation:', rotationApplied);
+
+						let analysisCanvas = canvas1.closest('.analysis-canvas'); // Get the closest parent element
+						if (analysisCanvas) {
+							let grayTextItem = analysisCanvas.querySelector('.analysis-canvas-custom .gray-analysis-text-item');
+							let canvasCustom = analysisCanvas.querySelector('.analysis-canvas-custom');
+
+							if (rotationApplied > 0) {
+								if (rotationApplied < 17) {
+									canvasCustom.style.marginTop = '-1px';
+									if (grayTextItem) grayTextItem.style.marginTop = '10px';
+									if (window.innerWidth <= 1360) {
+										canvasCustom.style.marginTop = '0px';
+										if (grayTextItem) grayTextItem.style.marginTop = '30px';
+									}
+								} else if (rotationApplied < 27) {
+									canvasCustom.style.marginTop = '-7px';
+									if (grayTextItem) grayTextItem.style.marginTop = '13px';
+									if (window.innerWidth <= 1360) {
+										canvasCustom.style.marginTop = '0px';
+										if (grayTextItem) grayTextItem.style.marginTop = '21px';
+									}
+								} else {
+									canvasCustom.style.marginTop = '-9px';
+									if (grayTextItem) grayTextItem.style.marginTop = '4px';
+									if (window.innerWidth <= 1360) {
+										canvasCustom.style.marginTop = '-3px';
+										if (grayTextItem) grayTextItem.style.marginTop = '18px';
+									}
+								}
+							} else {
+								canvasCustom.style.marginTop = '4px';
+								if (grayTextItem) grayTextItem.style.marginTop = '23px';
+
+								if (window.innerWidth <= 1360) {
+									canvasCustom.style.marginTop = '7px';
+									if (grayTextItem) grayTextItem.style.marginTop = '41px';
+								}
+							}
+						}
+					}
 				}
 
 			}
@@ -22972,6 +23006,52 @@ const Boston = {
 
 					}
 
+				},
+				animation: {
+					onComplete: function () {
+						let xScale = Boston.chart2.scales.x;
+						let rotationApplied = xScale.labelRotation; // Actual rotation in degrees
+						// console.log('X-axis tick rotation:', rotationApplied);
+
+						let analysisCanvas = canvas2.closest('.analysis-canvas'); // Get the closest parent element
+						if (analysisCanvas) {
+							let grayTextItem = analysisCanvas.querySelector('.analysis-canvas-custom .gray-analysis-text-item');
+							let canvasCustom = analysisCanvas.querySelector('.analysis-canvas-custom');
+
+							if (rotationApplied > 0) {
+								if (rotationApplied < 17) {
+									canvasCustom.style.marginTop = '-1px';
+									if (grayTextItem) grayTextItem.style.marginTop = '10px';
+									if (window.innerWidth <= 1360) {
+										canvasCustom.style.marginTop = '0px';
+										if (grayTextItem) grayTextItem.style.marginTop = '19px';
+									}
+								} else if (rotationApplied < 27) {
+									canvasCustom.style.marginTop = '-3px';
+									if (grayTextItem) grayTextItem.style.marginTop = '9px';
+									if (window.innerWidth <= 1360) {
+										canvasCustom.style.marginTop = '-1px';
+										if (grayTextItem) grayTextItem.style.marginTop = '15px';
+									}
+								} else {
+									canvasCustom.style.marginTop = '-5px';
+									if (grayTextItem) grayTextItem.style.marginTop = '10px';
+									if (window.innerWidth <= 1360) {
+										canvasCustom.style.marginTop = '-2px';
+										if (grayTextItem) grayTextItem.style.marginTop = '19px';
+									}
+								}
+							} else {
+								canvasCustom.style.marginTop = '4px';
+								if (grayTextItem) grayTextItem.style.marginTop = '23px';
+
+								if (window.innerWidth <= 1360) {
+									canvasCustom.style.marginTop = '7px';
+									if (grayTextItem) grayTextItem.style.marginTop = '39px';
+								}
+							}
+						}
+					}
 				}
 
 			}
@@ -22986,7 +23066,7 @@ const Boston = {
 
 
 
-		const canvas2 = document.querySelector('#hospital-waste');
+		const canvas3 = document.querySelector('#hospital-waste');
 
 
 
@@ -23016,7 +23096,7 @@ const Boston = {
 
 
 
-		Boston.chart3 = new Chart(canvas2, {
+		Boston.chart3 = new Chart(canvas3, {
 
 			type: 'bar',
 
@@ -23154,6 +23234,52 @@ const Boston = {
 
 					}
 
+				},
+				animation: {
+					onComplete: function () {
+						let xScale = Boston.chart3.scales.x;
+						let rotationApplied = xScale.labelRotation; // Actual rotation in degrees
+						// console.log('X-axis tick rotation:', rotationApplied);
+
+						let analysisCanvas = canvas3.closest('.analysis-canvas'); // Get the closest parent element
+						if (analysisCanvas) {
+							let grayTextItem = analysisCanvas.querySelector('.analysis-canvas-custom .gray-analysis-text-item');
+							let canvasCustom = analysisCanvas.querySelector('.analysis-canvas-custom');
+
+							if (rotationApplied > 0) {
+								if (rotationApplied < 17) {
+									canvasCustom.style.marginTop = '-1px';
+									if (grayTextItem) grayTextItem.style.marginTop = '10px';
+									if (window.innerWidth <= 1360) {
+										canvasCustom.style.marginTop = '0px';
+										if (grayTextItem) grayTextItem.style.marginTop = '29px';
+									}
+								} else if (rotationApplied < 27) {
+									canvasCustom.style.marginTop = '-3px';
+									if (grayTextItem) grayTextItem.style.marginTop = '9px';
+									if (window.innerWidth <= 1360) {
+										canvasCustom.style.marginTop = '0px';
+										if (grayTextItem) grayTextItem.style.marginTop = '25px';
+									}
+								} else {
+									canvasCustom.style.marginTop = '-4px';
+									if (grayTextItem) grayTextItem.style.marginTop = '10px';
+									if (window.innerWidth <= 1360) {
+										canvasCustom.style.marginTop = '0px';
+										if (grayTextItem) grayTextItem.style.marginTop = '29px';
+									}
+								}
+							} else {
+								canvasCustom.style.marginTop = '4px';
+								if (grayTextItem) grayTextItem.style.marginTop = '23px';
+
+								if (window.innerWidth <= 1360) {
+									canvasCustom.style.marginTop = '7px';
+									if (grayTextItem) grayTextItem.style.marginTop = '39px';
+								}
+							}
+						}
+					}
 				}
 
 			}
@@ -23168,7 +23294,7 @@ const Boston = {
 
 
 
-		const canvas2 = document.querySelector('#economic-modal-portfolio-graph');
+		const canvas4 = document.querySelector('#economic-modal-portfolio-graph');
 
 
 
@@ -23202,7 +23328,7 @@ const Boston = {
 
 
 
-		Boston.chart4 = new Chart(canvas2, {
+		Boston.chart4 = new Chart(canvas4, {
 
 			type: 'bar',
 
@@ -23299,8 +23425,9 @@ const Boston = {
 						ticks: {
 
 							padding: 0,
-
-							// maxTicksLimit: 5,
+							autoSkip: false, // Ensures ticks are not skipped
+							maxRotation: 45, // Allows rotation up to 45 degrees when space is insufficient
+							minRotation: 20, // No rotation when space is sufficient
 
 						}
 
@@ -23340,6 +23467,52 @@ const Boston = {
 
 					}
 
+				},
+				animation: {
+					onComplete: function () {
+						let xScale = Boston.chart4.scales.x;
+						let rotationApplied = xScale.labelRotation; // Actual rotation in degrees
+						// console.log('X-axis tick rotation:', rotationApplied);
+
+						let analysisCanvas = canvas4.closest('.analysis-canvas'); // Get the closest parent element
+						if (analysisCanvas) {
+							let grayTextItem = analysisCanvas.querySelector('.analysis-canvas-custom .gray-analysis-text-item');
+							let canvasCustom = analysisCanvas.querySelector('.analysis-canvas-custom');
+
+							if (rotationApplied > 0) {
+								if (rotationApplied < 17) {
+									canvasCustom.style.marginTop = '-1px';
+									if (grayTextItem) grayTextItem.style.marginTop = '10px';
+									if (window.innerWidth <= 1360) {
+										canvasCustom.style.marginTop = '0px';
+										if (grayTextItem) grayTextItem.style.marginTop = '30px';
+									}
+								} else if (rotationApplied < 27) {
+									canvasCustom.style.marginTop = '-7px';
+									if (grayTextItem) grayTextItem.style.marginTop = '13px';
+									if (window.innerWidth <= 1360) {
+										canvasCustom.style.marginTop = '0px';
+										if (grayTextItem) grayTextItem.style.marginTop = '21px';
+									}
+								} else {
+									canvasCustom.style.marginTop = '-9px';
+									if (grayTextItem) grayTextItem.style.marginTop = '4px';
+									if (window.innerWidth <= 1360) {
+										canvasCustom.style.marginTop = '-3px';
+										if (grayTextItem) grayTextItem.style.marginTop = '18px';
+									}
+								}
+							} else {
+								canvasCustom.style.marginTop = '4px';
+								if (grayTextItem) grayTextItem.style.marginTop = '23px';
+
+								if (window.innerWidth <= 1360) {
+									canvasCustom.style.marginTop = '7px';
+									if (grayTextItem) grayTextItem.style.marginTop = '41px';
+								}
+							}
+						}
+					}
 				}
 
 			}
@@ -23367,6 +23540,7 @@ const Boston = {
 			} else {
 
 				$('#sicd-percentage-input').val('');
+				console.log($('#sicd-percentage-input').val());
 
 			}
 
@@ -23446,13 +23620,9 @@ const Boston = {
 
 				element.closest('tr').classList.add('cinputs-enable');
 
-				if (!element.classList.contains('bostonInp')) {
+				element.setAttribute('tabindex', 0);
 
-					element.setAttribute('tabindex', 0);
-
-					element.style.pointerEvents = 'inherit';
-
-				}
+				element.style.pointerEvents = 'inherit';
 
 			} else {
 
@@ -23484,13 +23654,9 @@ const Boston = {
 
 				element.closest('tr.cinputs-enable')?.querySelectorAll('.boston-input')?.forEach((el) => {
 
-					if (!element.classList.contains('bostonInp')) {
+					element.setAttribute('tabindex', 0);
 
-						element.setAttribute('tabindex', 0);
-
-						element.classList.remove('disabled')
-
-					}
+					element.classList.remove('disabled')
 
 				})
 
@@ -24063,8 +24229,11 @@ const Portfolio = {
 			$('#modal_Eco_impact_dis').html($('#Eco_impact_dis').html())
 
 			$('#modal_Eco_impact_dif').html($('#Eco_impact_dif').html())
+			$('#modal_Eco_impact_dif').attr('data-number', trimValue($('#Eco_impact_dif').html()));
 
 			$('#cal_modal_Eco_impact_dis').html($('#Eco_impact_dif').html())
+			$('#cal_modal_Eco_impact_dis').attr('data-number', trimValue($('#Eco_impact_dif').html()));
+
 
 			let val1 = trimValue($('#Eco_impact').html());
 
@@ -24101,6 +24270,7 @@ const Portfolio = {
 			$('#portfolio_slider_4').val($('.crtd_display_percent').html());
 
 			$('#portfolio-modal').addClass('show');
+			$('.num-box-cust').html('1');
 
 		})
 
@@ -24190,8 +24360,12 @@ const Portfolio = {
 
 			// const N_G_ownTotalCost = N_G_TotalCost - N_G_EconomicBenefit;
 
-			$('#cal_modal_Eco_impact_dis').html(number_format(N_G_EconomicBenefit, ','))
-
+			// $('#cal_modal_Eco_impact_dis').html(number_format(N_G_EconomicBenefit, ','))
+			$('#cal_modal_Eco_impact_dis').attr('data-number', N_G_EconomicBenefit);
+			let updated_cal_modal_Eco_impact_dis = $('#cal_modal_Eco_impact_dis').closest('.change-num-main-box').find('.num-box-cust').html();
+			let updated_cal_modal_Eco_impact_dis_number = $('#cal_modal_Eco_impact_dis').attr('data-number');
+			let updated_cal_modal_Eco_impact_dis_total = updated_cal_modal_Eco_impact_dis * updated_cal_modal_Eco_impact_dis_number;
+			$('#cal_modal_Eco_impact_dis').html(number_format(updated_cal_modal_Eco_impact_dis_total, ','));
 		})
 
 	},
@@ -24260,7 +24434,7 @@ const ResultCalculation = {
 
 			const country_currency = Currency_names[Boston.country];
 
-			$('.portfolio-currency-k').html(`${country_currency} (K)`);
+			$('.portfolio-currency-k').html(`${country_currency}`);
 
 
 
@@ -24400,7 +24574,7 @@ const ResultCalculation = {
 
 			localStorage.removeItem('initial-data');
 
-			localStorage.removeItem('modifie-fields');
+			remove_rhythm_total();
 
 		}
 
@@ -24430,9 +24604,7 @@ const ResultCalculation = {
 
 			localStorage.removeItem('initial-data');
 
-			localStorage.removeItem('modifie-fields');
-
-
+			remove_rhythm_total();
 
 		} else {
 
@@ -24445,9 +24617,7 @@ const ResultCalculation = {
 				localStorage.removeItem('memorize-tab');
 
 				localStorage.removeItem('initial-data');
-
-				localStorage.removeItem('modifie-fields');
-
+				remove_rhythm_total();
 				return;
 
 			}
@@ -24508,7 +24678,7 @@ const ResultCalculation = {
 
 			$('.tvicd_percent_display').html(TVICDPercent)
 
-			$('.sicd_display').html(SICD)
+			$('.sicd_display').html(SICD);
 
 			$('.sicd_display_percent').html(SICDPercent)
 
@@ -24713,16 +24883,10 @@ const ResultCalculation = {
 			//Benefit
 
 			const HL_BSCBenefitPatientYear = HL_otherCostPatientYear - HL_ownCostPatientYear;
-
 			const HL_TotalBCSBenefitYear = HL_otherTotalCost - HL_ownTotalCost;
 
-
-
 			$('#icd_crtd_cost').html(number_format(HL_ownCostPatientYear, 2, '.', ','))
-
 			$('#icd_crtd_cost_dis').html(number_format(HL_otherCostPatientYear, 2, '.', ','))
-
-
 
 			$('#tot_hospitalisation_cost').html(number_format(HL_ownTotalCost, ','))
 
@@ -24839,16 +25003,169 @@ window.addEventListener('DOMContentLoaded', function () {
 })
 
 
+function updateValue(button, increment) {
+	let numBox = button.closest(".num-box-calculate").querySelector(".num-box-cust");
+	let mainNum = button.closest(".change-num-main-box").querySelector(".change-num-main");
+	let upArrow = button.closest(".num-box-calculate").querySelector(".up-arrow");
+	let downArrow = button.closest(".num-box-calculate").querySelector(".down-arrow");
+	let value = parseInt(numBox.textContent, 10) || 1;
+	let baseValue = mainNum.getAttribute("data-number");
+
+	value = Math.min(5, Math.max(1, value + increment)); // Ensure value stays within 1-5
+	numBox.textContent = value;
+
+	let result = value * baseValue;
+	mainNum.textContent = number_format(result, ','); // Update result
+	upArrow.classList.toggle("disable", value === 5);
+	downArrow.classList.toggle("disable", value === 1);
+}
+
+document.querySelectorAll(".up-arrow, .down-arrow").forEach(button => {
+	button.addEventListener("click", function () {
+		updateValue(this, this.classList.contains("up-arrow") ? 1 : -1);
+	});
+});
 
 
 
-window.addEventListener('error', function (e) {
 
-	alert(e.message);
 
+
+$('.boston-sminput[data-symbol="km"]').each(function () {
+	var value = $(this).val();
+	$(this).wrap('<span class="currency-input-wrapper"></span>')
+	$(this).after(`<span class="currency-input-mirror">${value} km</span>`);
+
+	$(this).on('blur', function () {
+		$(this).siblings('.currency-input-mirror').html($(this).val() + ' km');
+		modifyInput();
+	});
+});
+$('.env-reset-btn').on('click', function () {
+	var inp = $(this).closest('.rhythm-bulb-box').find('#rhythm_km_work_order');
+	inp.each(function () {
+		var mainValue = $(this).attr('data-value');
+		$(this).val(mainValue);
+		$(this).siblings('.currency-input-mirror').html(mainValue + ' km');
+	})
+	rhythm_total();
 })
 
+$(document).on('input', '.rhythm-calculate-box input.boston-sminput', function () {
+	this.value = this.value.replace(/[^0-9.]/g, ''); // Allow only numbers and decimal points
+	if ((this.value.match(/\./g) || []).length > 1) {
+		this.value = this.value.replace(/\.+$/, ""); // Prevent multiple dots
+	}
+	this.value = this.value.replace(/^0+(?=\d)/, ''); // Prevent leading zeros
+	this.value = this.value.replace(/(\.\d{2})\d+/, '$1'); // Allow only two decimal places
+});
+
+function modifyInput() {
+	$('.rhythm-calculate-box').find('input').each(function () {
+		var currentValue = $(this).val();
+		var dataValue = $(this).attr('data-value');
+
+		if (currentValue === dataValue) {
+			$(this).attr('data-modified', 'false');
+		} else {
+			$(this).attr('data-modified', 'true');
+		}
+	});
+}
 
 
+function rhythm_total() {
+	var staticNum = parseFloat($('.rhythm-calculate-box').find('#rhythm_co2_multi').html()) || 1;
+	var total = staticNum;
 
+	var inputData = []; // Array to store input values, data-values, and mirrored values
+
+	// Collect input values and data-value attributes
+	$('.rhythm-calculate-box').find('input').each(function () {
+		var inputVal = parseFloat($(this).val()) || 1; // Default to 1 for multiplication
+		total *= inputVal; // Multiply each input value with total
+
+		var dataValue = $(this).attr('data-value') || ''; // Get data-value
+		inputData.push({ value: inputVal, dataValue: dataValue });
+	});
+
+	// Collect values from .currency-input-mirror elements
+	$('.rhythm-calculate-box').find('.currency-input-mirror').each(function () {
+		var mirrorValue = $(this).html();
+		inputData.push({ mirrorValue: mirrorValue });
+	});
+
+	modifyInput();
+
+	var formattedTotal = total % 1 === 0 ? total : total.toFixed(2);
+	$('#rhythm_result_num').html(formattedTotal);
+
+	// Store input values, data-values, and mirrored values in localStorage
+	localStorage.setItem('rhythm-input', JSON.stringify(inputData));
+}
+
+
+// Restore stored values on page load
+function restore_inputs() {
+	var storedData = localStorage.getItem('rhythm-input');
+	if (storedData) {
+		var inputData = JSON.parse(storedData);
+
+		// Restore input values and data-values
+		$('.rhythm-calculate-box').find('input').each(function (index) {
+			if (inputData[index] && inputData[index].value !== undefined) {
+				$(this).val(inputData[index].value); // Restore input value
+				$(this).attr('data-value', inputData[index].dataValue); // Restore data-value
+			}
+		});
+
+		// Restore currency input mirror values
+		var mirrorIndex = 0; // Separate index for mirrored elements
+		$('.rhythm-calculate-box').find('.currency-input-mirror').each(function () {
+			if (inputData[inputData.length - $('.currency-input-mirror').length + mirrorIndex] &&
+				inputData[inputData.length - $('.currency-input-mirror').length + mirrorIndex].mirrorValue !== undefined) {
+
+				$(this).html(inputData[inputData.length - $('.currency-input-mirror').length + mirrorIndex].mirrorValue);
+			}
+			mirrorIndex++;
+		});
+
+		rhythm_total(); // Recalculate after restoring values
+	} else {
+		rhythm_total();
+	}
+}
+
+
+// Function to remove stored data
+function remove_rhythm_total() {
+	localStorage.removeItem('rhythm-input'); // Remove stored data
+	$('.rhythm-calculate-box').find('input').val(''); // Clear input fields
+	$('.rhythm-calculate-box').find('.currency-input-mirror').html(''); // Clear mirrored values
+	$('#rhythm_result_num').html(''); // Clear result display
+
+	rhythm_total(); // Call to reset the stored values in localStorage
+}
+
+
+// Call rhythm_total on input blur
+$('.rhythm-calculate-box .boston-sminput').each(function () {
+	$(this).on('blur', function () {
+		rhythm_total();
+	});
+});
+
+// Initialize stored data on page load
+restore_inputs();
+
+$(document).ready(function () {
+	function updatePercentage() {
+		let total = parseInt($('#sicd-total-input').val(), 10) || 0;
+		$('#sicd-percentage-input').val(total > 0 ? '100' : '0');
+	}
+
+	updatePercentage(); // Set initial value on page load
+
+	$('#sicd-total-input').on('input', updatePercentage); // Update on typing
+});
 
